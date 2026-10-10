@@ -6,6 +6,8 @@
   "kind": "read",
   "version": "1.0.0",
   "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "chicago-311",
   "terms": {
     "url": "https://www.chicago.gov/city/en/narr/foia/data_disclaimer.html",
     "attribution": "Data: City of Chicago Data Portal",

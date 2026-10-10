@@ -1,0 +1,75 @@
+{
+  "spec_version": 1,
+  "name": "fema-disasters",
+  "title": "Recent FEMA disaster declarations",
+  "description": "The latest FEMA disaster declarations for a US state (two-letter code, e.g. 'fema disasters in TX'). No key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "fema-declarations",
+  "terms": {
+    "url": "https://www.fema.gov/about/openfema/terms-conditions",
+    "attribution": "Data: OpenFEMA",
+    "notes": "No key. OpenFEMA asks users not to imply FEMA endorsement."
+  },
+  "triggers": {
+    "keywords": [
+      "fema",
+      "disaster",
+      "disasters",
+      "declaration"
+    ],
+    "phrases": [
+      "disaster declaration"
+    ]
+  },
+  "inputs": {
+    "state": {
+      "regex": "\\b(?:in|for)\\s+([A-Za-z]{2})\\b",
+      "required": true,
+      "case": "upper",
+      "pattern": "^[A-Z]{2}$",
+      "description": "a two-letter US state code (e.g. 'in TX')"
+    }
+  },
+  "location": "none",
+  "request": {
+    "base_url": "https://www.fema.gov",
+    "path": "/api/open/v2/DisasterDeclarationsSummaries",
+    "method": "GET",
+    "params": {
+      "$filter": "state eq '{inputs.state}'",
+      "$orderby": "declarationDate desc",
+      "$top": 3,
+      "$select": "declarationTitle,declarationDate,incidentType,designatedArea"
+    }
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "www.fema.gov"
+  ],
+  "response": {
+    "list": {
+      "path": "DisasterDeclarationsSummaries",
+      "item": "{incidentType}: {designatedArea} ({declarationDate|date})",
+      "max": 3,
+      "join": "; "
+    },
+    "replies": [
+      "Latest FEMA declarations for {inputs.state}: {items}. Data: OpenFEMA",
+      "OpenFEMA, {inputs.state}: {items}"
+    ],
+    "empty_replies": [
+      "OpenFEMA has no disaster declarations on file for {inputs.state}."
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "spec_version": 1,
+  "name": "next-launch",
+  "title": "Next rocket launch (Launch Library 2)",
+  "description": "The next scheduled orbital launch worldwide, from The Space Devs' Launch Library 2. No key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "launch-library",
+  "terms": {
+    "url": "https://thespacedevs.com/llapi",
+    "attribution": "Data: The Space Devs Launch Library 2",
+    "notes": "No key: 15 requests/hour per IP, so this skill is limited to one call every 10 minutes."
+  },
+  "triggers": {
+    "keywords": [
+      "launch",
+      "rocket",
+      "spacex"
+    ],
+    "phrases": [
+      "next launch",
+      "rocket launch"
+    ]
+  },
+  "location": "none",
+  "request": {
+    "base_url": "https://ll.thespacedevs.com",
+    "path": "/2.3.0/launches/upcoming/",
+    "method": "GET",
+    "params": {
+      "limit": 1,
+      "mode": "list",
+      "hide_recent_previous": "true"
+    }
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "ll.thespacedevs.com"
+  ],
+  "response": {
+    "extract": {
+      "n": "results.0.name",
+      "net": "results.0.net",
+      "st": "results.0.status.abbrev",
+      "loc": "results.0.location||results.0.pad.location.name"
+    },
+    "replies": [
+      "Next launch: {n}, {net|date} {net|time_hm} UTC ({st}) from {loc}. Data: The Space Devs",
+      "Up next: {n} on {net|date} at {net|time_hm} UTC, status {st}. (Launch Library 2)"
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 600,
+    "max_calls_per_day": 50
+  }
+}

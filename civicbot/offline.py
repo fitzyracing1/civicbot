@@ -29,7 +29,10 @@ def _skill_raw(method, url, headers, body, timeout, max_bytes):
     now = _t.time()
     iso = lambda m: _dt.datetime.fromtimestamp(now + m * 60, _dt.timezone(_dt.timedelta(hours=-4))).isoformat(timespec="seconds")
     host = url.split("/")[2]
-    if host == "api.open-meteo.com":
+    free = _free_sample(url)
+    if free is not None:
+        d = free
+    elif host == "api.open-meteo.com":
         lat = 41.3 if "latitude=41" in url else 39.17
         d = {"current_units": {"temperature_2m": "°F"},
              "current": {"time": _dt.datetime.now().strftime("%Y-%m-%dT%H:%M"), "temperature_2m": 61.2 if lat > 40 else 66.9,
@@ -60,6 +63,28 @@ def offline_skill_fetcher():
     def resolve(host):
         return ["127.0.0.1"] if host in ("localhost", "internal.example") else ["93.184.216.34"]
     return SafeFetcher(resolve=resolve, raw=_skill_raw, min_host_interval=0, allow_nets=[])
+
+
+_SAMPLES: Optional[dict] = None
+
+
+def _free_sample(url: str) -> Any:
+    """Recorded live responses for the free catalog skills (data/free_skill_samples.json, captured 2026-10-10)."""
+    global _SAMPLES
+    import urllib.parse as _u
+    if _SAMPLES is None:
+        try:
+            _SAMPLES = json.loads(resources.files("civicbot").joinpath("data/free_skill_samples.json").read_text("utf-8"))
+        except (FileNotFoundError, ValueError):
+            _SAMPLES = {}
+    u = _u.urlsplit(url)
+    keys = sorted(k for k, _ in _u.parse_qsl(u.query, keep_blank_values=True))
+    for s in _SAMPLES.values():
+        if s["host"] != u.hostname or s["keys"] != keys:
+            continue
+        if (u.path.startswith(s["path"]) if s.get("prefix") else u.path == s["path"]):
+            return s["response"]
+    return None
 
 
 class OfflineTransport(HttpTransport):

@@ -1,0 +1,67 @@
+{
+  "spec_version": 1,
+  "name": "natural-events",
+  "title": "Open natural events (NASA EONET)",
+  "description": "Currently open wildfires, volcanoes, severe storms and other events tracked by NASA EONET. No key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "nasa-eonet",
+  "terms": {
+    "url": "https://eonet.gsfc.nasa.gov/docs/v3",
+    "attribution": "Data: NASA EONET",
+    "notes": "NASA open API, no key for EONET."
+  },
+  "triggers": {
+    "keywords": [
+      "wildfire",
+      "wildfires",
+      "volcano",
+      "volcanoes",
+      "eonet"
+    ],
+    "phrases": [
+      "natural events",
+      "natural disasters"
+    ]
+  },
+  "location": "none",
+  "request": {
+    "base_url": "https://eonet.gsfc.nasa.gov",
+    "path": "/api/v3/events",
+    "method": "GET",
+    "params": {
+      "status": "open",
+      "limit": 4,
+      "days": 14
+    }
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "eonet.gsfc.nasa.gov"
+  ],
+  "response": {
+    "list": {
+      "path": "events",
+      "item": "{title}",
+      "max": 4,
+      "join": "; "
+    },
+    "replies": [
+      "Open natural events (NASA EONET): {items}",
+      "NASA EONET is tracking: {items}"
+    ],
+    "empty_replies": [
+      "NASA EONET has no open events from the last 14 days."
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

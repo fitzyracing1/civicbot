@@ -1,0 +1,57 @@
+{
+  "spec_version": 1,
+  "name": "elevation",
+  "title": "Elevation (Open-Meteo)",
+  "description": "Ground elevation for the place you mention (Copernicus DEM 90 m). No key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "open-meteo-elevation",
+  "terms": {
+    "url": "https://open-meteo.com/en/terms",
+    "attribution": "Elevation: Open-Meteo.com, Copernicus DEM",
+    "notes": "Free for non-commercial use under 10,000 calls/day; commercial use needs an Open-Meteo API plan."
+  },
+  "triggers": {
+    "keywords": [
+      "elevation",
+      "altitude"
+    ],
+    "phrases": [
+      "above sea level",
+      "how high is"
+    ]
+  },
+  "location": "required",
+  "request": {
+    "base_url": "https://api.open-meteo.com",
+    "path": "/v1/elevation",
+    "method": "GET",
+    "params": {
+      "latitude": "{location.lat}",
+      "longitude": "{location.lng}"
+    }
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "api.open-meteo.com"
+  ],
+  "response": {
+    "extract": {
+      "m": "elevation.0"
+    },
+    "replies": [
+      "{location.text} sits about {m|round} m above sea level. Data: Open-Meteo (Copernicus DEM)",
+      "Elevation at {location.text}: roughly {m|round} m. (Open-Meteo/Copernicus)"
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

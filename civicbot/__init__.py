@@ -10,7 +10,7 @@ from .geocode import Geocoder, GeocodeResult
 from .resolver import JurisdictionResolver, Resolution
 from .transit import TransitFeed
 
-__version__ = "0.1.0"
+__version__ = "0.4.0"
 __all__ = [
     "HttpTransport", "HttpError", "Endpoint", "Registry", "Open311Client",
     "Open311Error", "PreparedRequest", "ValidationError", "Geocoder",

@@ -62,6 +62,13 @@ FILTERS: Dict[str, Callable[[Any], Any]] = {
     "time_hm": _fmt_time,
     "date": lambda v: str(v)[:10],
     "wmo": lambda v: WMO.get(int(float(v)), f"code {v}") if _num(v) else v,
+    # v0.4 (additive)
+    "money": lambda v: f"{float(v):.2f}" if _num(v) else v,
+    "rate": lambda v: f"{float(v):.4f}".rstrip("0").rstrip(".") if _num(v) else v,
+    "ms_time": lambda v: _dt.datetime.fromtimestamp(float(v) / 1000, _dt.timezone.utc).strftime("%H:%M UTC")
+    if _num(v) else v,
+    "ms_date": lambda v: _dt.datetime.fromtimestamp(float(v) / 1000, _dt.timezone.utc).strftime("%Y-%m-%d")
+    if _num(v) else v,
 }
 
 

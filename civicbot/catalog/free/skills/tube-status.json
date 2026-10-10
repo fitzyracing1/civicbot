@@ -1,0 +1,61 @@
+{
+  "spec_version": 1,
+  "name": "tube-status",
+  "title": "London Underground status (TfL)",
+  "description": "Line-by-line status of the London Underground from Transport for London. No key needed.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "tfl-status",
+  "terms": {
+    "url": "https://tfl.gov.uk/info-for/open-data-users/",
+    "attribution": "Powered by TfL Open Data",
+    "notes": "No key for light use (anonymous limits apply); free app key for more. Attribution required."
+  },
+  "triggers": {
+    "keywords": [
+      "tube",
+      "underground",
+      "tfl"
+    ],
+    "phrases": [
+      "tube status",
+      "london underground"
+    ]
+  },
+  "location": "none",
+  "request": {
+    "base_url": "https://api.tfl.gov.uk",
+    "path": "/Line/Mode/tube/Status",
+    "method": "GET",
+    "params": {}
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "api.tfl.gov.uk"
+  ],
+  "response": {
+    "list": {
+      "path": "$",
+      "item": "{name}: {lineStatuses.0.statusSeverityDescription}",
+      "max": 10,
+      "join": "; "
+    },
+    "replies": [
+      "Tube now: {items}. Data: TfL",
+      "TfL status: {items}"
+    ],
+    "empty_replies": [
+      "TfL returned no Tube line status right now."
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

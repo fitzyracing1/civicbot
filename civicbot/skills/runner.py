@@ -79,6 +79,8 @@ class SkillRunner:
                 if m:
                     val = (m.group(1) if m.groups() else m.group(0)).strip()
             val = val if val is not None else d.get("default")
+            if val is not None and d.get("case"):
+                val = val.upper() if d["case"] == "upper" else val.lower()
             if val is None:
                 if d.get("required"):
                     raise SkillInputError(f"Need {d.get('description') or name} for {spec['name']}.")
@@ -169,7 +171,14 @@ class SkillRunner:
     # -- response ------------------------------------------------------------------------
     def replies(self, spec: dict, data: Any, ctx: SkillContext) -> List[str]:
         resp = spec["response"]
-        values: Dict[str, Any] = {k: get_path(data, p) for k, p in resp.get("extract", {}).items()}
+        def _path(p: str) -> str:  # v0.4: extract paths may name an input, e.g. "rates.{inputs.to}"
+            if "{" not in p:
+                return p
+            try:
+                return render(p, ctx.var, sanitize_values=False)
+            except MissingValue:
+                return "\x00missing"
+        values: Dict[str, Any] = {k: get_path(data, _path(p)) for k, p in resp.get("extract", {}).items()}
         empty = False
         if "list" in resp:
             L = resp["list"]

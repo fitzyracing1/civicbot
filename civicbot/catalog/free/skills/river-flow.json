@@ -1,0 +1,76 @@
+{
+  "spec_version": 1,
+  "name": "river-flow",
+  "title": "River flow and gage height (USGS)",
+  "description": "Latest streamflow and gage height at a USGS site number (default 01646500, Potomac at Little Falls). No key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "usgs-water-iv",
+  "terms": {
+    "url": "https://waterservices.usgs.gov/docs/instantaneous-values/",
+    "attribution": "Data: USGS Water Services",
+    "notes": "Provisional US government data, no key. The legacy NWIS service is being replaced by api.waterdata.usgs.gov."
+  },
+  "triggers": {
+    "keywords": [
+      "river",
+      "streamflow",
+      "gage",
+      "gauge",
+      "creek",
+      "usgs"
+    ],
+    "phrases": [
+      "river level",
+      "how high is the river"
+    ]
+  },
+  "inputs": {
+    "site": {
+      "regex": "\\b(\\d{8,15})\\b",
+      "default": "01646500",
+      "pattern": "^[0-9]{8,15}$",
+      "description": "USGS site number"
+    }
+  },
+  "location": "none",
+  "request": {
+    "base_url": "https://waterservices.usgs.gov",
+    "path": "/nwis/iv/",
+    "method": "GET",
+    "params": {
+      "format": "json",
+      "sites": "{inputs.site}",
+      "parameterCd": "00060,00065",
+      "siteStatus": "active"
+    }
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "waterservices.usgs.gov"
+  ],
+  "response": {
+    "extract": {
+      "site": "value.timeSeries.0.sourceInfo.siteName",
+      "v1": "value.timeSeries.0.values.0.value.0.value",
+      "u1": "value.timeSeries.0.variable.unit.unitCode",
+      "at": "value.timeSeries.0.values.0.value.0.dateTime",
+      "v2": "value.timeSeries.1.values.0.value.0.value",
+      "u2": "value.timeSeries.1.variable.unit.unitCode"
+    },
+    "replies": [
+      "{site|title}: {v1} {u1} and {v2} {u2} at {at|time_hm}. Data: USGS",
+      "USGS {inputs.site} ({site|title}) at {at|time_hm}: {v1} {u1}, {v2} {u2}."
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "spec_version": 1,
+  "name": "zip-lookup",
+  "title": "US ZIP code lookup (Zippopotam.us)",
+  "description": "City and state for a US ZIP code, e.g. 'zip 47401'. No key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "zippopotam",
+  "terms": {
+    "url": "https://www.zippopotam.us/",
+    "attribution": "Data: Zippopotam.us",
+    "notes": "Free, no key; fair use."
+  },
+  "triggers": {
+    "keywords": [
+      "zip",
+      "zipcode",
+      "postcode"
+    ],
+    "phrases": [
+      "zip code"
+    ]
+  },
+  "inputs": {
+    "zip": {
+      "regex": "\\b(\\d{5})\\b",
+      "required": true,
+      "pattern": "^[0-9]{5}$",
+      "description": "a 5-digit US ZIP code"
+    }
+  },
+  "location": "none",
+  "request": {
+    "base_url": "https://api.zippopotam.us",
+    "path": "/us/{inputs.zip}",
+    "method": "GET",
+    "params": {}
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "api.zippopotam.us"
+  ],
+  "response": {
+    "extract": {
+      "place": "places.0.place name",
+      "st": "places.0.state",
+      "abbr": "places.0.state abbreviation"
+    },
+    "replies": [
+      "ZIP {inputs.zip} is {place}, {st}. Data: Zippopotam.us",
+      "{inputs.zip}: {place}, {abbr}. (Zippopotam.us)"
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

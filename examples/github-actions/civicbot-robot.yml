@@ -1,0 +1,73 @@
+# Run YOUR OWN civicbot robot on a schedule with GitHub Actions (template; copy into .github/workflows/).
+#
+# What is free and what is not (checked 2026-10-10):
+#   * civicbot and the free catalog APIs: free.
+#   * GitHub Actions: free on public repos (standard runners); private repos get 2,000 min/month on GitHub Free.
+#     Every 30 min ~= 1,440 runs/month (each run bills at least 1 minute). Scheduled workflows in PUBLIC repos
+#     are disabled after 60 days without repository activity.
+#   * The X API is NOT free: it is pay-per-use (https://docs.x.com/x-api/getting-started/pricing). Reading your
+#     robot's mentions and posting replies costs credits, even in shadow mode (shadow mode still READS mentions).
+#
+# One-time setup (on your computer, see guide: https://fitzyracing1.github.io/civicbot/guide.html):
+#   1. Create your robot's X account and an X developer app (OAuth 2.0, callback http://127.0.0.1:8765/callback).
+#   2. pip install "civicbot[secure]"; export X_CLIENT_ID=... X_CLIENT_SECRET=...
+#      export CIVICBOT_TOKEN_KEY=$(python -c "from cryptography.fernet import Fernet;print(Fernet.generate_key().decode())")
+#   3. civicbot connect --listen --robot YOUR_ROBOT --owner YOUR_HANDLE --home-city "Your City, ST" --free
+#   4. tar czf - .civicbot | base64 -w0   -> paste into the secret CIVICBOT_STATE_B64 (tokens inside are encrypted)
+#   5. Repo secrets: X_CLIENT_ID, X_CLIENT_SECRET (if your app is confidential), CIVICBOT_TOKEN_KEY, CIVICBOT_STATE_B64
+#      Repo variables: CIVICBOT_ROBOT (robot handle), CIVICBOT_POST ("1" to really post; anything else = shadow)
+#
+# Safety: shadow by default (prints would-be replies); free mode (keyless catalog skills only); 311 is always
+# dry-run in free mode. Logs never print tokens. One run at a time (refresh tokens can rotate on use).
+name: civicbot robot
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: civicbot-robot
+  cancel-in-progress: false
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      X_CLIENT_ID: ${{ secrets.X_CLIENT_ID }}
+      X_CLIENT_SECRET: ${{ secrets.X_CLIENT_SECRET }}
+      CIVICBOT_TOKEN_KEY: ${{ secrets.CIVICBOT_TOKEN_KEY }}
+      CIVICBOT_FREE: "1"
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet "civicbot[secure]>=0.4.0"
+      - name: Restore robot state (encrypted token + seen mentions)
+        uses: actions/cache/restore@v4
+        with:
+          path: .civicbot
+          key: civicbot-state-${{ github.run_id }}
+          restore-keys: civicbot-state-
+      - name: First run - unpack initial state from secret
+        env:
+          STATE_B64: ${{ secrets.CIVICBOT_STATE_B64 }}
+        run: |
+          if [ ! -f .civicbot/tokens.enc ]; then
+            if [ -z "$STATE_B64" ]; then echo "Set the CIVICBOT_STATE_B64 secret (see header)"; exit 1; fi
+            echo "$STATE_B64" | base64 -d | tar xzf -
+          fi
+      - name: Poll mentions once and reply
+        run: |
+          if [ "${{ vars.CIVICBOT_POST }}" = "1" ]; then POST=--post; else POST=; fi
+          civicbot run --once --free --robot "${{ vars.CIVICBOT_ROBOT }}" --state-dir .civicbot $POST
+      - name: Save robot state
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: .civicbot
+          key: civicbot-state-${{ github.run_id }}

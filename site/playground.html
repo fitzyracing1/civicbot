@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Playground: talk to a civic robot in your browser · civicbot</title>
+<meta name="description" content="Try civicbot with no install: weather, air quality, quakes, tides, recalls, holidays, currency, Wikipedia and 311 dry runs, all from free public APIs called by your own browser.">
+<link rel="stylesheet" href="assets/style.css"></head>
+<body>
+<main>
+<h1>Playground</h1>
+<p class="lead">Ask the way you would @mention your robot on X. Your browser calls free public APIs directly (CORS),
+so there is no server, no account, no key and no tracking. Nothing is posted anywhere, and 311 reports are only ever a
+<b>dry run</b>.</p>
+<div class="filters">
+  <label class="small" for="city">Home city</label>
+  <input type="text" id="city" value="Bloomington, IN" aria-label="Home city" style="max-width:240px">
+  <span class="small">Questions without “in &lt;place&gt;” use this.</span>
+</div>
+<div class="chips" id="chips"></div>
+<div class="chat" id="chat" aria-live="polite"></div>
+<form class="ask" id="ask"><input type="text" id="msg" placeholder="@yourrobot weather tomorrow in Lisbon" autocomplete="off" aria-label="Message">
+<button class="btn" type="submit">Send</button></form>
+<p class="small">Data comes from Open-Meteo (CC BY 4.0), US NWS, USGS, NOAA, Frankfurter/ECB, Nager.Date, Wikipedia (CC BY-SA),
+Zippopotam.us, openFDA, NHTSA, TfL, MBTA and wheretheiss.at. Please be gentle: the robot waits 1 s between questions.
+The real robot uses the same free APIs through reviewed skill specs (<a href="apis.html">directory</a>).</p>
+</main>
+<script src="assets/nav.js"></script>
+<script src="assets/playground.js"></script>
+</body></html>

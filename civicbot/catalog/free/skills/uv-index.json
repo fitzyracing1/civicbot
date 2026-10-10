@@ -1,0 +1,64 @@
+{
+  "spec_version": 1,
+  "name": "uv-index",
+  "title": "UV index (Open-Meteo)",
+  "description": "Current UV index and today's peak for the place you mention. No key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "open-meteo-forecast",
+  "terms": {
+    "url": "https://open-meteo.com/en/terms",
+    "attribution": "Weather data by Open-Meteo.com (CC BY 4.0)",
+    "notes": "Free for non-commercial use under 10,000 calls/day; commercial use needs an Open-Meteo API plan."
+  },
+  "triggers": {
+    "keywords": [
+      "uv",
+      "sunscreen",
+      "sunburn",
+      "sunblock"
+    ],
+    "phrases": [
+      "uv index"
+    ]
+  },
+  "location": "required",
+  "request": {
+    "base_url": "https://api.open-meteo.com",
+    "path": "/v1/forecast",
+    "method": "GET",
+    "params": {
+      "latitude": "{location.lat}",
+      "longitude": "{location.lng}",
+      "current": "uv_index",
+      "daily": "uv_index_max",
+      "timezone": "auto",
+      "forecast_days": 1
+    }
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "api.open-meteo.com"
+  ],
+  "response": {
+    "extract": {
+      "uv": "current.uv_index",
+      "mx": "daily.uv_index_max.0"
+    },
+    "replies": [
+      "UV index in {location.text}: {uv} now, peak {mx} today. Above 3, sunscreen helps. Data: Open-Meteo",
+      "{location.text} UV: {uv} right now, up to {mx} today. (Open-Meteo)",
+      "Sun strength in {location.text}: UV {uv} now, max {mx} today. Source: Open-Meteo"
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

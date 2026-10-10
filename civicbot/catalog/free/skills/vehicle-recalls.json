@@ -1,0 +1,94 @@
+{
+  "spec_version": 1,
+  "name": "vehicle-recalls",
+  "title": "Vehicle recalls (NHTSA)",
+  "description": "Safety recalls for a vehicle, e.g. 'recalls 2018 honda civic'. No key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "nhtsa-recalls",
+  "terms": {
+    "url": "https://www.nhtsa.gov/nhtsa-datasets-and-apis",
+    "attribution": "Data: NHTSA",
+    "notes": "US government data, no key."
+  },
+  "triggers": {
+    "keywords": [
+      "recall",
+      "recalls",
+      "nhtsa",
+      "car",
+      "truck",
+      "vehicle",
+      "suv"
+    ],
+    "phrases": [
+      "car recall",
+      "vehicle recall"
+    ]
+  },
+  "inputs": {
+    "year": {
+      "regex": "\\b((?:19|20)\\d{2})\\s+[A-Za-z]",
+      "required": true,
+      "pattern": "^(19|20)[0-9]{2}$",
+      "description": "model year"
+    },
+    "make": {
+      "regex": "\\b(?:19|20)\\d{2}\\s+([A-Za-z-]{2,20})\\b",
+      "required": true,
+      "case": "lower",
+      "pattern": "^[a-z-]{2,20}$",
+      "description": "make"
+    },
+    "model": {
+      "regex": "\\b(?:19|20)\\d{2}\\s+[A-Za-z-]{2,20}\\s+([A-Za-z0-9-]{1,20})\\b",
+      "required": true,
+      "case": "lower",
+      "pattern": "^[a-z0-9-]{1,20}$",
+      "description": "model"
+    }
+  },
+  "location": "none",
+  "request": {
+    "base_url": "https://api.nhtsa.gov",
+    "path": "/recalls/recallsByVehicle",
+    "method": "GET",
+    "params": {
+      "make": "{inputs.make}",
+      "model": "{inputs.model}",
+      "modelYear": "{inputs.year}"
+    }
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "api.nhtsa.gov"
+  ],
+  "response": {
+    "extract": {
+      "total": "Count"
+    },
+    "list": {
+      "path": "results",
+      "item": "{Component}",
+      "max": 3,
+      "join": "; "
+    },
+    "replies": [
+      "{inputs.year} {inputs.make|title} {inputs.model|title}: {total} NHTSA recalls, e.g. {items}. Check your VIN at nhtsa.gov",
+      "NHTSA lists {total} recalls for the {inputs.year} {inputs.make|title} {inputs.model|title}: {items}"
+    ],
+    "empty_replies": [
+      "NHTSA lists no recalls for the {inputs.year} {inputs.make|title} {inputs.model|title}."
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

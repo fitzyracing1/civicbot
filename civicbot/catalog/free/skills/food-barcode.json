@@ -1,0 +1,68 @@
+{
+  "spec_version": 1,
+  "name": "food-barcode",
+  "title": "Food product by barcode (Open Food Facts)",
+  "description": "Product name, brand and Nutri-Score for a barcode, e.g. 'barcode 3017624010701'. No key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "open-food-facts",
+  "terms": {
+    "url": "https://world.openfoodfacts.org/terms-of-use",
+    "attribution": "Data: Open Food Facts (ODbL)",
+    "notes": "No key; 100 product reads/minute. Send an identifying User-Agent."
+  },
+  "triggers": {
+    "keywords": [
+      "barcode",
+      "nutriscore",
+      "ean",
+      "upc"
+    ],
+    "phrases": [
+      "nutri-score",
+      "scan code"
+    ]
+  },
+  "inputs": {
+    "code": {
+      "regex": "\\b(\\d{8,14})\\b",
+      "required": true,
+      "pattern": "^[0-9]{8,14}$",
+      "description": "an 8-14 digit barcode"
+    }
+  },
+  "location": "none",
+  "request": {
+    "base_url": "https://world.openfoodfacts.org",
+    "path": "/api/v2/product/{inputs.code}.json",
+    "method": "GET",
+    "params": {
+      "fields": "product_name,brands,nutriscore_grade"
+    }
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "world.openfoodfacts.org"
+  ],
+  "response": {
+    "extract": {
+      "n": "product.product_name",
+      "b": "product.brands",
+      "g": "product.nutriscore_grade"
+    },
+    "replies": [
+      "{n} ({b}): Nutri-Score {g|upper}. Data: Open Food Facts (ODbL)",
+      "Barcode {inputs.code}: {n} by {b}, Nutri-Score {g|upper}. (Open Food Facts)"
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 2,
+    "max_calls_per_day": 200
+  }
+}

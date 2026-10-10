@@ -1,0 +1,61 @@
+{
+  "spec_version": 1,
+  "name": "moon-phase",
+  "title": "Next moon phases (US Naval Observatory)",
+  "description": "The next two primary moon phases with dates (UT), from the USNO. No key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "usno-moon",
+  "terms": {
+    "url": "https://aa.usno.navy.mil/data/api",
+    "attribution": "Data: US Naval Observatory",
+    "notes": "US government service, no key."
+  },
+  "triggers": {
+    "keywords": [
+      "moon",
+      "lunar"
+    ],
+    "phrases": [
+      "full moon",
+      "new moon",
+      "moon phase"
+    ]
+  },
+  "location": "none",
+  "request": {
+    "base_url": "https://aa.usno.navy.mil",
+    "path": "/api/moon/phases/date",
+    "method": "GET",
+    "params": {
+      "date": "{date.today}",
+      "nump": 2
+    }
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "aa.usno.navy.mil"
+  ],
+  "response": {
+    "list": {
+      "path": "phasedata",
+      "item": "{phase} {year}-{month}-{day} {time} UT",
+      "max": 2,
+      "join": "; "
+    },
+    "replies": [
+      "Moon: {items}. Data: US Naval Observatory",
+      "Next moon phases: {items} (USNO)"
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

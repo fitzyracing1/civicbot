@@ -1,0 +1,59 @@
+{
+  "spec_version": 1,
+  "name": "uk-carbon-intensity",
+  "title": "UK grid carbon intensity (National Grid ESO)",
+  "description": "How clean Great Britain's electricity is right now (gCO2/kWh). No key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "uk-carbon-intensity",
+  "terms": {
+    "url": "https://carbon-intensity.github.io/api-definitions/",
+    "attribution": "Carbon Intensity API (National Grid ESO), CC BY 4.0",
+    "notes": "No key. Please cache; data updates every 30 minutes."
+  },
+  "triggers": {
+    "keywords": [
+      "carbon",
+      "grid",
+      "co2"
+    ],
+    "phrases": [
+      "carbon intensity",
+      "is the grid green",
+      "uk grid"
+    ],
+    "min_score": 2
+  },
+  "location": "none",
+  "request": {
+    "base_url": "https://api.carbonintensity.org.uk",
+    "path": "/intensity",
+    "method": "GET",
+    "params": {}
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "api.carbonintensity.org.uk"
+  ],
+  "response": {
+    "extract": {
+      "g": "data.0.intensity.actual||data.0.intensity.forecast",
+      "idx": "data.0.intensity.index",
+      "at": "data.0.from"
+    },
+    "replies": [
+      "GB grid carbon intensity now: {g} gCO2/kWh ({idx}). Data: National Grid ESO Carbon Intensity API",
+      "Great Britain's electricity is {idx} carbon right now, {g} gCO2/kWh. (carbonintensity.org.uk)"
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

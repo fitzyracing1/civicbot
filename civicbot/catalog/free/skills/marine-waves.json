@@ -1,0 +1,66 @@
+{
+  "spec_version": 1,
+  "name": "marine-waves",
+  "title": "Waves and sea temperature (Open-Meteo Marine)",
+  "description": "Current wave height, period and sea-surface temperature near a coastal place. No key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "open-meteo-marine",
+  "terms": {
+    "url": "https://open-meteo.com/en/terms",
+    "attribution": "Marine data by Open-Meteo.com (CC BY 4.0)",
+    "notes": "Free for non-commercial use under 10,000 calls/day; commercial use needs an Open-Meteo API plan."
+  },
+  "triggers": {
+    "keywords": [
+      "waves",
+      "surf",
+      "swell",
+      "sea",
+      "beach"
+    ],
+    "phrases": [
+      "wave height",
+      "water temperature",
+      "sea temperature"
+    ]
+  },
+  "location": "required",
+  "request": {
+    "base_url": "https://marine-api.open-meteo.com",
+    "path": "/v1/marine",
+    "method": "GET",
+    "params": {
+      "latitude": "{location.lat}",
+      "longitude": "{location.lng}",
+      "current": "wave_height,wave_period,sea_surface_temperature",
+      "timezone": "auto"
+    }
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "marine-api.open-meteo.com"
+  ],
+  "response": {
+    "extract": {
+      "h": "current.wave_height",
+      "p": "current.wave_period",
+      "sst": "current.sea_surface_temperature"
+    },
+    "replies": [
+      "Sea near {location.text}: waves {h} m every {p} s, water {sst}°C. Data: Open-Meteo Marine",
+      "{location.text} surf check: {h} m waves, {p} s period, sea {sst}°C. (Open-Meteo)",
+      "Waves off {location.text} are {h} m (period {p} s); sea surface {sst}°C. Source: Open-Meteo"
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

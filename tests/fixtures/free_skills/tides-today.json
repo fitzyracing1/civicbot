@@ -1,0 +1,1 @@
+{"skill": "tides-today", "text": "when is high tide", "home_city": "", "lat": null, "lng": null, "now": 1791673053.53095, "recorded": "2026-10-10", "response": {"predictions": [{"t": "2026-10-10 05:22", "v": "0.133", "type": "L"}, {"t": "2026-10-10 11:35", "v": "10.622", "type": "H"}, {"t": "2026-10-10 17:48", "v": "-0.265", "type": "L"}]}}

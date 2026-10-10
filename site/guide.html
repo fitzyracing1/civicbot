@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Run your own civic robot for free (and what isn't free) · civicbot</title>
+<meta name="description" content="An honest guide to running civicbot: what costs nothing, what the X API costs (pay-per-use), and a GitHub Actions template that runs your robot on a schedule in shadow mode by default.">
+<link rel="stylesheet" href="assets/style.css"></head>
+<body>
+<main>
+<h1>Run your own robot for free</h1>
+<p class="lead">The software is free, and so are the APIs in the directory. <b>Posting on X through its API is not
+free</b>: it is pay-per-use. This guide covers the paths that cost $0 first, then shows how to keep an X robot as
+cheap as possible.</p>
+
+<h2 id="cost">What's free, what isn't (checked 2026-10-10)</h2>
+<table>
+<tr><th>Piece</th><th>Cost</th><th>Source</th></tr>
+<tr><td>civicbot (CLI, SDK, skills, this site)</td><td><b>Free</b>, MIT license</td><td><a href="https://github.com/fitzyracing1/civicbot">GitHub</a></td></tr>
+<tr><td>Catalog skill APIs (Open-Meteo, NWS, USGS, NOAA, MBTA, TfL, Wikipedia…)</td><td><b>Free</b>, no key. Each has fair-use limits and terms (Open-Meteo is free for non-commercial use)</td><td><a href="apis.html">directory</a></td></tr>
+<tr><td>Playground, <code>civicbot chat</code>, <code>civicbot simulate</code></td><td><b>Free</b>; never touches X</td><td>below</td></tr>
+<tr><td>GitHub Actions to run your robot on a schedule</td><td><b>Free</b> in public repos (standard runners). Private repos get 2,000 min/month on GitHub Free</td><td><a href="https://docs.github.com/en/billing/concepts/product-billing/github-actions">GitHub docs</a></td></tr>
+<tr><td>X API: reading your robot's mentions</td><td><b>Paid</b>, per resource returned. $0.005 per Post read, or $0.001 as an “Owned Read” (see below)</td><td><a href="https://docs.x.com/x-api/getting-started/pricing">docs.x.com pricing</a></td></tr>
+<tr><td>X API: posting a reply</td><td><b>Paid</b>: $0.010 per summoned reply, $0.015 for a regular post, and <b>$0.20 if the post has a URL</b> (civicbot replies never include links)</td><td><a href="https://docs.x.com/x-api/getting-started/pricing">docs.x.com pricing</a></td></tr>
+<tr><td>X starter credits</td><td>One-time per account: $20 when you save your first eligible card, plus a match of your first auto-recharge up to $50. <b>A card is required.</b></td><td><a href="https://docs.x.com/x-api/getting-started/free-credits">docs.x.com free credits</a></td></tr>
+</table>
+<p class="note"><b>Bottom line:</b> there is no $0 way to run a robot that replies on X through the API today. The X API
+has no free tier, so even a personal robot needs credits. Prices change, so check the
+<a href="https://console.x.com">Developer Console</a> before you rely on these numbers.</p>
+
+<h3>Keeping X costs tiny</h3>
+<ul>
+<li><b>Create the X developer app on the robot account itself.</b> The pricing page says
+<code>GET /2/users/{id}/mentions</code> is billed as an Owned Read ($0.001 per resource) when <code>{id}</code> is the
+authenticated user <em>and</em> that user owns the developer app.</li>
+<li>Reads are charged per resource <em>returned</em>, and the same Post is deduplicated within a 24-hour UTC day. An
+empty poll returns no resources.</li>
+<li>Replies only go to people who @mention the robot (“summoned”, $0.010). civicbot never puts links in replies.</li>
+<li><i>Rough example, our arithmetic and not an X quote:</i> 100 questions a month ≈ 100 × ($0.001 read + $0.010 reply) ≈ <b>$1.10/month</b>.</li>
+<li>Set a spending limit in the Developer Console. Shadow mode (the default below) still <b>reads</b> mentions, so it costs reads but never pays for posts.</li>
+</ul>
+
+<h2>Option 1: $0, no install: the playground</h2>
+<p><a href="playground.html">Open the playground</a>. Your browser calls free CORS-enabled APIs directly. Nothing is
+posted, and 311 reports are a dry run.</p>
+
+<h2>Option 2: $0, in your terminal</h2>
+<pre><code>pip install civicbot
+civicbot chat --free --city "Bloomington, IN"      # interactive; type 'skills', 'help', 'quit'
+civicbot chat -c "air quality" -c "holidays in PT" # one-shot questions
+civicbot chat --offline -c "tides"                 # recorded sample data, no network
+civicbot simulate --demo skills --offline --free   # robots on a fake X: shows exactly what would be posted</code></pre>
+
+<h2>Option 3: your real robot on X (pay-per-use X API), run free on GitHub Actions</h2>
+<ol>
+<li><b>Make the robot's own X account</b>, separate from yours (it counts toward your own 10-account limit), and mark
+it as automated, with you as the managing account
+(<a href="https://help.x.com/en/using-x/automated-account-labels">X automated-account labels</a>).</li>
+<li><b>Create an X developer app on the robot account.</b> Use OAuth 2.0 with the callback
+<code>http://127.0.0.1:8765/callback</code> and the scopes <code>tweet.read tweet.write users.read offline.access</code>. Add credits and a spending limit.</li>
+<li><b>Connect on your computer.</b> The token is encrypted at rest and is never printed:
+<pre><code>pip install "civicbot[secure]"
+export X_CLIENT_ID=...            # from your app
+export X_CLIENT_SECRET=...        # only if your app is "confidential"
+export CIVICBOT_TOKEN_KEY=$(python -c "from cryptography.fernet import Fernet;print(Fernet.generate_key().decode())")
+civicbot connect --listen --robot YOUR_ROBOT --owner YOUR_HANDLE --home-city "Your City, ST" --free
+civicbot run --robot YOUR_ROBOT                     # one poll, SHADOW: prints replies, posts nothing</code></pre></li>
+<li><b>Schedule it.</b> Copy
+<a href="https://github.com/fitzyracing1/civicbot/blob/main/examples/github-actions/civicbot-robot.yml">examples/github-actions/civicbot-robot.yml</a>
+into <code>.github/workflows/</code> in <b>your own private repo</b>. Add the secrets <code>X_CLIENT_ID</code>,
+<code>X_CLIENT_SECRET</code>, <code>CIVICBOT_TOKEN_KEY</code> and <code>CIVICBOT_STATE_B64</code>
+(<code>tar czf - .civicbot | base64 -w0</code>; the token inside is encrypted), plus the variable
+<code>CIVICBOT_ROBOT</code>. It polls every 30 minutes in <b>shadow mode</b>. Read the logs, and when you're happy set the
+variable <code>CIVICBOT_POST=1</code>.</li>
+</ol>
+<h3>Caveats</h3>
+<ul>
+<li><b>Minutes:</b> each run bills at least 1 minute. Every 30 minutes ≈ 1,440 runs/month, which fits a private repo's
+2,000 free minutes. Every 15 minutes would not.</li>
+<li><b>Public repos:</b> minutes are free, but GitHub disables scheduled workflows after 60 days without repository
+activity (<a href="https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#schedule">docs</a>).
+Workflow logs are public too, so stay in shadow mode or use a private repo.</li>
+<li><b>State</b> (encrypted token and seen mentions) lives in the Actions cache. A cache unused for 7 days is evicted. If
+that happens, the first run restores from <code>CIVICBOT_STATE_B64</code>, and if the refresh token there is stale you will
+need to reconnect. Refresh tokens can rotate on use, so the workflow allows only one run at a time.</li>
+<li><b>Schedules can be late</b> under load. Treat this as a hobby robot, not an emergency service.</li>
+<li><b>Rules:</b> follow X's <a href="https://help.x.com/en/rules-and-policies/x-automation">automation rules</a>. The robot
+answers only you and your allowlist, only when @mentioned, and only after your recorded consent. 311 reports stay a dry run in free mode.</li>
+</ul>
+
+<h2>Teach it more (still free)</h2>
+<p>Every skill in the <a href="apis.html">directory</a> that shows <code>@yourrobot learn …</code> is one message away.
+To add an API that isn't in the catalog, write a skill spec (<code>civicbot skill validate my.json</code>) and open a pull
+request so it can be reviewed and added. Free mode only learns reviewed catalog skills.</p>
+</main>
+<script src="assets/nav.js"></script>
+</body></html>

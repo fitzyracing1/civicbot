@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free public APIs for civic robots (verified) · civicbot</title>
+<meta name="description" content="A directory of free public APIs for weather, transit, 311, hazards, water, money and more. Each one was checked live, with auth, limits, CORS and docs listed.">
+<link rel="stylesheet" href="assets/style.css"></head>
+<body>
+<main>
+<h1>Free APIs, checked live</h1>
+<p class="lead" id="summary">Loading…</p>
+<p class="small">“No key” means no signup at all. “Free key” means a free signup. “Demo key” means a shared public key
+with low limits. <b>CORS</b> means a web page can call the API directly. Please respect each provider's limits and
+terms. civicbot is not affiliated with any of them. Where a skill exists, your robot can learn it.</p>
+<div class="filters">
+  <input type="search" id="q" placeholder="Search: tides, Lisbon, recalls, bikes…" aria-label="Search APIs">
+  <select id="cat" aria-label="Category"><option value="">All categories</option></select>
+  <select id="auth" aria-label="Auth"><option value="">Any auth</option><option value="none">No key</option>
+    <option value="demo-key">Demo key</option><option value="free-key">Free key</option></select>
+  <label class="small"><input type="checkbox" id="cors"> CORS only</label>
+  <label class="small"><input type="checkbox" id="sk"> Has a robot skill</label>
+</div>
+<p class="small" id="count"></p>
+<div class="grid" id="list"></div>
+</main>
+<script src="assets/nav.js"></script>
+<script>
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let DATA = null;
+const $ = id => document.getElementById(id);
+function render() {
+  const q = $("q").value.trim().toLowerCase(), cat = $("cat").value, auth = $("auth").value;
+  const rows = DATA.apis.filter(a => (!cat || a.category === cat) && (!auth || a.auth === auth)
+    && (!$("cors").checked || a.cors) && (!$("sk").checked || a.skills.length)
+    && (!q || JSON.stringify(a).toLowerCase().includes(q)));
+  $("count").textContent = `${rows.length} of ${DATA.count} shown`;
+  $("list").innerHTML = rows.map(a => `<div class="card api">
+    <h3><a href="${esc(a.docs)}" rel="noopener">${esc(a.name)}</a></h3>
+    <span class="pill">${esc(a.category)}</span>
+    <span class="pill ${a.auth === "none" ? "ok" : "key"}">${a.auth === "none" ? "no key" : esc(a.auth.replace("-", " "))}</span>
+    ${a.cors ? '<span class="pill ok">CORS</span>' : ""}<span class="pill">${esc(a.region || "")}</span>
+    <p>${esc(a.answers)}</p>
+    <p class="small"><code>${esc(a.base_url)}</code></p>
+    <p class="small">Limits: ${esc(a.limits)}${a.key_note ? " · " + esc(a.key_note) : ""}${a.terms ? " · " + esc(a.terms) : ""}</p>
+    <p class="small">✓ verified ${esc(a.verified.date)} (HTTP ${esc(a.verified.http)}, ${esc(a.verified.ms)} ms${a.verified.mode.startsWith("reachable") ? ", reachable, needs key" : ""})
+      · <a href="${esc(a.example)}" rel="noopener nofollow">example request</a></p>
+    ${a.skills.length ? `<p class="learn">${a.skills.map(s => `<code>@yourrobot learn ${esc(s)}</code>`).join(" ")}</p>` : ""}
+  </div>`).join("");
+}
+fetch("data/free_apis.json").then(r => r.json()).then(d => {
+  DATA = d;
+  $("summary").textContent = `${d.count} free public APIs in ${d.categories.length} categories, each called live on ${d.generated} `
+    + `by civicbot's checker. Any API that failed that day is left out. ${d.apis.filter(a => a.skills.length).length} of them back a ready-made robot skill.`;
+  d.categories.forEach(c => { const o = document.createElement("option"); o.value = o.textContent = c; $("cat").append(o); });
+  const p = new URLSearchParams(location.search);
+  if (p.get("q")) $("q").value = p.get("q");
+  if (p.get("category")) $("cat").value = p.get("category");
+  ["q", "cat", "auth", "cors", "sk"].forEach(id => $(id).addEventListener("input", render));
+  render();
+}).catch(e => { $("summary").textContent = "Could not load data/free_apis.json: " + e; });
+</script>
+</body></html>

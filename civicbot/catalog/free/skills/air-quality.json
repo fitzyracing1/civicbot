@@ -1,0 +1,68 @@
+{
+  "spec_version": 1,
+  "name": "air-quality",
+  "title": "Air quality now (Open-Meteo)",
+  "description": "Current US AQI and PM2.5 for the place you mention, from Open-Meteo's air-quality API (CAMS data). No key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "open-meteo-air",
+  "terms": {
+    "url": "https://open-meteo.com/en/terms",
+    "attribution": "Air quality: Open-Meteo.com / CAMS (CC BY 4.0)",
+    "notes": "Free for non-commercial use under 10,000 calls/day; commercial use needs an Open-Meteo API plan."
+  },
+  "triggers": {
+    "keywords": [
+      "aqi",
+      "smog",
+      "pollution",
+      "pm2.5",
+      "smoke",
+      "haze"
+    ],
+    "phrases": [
+      "air quality",
+      "how's the air",
+      "is the air"
+    ]
+  },
+  "location": "required",
+  "request": {
+    "base_url": "https://air-quality-api.open-meteo.com",
+    "path": "/v1/air-quality",
+    "method": "GET",
+    "params": {
+      "latitude": "{location.lat}",
+      "longitude": "{location.lng}",
+      "current": "us_aqi,pm2_5,ozone",
+      "timezone": "auto"
+    }
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "air-quality-api.open-meteo.com"
+  ],
+  "response": {
+    "extract": {
+      "aqi": "current.us_aqi",
+      "pm": "current.pm2_5",
+      "o3": "current.ozone",
+      "at": "current.time"
+    },
+    "replies": [
+      "Air quality in {location.text}: US AQI {aqi|round}, PM2.5 {pm} µg/m³, ozone {o3|round} µg/m³ at {at|time_hm}. Data: Open-Meteo/CAMS",
+      "{location.text} air right now: AQI {aqi|round} (US scale), PM2.5 {pm} µg/m³. Source: Open-Meteo (CAMS)",
+      "AQI {aqi|round} in {location.text} as of {at|time_hm}; PM2.5 {pm} µg/m³, ozone {o3|round}. (Open-Meteo/CAMS)"
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

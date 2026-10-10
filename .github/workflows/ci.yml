@@ -28,3 +28,8 @@ jobs:
         env:
           CIVICBOT_LIVE: "0"
         run: pytest -q -m "not live"
+      - name: Site builds (GitHub Pages) and JS parses
+        run: |
+          python scripts/build_site.py _site
+          for f in site/assets/*.js; do node --check "$f"; done
+          python -c "import json;d=json.load(open('_site/data/free_apis.json'));assert d['count']>=50;print(d['count'],'APIs')"

@@ -1,0 +1,75 @@
+{
+  "spec_version": 1,
+  "name": "mbta-alerts",
+  "title": "MBTA subway/light-rail alerts (Boston)",
+  "description": "Current service alerts on MBTA subway and light rail. No key needed (20 requests/minute).",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "mbta-alerts",
+  "terms": {
+    "url": "https://www.mbta.com/developers/v3-api",
+    "attribution": "Data: MBTA",
+    "notes": "No key: 20 requests/minute per IP. Free key raises it."
+  },
+  "triggers": {
+    "keywords": [
+      "delays",
+      "delay",
+      "disruption",
+      "shuttle"
+    ],
+    "phrases": [
+      "mbta alerts",
+      "t alerts",
+      "is the t running",
+      "red line",
+      "orange line",
+      "green line",
+      "blue line"
+    ]
+  },
+  "location": "none",
+  "request": {
+    "base_url": "https://api-v3.mbta.com",
+    "path": "/alerts",
+    "method": "GET",
+    "params": {
+      "filter[route_type]": "0,1",
+      "filter[activity]": "BOARD,EXIT,RIDE",
+      "filter[datetime]": "NOW",
+      "page[limit]": 4,
+      "fields[alert]": "service_effect,short_header,severity",
+      "sort": "-severity"
+    }
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "api-v3.mbta.com"
+  ],
+  "response": {
+    "list": {
+      "path": "data",
+      "item": "{attributes.service_effect||attributes.short_header}",
+      "max": 4,
+      "join": "; "
+    },
+    "replies": [
+      "MBTA subway alerts now: {items}. Data: MBTA",
+      "T alerts: {items} (MBTA)"
+    ],
+    "empty_replies": [
+      "No active MBTA subway alerts right now.",
+      "MBTA subway looks clear: no active alerts."
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

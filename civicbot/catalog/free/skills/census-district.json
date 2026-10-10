@@ -1,0 +1,65 @@
+{
+  "spec_version": 1,
+  "name": "census-district",
+  "title": "County and congressional district (US Census)",
+  "description": "Which county and congressional district a US place is in, from the Census Bureau geocoder. No key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "census-geographies",
+  "terms": {
+    "url": "https://geocoding.geo.census.gov/geocoder/",
+    "attribution": "Data: US Census Bureau",
+    "notes": "US government service, no key."
+  },
+  "triggers": {
+    "keywords": [
+      "district",
+      "congressional",
+      "county",
+      "representative"
+    ],
+    "phrases": [
+      "what district",
+      "which county",
+      "who represents"
+    ]
+  },
+  "location": "required",
+  "request": {
+    "base_url": "https://geocoding.geo.census.gov",
+    "path": "/geocoder/geographies/coordinates",
+    "method": "GET",
+    "params": {
+      "x": "{location.lng}",
+      "y": "{location.lat}",
+      "benchmark": "Public_AR_Current",
+      "vintage": "Current_Current",
+      "format": "json"
+    }
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "geocoding.geo.census.gov"
+  ],
+  "response": {
+    "extract": {
+      "county": "result.geographies.Counties.0.NAME",
+      "state": "result.geographies.States.0.STUSAB",
+      "cd": "result.geographies.119th Congressional Districts.0.NAME||result.geographies.120th Congressional Districts.0.NAME||result.geographies.121st Congressional Districts.0.NAME"
+    },
+    "replies": [
+      "{location.text} is in {county}, {state}, {cd}. Data: US Census Bureau",
+      "{location.text}: {county} ({state}), {cd}. (Census geocoder)"
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

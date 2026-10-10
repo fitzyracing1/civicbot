@@ -9,13 +9,16 @@
       "domains": [
         "api.carrismetropolitana.pt"
       ],
-      "sha256": "fc30c12f4311bce9967f853bd883ee022a57b86c594ce15d96ff1a03c4c008cc",
+      "sha256": "0fa002f344d2852b69b9079961baa7b3f1ff49d358afd0ce8aff95a8299e3117",
       "review": {
         "status": "reviewed",
         "by": "civicbot maintainers",
         "date": "2026-10-10",
         "live_check": "passed 2026-10-10 (CIVICBOT_LIVE=1 pytest -m live)"
-      }
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "carris-metropolitana"
     },
     {
       "name": "chicago-311-nearby",
@@ -25,13 +28,16 @@
       "domains": [
         "data.cityofchicago.org"
       ],
-      "sha256": "8c9b238f8000cb06d01b040f073f88ee808c6a12c49f12b2da505bb4ea45a55d",
+      "sha256": "661504cc9dae833de5805566df2b13172f235fd470fcb30d00a774083a434888",
       "review": {
         "status": "reviewed",
         "by": "civicbot maintainers",
         "date": "2026-10-10",
         "live_check": "passed 2026-10-10 (CIVICBOT_LIVE=1 pytest -m live)"
-      }
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "chicago-311"
     },
     {
       "name": "mbta-next-trains",
@@ -41,13 +47,16 @@
       "domains": [
         "api-v3.mbta.com"
       ],
-      "sha256": "d4cbff2da978cc251fb9e50dd5077a23a1f5074d883df3db6bc875bfd0b54f2f",
+      "sha256": "f7904febb491c6d4940686fd15f08a658da96693eed5882c9870803184f2a210",
       "review": {
         "status": "reviewed",
         "by": "civicbot maintainers",
         "date": "2026-10-10",
         "live_check": "passed 2026-10-10 (CIVICBOT_LIVE=1 pytest -m live)"
-      }
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "mbta-v3"
     },
     {
       "name": "open-meteo-weather",
@@ -57,13 +66,16 @@
       "domains": [
         "api.open-meteo.com"
       ],
-      "sha256": "377a9aacd56fd73506be941deac501e539a2ef715bc855ab7080c5b1de23063b",
+      "sha256": "acc20606b9968d93368e44e55f891ba13dfd2bed2d547bf999076b154a7d94bc",
       "review": {
         "status": "reviewed",
         "by": "civicbot maintainers",
         "date": "2026-10-10",
         "live_check": "passed 2026-10-10 (CIVICBOT_LIVE=1 pytest -m live)"
-      }
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "open-meteo-forecast"
     }
   ]
 }

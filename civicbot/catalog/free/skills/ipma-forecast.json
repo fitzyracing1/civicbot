@@ -1,0 +1,68 @@
+{
+  "spec_version": 1,
+  "name": "ipma-forecast",
+  "title": "Portugal forecast (IPMA)",
+  "description": "Today's forecast from Portugal's weather institute IPMA for a city id (default Lisboa, 1110600; Porto is 1131200). No key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "ipma-forecast",
+  "terms": {
+    "url": "https://api.ipma.pt/",
+    "attribution": "Dados: IPMA",
+    "notes": "Open data from IPMA; no key. Cite IPMA as the source."
+  },
+  "triggers": {
+    "keywords": [
+      "ipma",
+      "previsão",
+      "tempo"
+    ],
+    "phrases": [
+      "ipma forecast",
+      "tempo em lisboa",
+      "portugal weather"
+    ]
+  },
+  "inputs": {
+    "city": {
+      "regex": "\\b(1\\d{6}|2\\d{6}|3\\d{6})\\b",
+      "default": "1110600",
+      "pattern": "^[1-3][0-9]{6}$",
+      "description": "IPMA globalIdLocal (7 digits); default 1110600 Lisboa"
+    }
+  },
+  "location": "none",
+  "request": {
+    "base_url": "https://api.ipma.pt",
+    "path": "/open-data/forecast/meteorology/cities/daily/{inputs.city}.json",
+    "method": "GET",
+    "params": {}
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "api.ipma.pt"
+  ],
+  "response": {
+    "extract": {
+      "mx": "data.0.tMax",
+      "mn": "data.0.tMin",
+      "pp": "data.0.precipitaProb",
+      "wd": "data.0.predWindDir",
+      "d": "data.0.forecastDate"
+    },
+    "replies": [
+      "IPMA {d}, local {inputs.city}: max {mx}°C, min {mn}°C, rain chance {pp}%, wind from {wd}. Fonte: IPMA",
+      "Previsão IPMA {d}: {mn}–{mx}°C, precipitação {pp}%, vento {wd}. (IPMA, {inputs.city})"
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

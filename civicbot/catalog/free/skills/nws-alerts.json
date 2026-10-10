@@ -1,0 +1,70 @@
+{
+  "spec_version": 1,
+  "name": "nws-alerts",
+  "title": "Active weather alerts (US National Weather Service)",
+  "description": "Active NWS watches, warnings and advisories for a US place. No key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "nws-alerts",
+  "terms": {
+    "url": "https://www.weather.gov/documentation/services-web-api",
+    "attribution": "Data: US National Weather Service",
+    "notes": "US government data, no key. NWS asks for a User-Agent that identifies the app and a contact."
+  },
+  "triggers": {
+    "keywords": [
+      "warning",
+      "warnings",
+      "watch",
+      "advisory",
+      "tornado",
+      "nws",
+      "alerts"
+    ],
+    "phrases": [
+      "weather alert",
+      "any alerts",
+      "severe weather"
+    ]
+  },
+  "location": "required",
+  "request": {
+    "base_url": "https://api.weather.gov",
+    "path": "/alerts/active",
+    "method": "GET",
+    "params": {
+      "point": "{location.lat},{location.lng}"
+    }
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "api.weather.gov"
+  ],
+  "response": {
+    "list": {
+      "path": "features",
+      "item": "{properties.event}",
+      "max": 3,
+      "join": "; "
+    },
+    "replies": [
+      "NWS alerts for {location.text}: {items}. Details: weather.gov",
+      "Active for {location.text}: {items} (National Weather Service)",
+      "Heads up, {location.text}: {items}. Source: NWS"
+    ],
+    "empty_replies": [
+      "No active NWS alerts for {location.text} right now.",
+      "The National Weather Service has no active alerts for {location.text}."
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

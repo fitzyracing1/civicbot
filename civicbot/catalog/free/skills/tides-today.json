@@ -1,0 +1,80 @@
+{
+  "spec_version": 1,
+  "name": "tides-today",
+  "title": "Today's tides (NOAA)",
+  "description": "Today's high/low tide predictions for a NOAA station id (default 8443970, Boston). No key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "noaa-tides",
+  "terms": {
+    "url": "https://api.tidesandcurrents.noaa.gov/api/prod/",
+    "attribution": "Data: NOAA CO-OPS",
+    "notes": "US government data, no key; pass an application name."
+  },
+  "triggers": {
+    "keywords": [
+      "tide",
+      "tides",
+      "high tide",
+      "low tide"
+    ],
+    "phrases": [
+      "when is high tide",
+      "when is low tide"
+    ]
+  },
+  "inputs": {
+    "station": {
+      "regex": "\\b(\\d{7})\\b",
+      "default": "8443970",
+      "pattern": "^[0-9]{7}$",
+      "description": "NOAA tide station id"
+    }
+  },
+  "location": "none",
+  "request": {
+    "base_url": "https://api.tidesandcurrents.noaa.gov",
+    "path": "/api/prod/datagetter",
+    "method": "GET",
+    "params": {
+      "product": "predictions",
+      "station": "{inputs.station}",
+      "date": "today",
+      "datum": "MLLW",
+      "interval": "hilo",
+      "units": "english",
+      "time_zone": "lst_ldt",
+      "format": "json",
+      "application": "civicbot"
+    }
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "api.tidesandcurrents.noaa.gov"
+  ],
+  "response": {
+    "list": {
+      "path": "predictions",
+      "item": "{type} {t|time_hm} ({v} ft)",
+      "max": 4,
+      "join": ", "
+    },
+    "replies": [
+      "Tides today at NOAA {inputs.station} (H=high, L=low, local time): {items}. Data: NOAA CO-OPS",
+      "NOAA {inputs.station} tides today: {items}"
+    ],
+    "empty_replies": [
+      "NOAA has no tide predictions for station {inputs.station} today."
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

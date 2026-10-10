@@ -1,0 +1,66 @@
+{
+  "spec_version": 1,
+  "name": "sun-times",
+  "title": "Sunrise and sunset (Open-Meteo)",
+  "description": "Today's sunrise, sunset and daylight hours for the place you mention, in local time. No key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "open-meteo-forecast",
+  "terms": {
+    "url": "https://open-meteo.com/en/terms",
+    "attribution": "Weather data by Open-Meteo.com (CC BY 4.0)",
+    "notes": "Free for non-commercial use under 10,000 calls/day; commercial use needs an Open-Meteo API plan."
+  },
+  "triggers": {
+    "keywords": [
+      "sunrise",
+      "sunset",
+      "dawn",
+      "dusk",
+      "daylight"
+    ],
+    "phrases": [
+      "when does the sun",
+      "golden hour"
+    ]
+  },
+  "location": "required",
+  "request": {
+    "base_url": "https://api.open-meteo.com",
+    "path": "/v1/forecast",
+    "method": "GET",
+    "params": {
+      "latitude": "{location.lat}",
+      "longitude": "{location.lng}",
+      "daily": "sunrise,sunset,daylight_duration",
+      "timezone": "auto",
+      "forecast_days": 1
+    }
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "api.open-meteo.com"
+  ],
+  "response": {
+    "extract": {
+      "rise": "daily.sunrise.0",
+      "set": "daily.sunset.0",
+      "dl": "daily.daylight_duration.0"
+    },
+    "replies": [
+      "{location.text}: sunrise {rise|time_hm}, sunset {set|time_hm} (local time). Data: Open-Meteo",
+      "Sun times for {location.text} today: up at {rise|time_hm}, down at {set|time_hm}. (Open-Meteo)",
+      "In {location.text} the sun rises at {rise|time_hm} and sets at {set|time_hm} today. Source: Open-Meteo"
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

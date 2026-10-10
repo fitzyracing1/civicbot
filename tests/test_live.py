@@ -69,3 +69,33 @@ def test_live_catalog_skill(name):
     assert replies and all(len(r) <= 270 for r in replies)
     assert expect in replies[0]
     print(name, "->", replies[0])
+
+
+def _free_names():
+    from civicbot.skills.catalog import Catalog, free_catalog_dir
+    return Catalog(free_catalog_dir()).names()
+
+
+@pytest.mark.parametrize("name", _free_names())
+def test_live_free_catalog_skill(name):
+    """v0.4: every free catalog skill answers live with its sample question (one read-only GET each)."""
+    import importlib.util
+    import pathlib
+    import time
+    from civicbot.skills import FetchError, SafeFetcher, SkillRunner
+    from civicbot.skills.catalog import Catalog, free_catalog_dir
+    path = pathlib.Path(__file__).parents[1] / "scripts" / "free_apis" / "check_skills.py"
+    mod_spec = importlib.util.spec_from_file_location("check_skills", path)
+    mod = importlib.util.module_from_spec(mod_spec)
+    mod_spec.loader.exec_module(mod)
+    text, loc = mod.SAMPLES[name]
+    home, lat, lng = loc if loc else ("", None, None)
+    spec = Catalog(free_catalog_dir()).get(name)
+    runner = SkillRunner(SafeFetcher())
+    try:
+        replies = runner.run_read(spec, runner.context(spec, text, home_city=home, default_lat=lat, default_lng=lng), [])
+    except (FetchError, OSError) as e:
+        pytest.skip(f"network unavailable: {e}")
+    time.sleep(0.3)
+    assert replies and replies[0]
+    print(name, "->", replies[0])
