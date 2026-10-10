@@ -33,3 +33,5 @@ jobs:
           python scripts/build_site.py _site
           for f in site/assets/*.js; do node --check "$f"; done
           python -c "import json;d=json.load(open('_site/data/free_apis.json'));assert d['count']>=50;print(d['count'],'APIs')"
+          python -c "import json;d=json.load(open('_site/data/grok-pack.json'));assert len(d['skills'])>=30;print(len(d['skills']),'Grok pack skills')"
+          test -s _site/grok.txt && test -s _site/llms.txt && test -s _site/grok.html

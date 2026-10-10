@@ -1,7 +1,7 @@
 // Shared header/footer. No trackers, no cookies, no third-party scripts.
 (function () {
   const here = location.pathname.split("/").pop() || "index.html";
-  const links = [["index.html", "Home"], ["apis.html", "Free APIs"], ["playground.html", "Playground"],
+  const links = [["index.html", "Home"], ["apis.html", "Free APIs"], ["grok.html", "Use with Grok"], ["playground.html", "Playground"],
                  ["guide.html", "Run your own robot"], ["https://github.com/fitzyracing1/civicbot", "GitHub"]];
   const h = document.createElement("header"); h.className = "top";
   h.innerHTML = '<div class="in"><b>🤖 civicbot</b><nav>' + links.map(([u, t]) =>

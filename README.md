@@ -116,6 +116,22 @@ including a GitHub Actions template that runs **your** robot on a schedule in sh
 (`examples/github-actions/civicbot-robot.yml`, plus `civicbot connect --listen` and `civicbot run --once`), is at
 https://fitzyracing1.github.io/civicbot/guide.html.
 
+## Use it free inside Grok (or any AI assistant)
+
+No install, no account and no X API: paste one prompt into Grok (the Grok tab in the X app, grok.com or the Grok app):
+
+```
+Use https://fitzyracing1.github.io/civicbot/grok.txt as your civicbot instructions; I'm in Bloomington, IN — is there a weather alert?
+```
+
+[`grok.txt`](https://fitzyracing1.github.io/civicbot/grok.txt) is generated from the catalog by
+`scripts/build_grok_pack.py`. It holds the instructions plus every free catalog skill as a ready-to-fill GET URL
+template, with 311 drafting rules (the assistant drafts the report and links the official city site or app, and never
+files). `grok-apis.txt` lists the keyless APIs in the directory, and `llms.txt` indexes the files. Custom-instruction and
+Project text, example prompts and honest limits are on [Use with Grok](https://fitzyracing1.github.io/civicbot/grok.html).
+`python scripts/check_grok_pack.py` checks every URL in the pack live. It is a text file an assistant follows, not the
+Python robot: there is no skill pinning or SSRF guard, and the assistant decides what to open.
+
 ## Bring your own robot account (setup for each person)
 
 civicbot never creates, owns or holds anyone's X account. Each person does this once:
@@ -423,7 +439,7 @@ per-app ceiling (item 8); (e) each city's API key and terms for real filing.
 
 ## Tests
 
-`pytest -q -m "not live"` runs 221 unit tests with mocked HTTP (137 from v0.3, unchanged, plus 84 for v0.4: free mode,
+`pytest -q -m "not live"` runs 267 unit tests with mocked HTTP (137 from v0.3, unchanged, 84 for v0.4 and 46 for the Grok pack generator; v0.4: free mode,
 spec additions, CLI `chat`/`apis`/`simulate --free`/`run` (shadow), the directory's shape, and each free skill replayed from its
 recorded live response and routed from its sample question). The 42 live tests are skipped unless `CIVICBOT_LIVE=1`. They cover:
 - PKCE S256, the authorize URL, code exchange (state check, TTL, Basic auth), refresh and revoke

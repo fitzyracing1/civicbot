@@ -1,0 +1,1162 @@
+{
+ "checked": "2026-10-10T19:18:59-0400",
+ "ok": 165,
+ "total": 165,
+ "results": [
+  {
+   "name": "311:austin:services",
+   "url": "https://311.austintexas.gov/open311/v2/services.json",
+   "http": 200,
+   "ms": 438,
+   "error": ""
+  },
+  {
+   "name": "311:austin:submit",
+   "url": "https://311.austintexas.gov/",
+   "http": 200,
+   "ms": 512,
+   "error": ""
+  },
+  {
+   "name": "311:bloomington-in:services",
+   "url": "https://bloomington.in.gov/crm/open311/v2/services.json",
+   "http": 200,
+   "ms": 298,
+   "error": ""
+  },
+  {
+   "name": "311:bloomington-in:submit",
+   "url": "https://bloomington.in.gov/ureport",
+   "http": 200,
+   "ms": 1240,
+   "error": ""
+  },
+  {
+   "name": "311:boston:services",
+   "url": "https://311.boston.gov/open311/v2/services.json",
+   "http": 200,
+   "ms": 479,
+   "error": ""
+  },
+  {
+   "name": "311:boston:submit",
+   "url": "https://www.boston.gov/departments/boston-311",
+   "http": 200,
+   "ms": 621,
+   "error": ""
+  },
+  {
+   "name": "311:brookline-ma:services",
+   "url": "https://spot.brooklinema.gov/open311/v2/services.json",
+   "http": 200,
+   "ms": 568,
+   "error": ""
+  },
+  {
+   "name": "311:brookline-ma:submit",
+   "url": "https://spot.brooklinema.gov/",
+   "http": 200,
+   "ms": 676,
+   "error": ""
+  },
+  {
+   "name": "311:chicago:submit",
+   "url": "https://311.chicago.gov/",
+   "http": 200,
+   "ms": 2227,
+   "error": ""
+  },
+  {
+   "name": "311:seeclickfix-services",
+   "url": "https://seeclickfix.com/open311/v2/services.json?lat=41.3083&long=-72.9259",
+   "http": 200,
+   "ms": 432,
+   "error": ""
+  },
+  {
+   "name": "311:seeclickfix-submit",
+   "url": "https://seeclickfix.com/",
+   "http": 200,
+   "ms": 273,
+   "error": ""
+  },
+  {
+   "name": "api:adsb-lol",
+   "url": "https://api.adsb.lol/v2/point/40.64/-73.78/5",
+   "http": 200,
+   "ms": 734,
+   "error": ""
+  },
+  {
+   "name": "api:artic",
+   "url": "https://api.artic.edu/api/v1/artworks?limit=1&fields=id,title",
+   "http": 200,
+   "ms": 173,
+   "error": ""
+  },
+  {
+   "name": "api:austin-311",
+   "url": "https://data.austintexas.gov/resource/38mr-dwji.json?$limit=1",
+   "http": 200,
+   "ms": 731,
+   "error": ""
+  },
+  {
+   "name": "api:bls-v1",
+   "url": "https://api.bls.gov/publicAPI/v1/timeseries/data/CUUR0000SA0",
+   "http": 200,
+   "ms": 450,
+   "error": ""
+  },
+  {
+   "name": "api:boston-311-ckan",
+   "url": "https://data.boston.gov/api/3/action/datastore_search?resource_id=254adca6-64ab-4c5c-9fc0-a6da622be185&limit=1",
+   "http": 200,
+   "ms": 509,
+   "error": ""
+  },
+  {
+   "name": "api:carris-alerts",
+   "url": "https://api.carrismetropolitana.pt/v2/alerts",
+   "http": 200,
+   "ms": 1321,
+   "error": ""
+  },
+  {
+   "name": "api:carris-metropolitana",
+   "url": "https://api.carrismetropolitana.pt/v2/arrivals/by_stop/020429",
+   "http": 200,
+   "ms": 166,
+   "error": ""
+  },
+  {
+   "name": "api:census-geocoder",
+   "url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=401%20N%20Morton%20St%2C%20Bloomington%2C%20IN&benchmark=Public_AR_Current&format=json",
+   "http": 200,
+   "ms": 462,
+   "error": ""
+  },
+  {
+   "name": "api:census-geographies",
+   "url": "https://geocoding.geo.census.gov/geocoder/geographies/coordinates?x=-86.5264&y=39.1653&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+   "http": 200,
+   "ms": 557,
+   "error": ""
+  },
+  {
+   "name": "api:chicago-311",
+   "url": "https://data.cityofchicago.org/resource/v6vf-nfxy.json?$select=sr_type,status,created_date&$where=within_circle(location,41.8837,-87.6319,400)&$order=created_date%20DESC&$limit=2",
+   "http": 200,
+   "ms": 809,
+   "error": ""
+  },
+  {
+   "name": "api:chicago-crimes",
+   "url": "https://data.cityofchicago.org/resource/ijzp-q8t2.json?$limit=1",
+   "http": 200,
+   "ms": 795,
+   "error": ""
+  },
+  {
+   "name": "api:chicago-food",
+   "url": "https://data.cityofchicago.org/resource/4ijn-s7e5.json?$limit=1",
+   "http": 200,
+   "ms": 1609,
+   "error": ""
+  },
+  {
+   "name": "api:citybikes",
+   "url": "https://api.citybik.es/v2/networks/gira",
+   "http": 200,
+   "ms": 836,
+   "error": ""
+  },
+  {
+   "name": "api:coinbase-spot",
+   "url": "https://api.coinbase.com/v2/prices/BTC-USD/spot",
+   "http": 200,
+   "ms": 162,
+   "error": ""
+  },
+  {
+   "name": "api:cpsc-recalls",
+   "url": "https://www.saferproducts.gov/RestWebServices/Recall?format=json&RecallDateStart=2026-09-01",
+   "http": 200,
+   "ms": 119,
+   "error": ""
+  },
+  {
+   "name": "api:currentuvindex",
+   "url": "https://currentuvindex.com/api/v1/uvi?latitude=39.1653&longitude=-86.5264",
+   "http": 200,
+   "ms": 304,
+   "error": ""
+  },
+  {
+   "name": "api:dados-gov-pt",
+   "url": "https://dados.gov.pt/api/1/datasets/?q=transportes&page_size=1",
+   "http": 200,
+   "ms": 903,
+   "error": ""
+  },
+  {
+   "name": "api:data-europa",
+   "url": "https://data.europa.eu/api/hub/search/search?q=bicycle&limit=1",
+   "http": 200,
+   "ms": 1262,
+   "error": ""
+  },
+  {
+   "name": "api:datamuse",
+   "url": "https://api.datamuse.com/words?ml=city&max=3",
+   "http": 200,
+   "ms": 744,
+   "error": ""
+  },
+  {
+   "name": "api:dwd-brightsky",
+   "url": "https://api.brightsky.dev/current_weather?lat=52.52&lon=13.40",
+   "http": 200,
+   "ms": 927,
+   "error": ""
+  },
+  {
+   "name": "api:ecb-fx",
+   "url": "https://data-api.ecb.europa.eu/service/data/EXR/D.USD.EUR.SP00.A?lastNObservations=1&format=jsondata",
+   "http": 200,
+   "ms": 780,
+   "error": ""
+  },
+  {
+   "name": "api:emsc-quakes",
+   "url": "https://www.seismicportal.eu/fdsnws/event/1/query?format=json&limit=3",
+   "http": 200,
+   "ms": 884,
+   "error": ""
+  },
+  {
+   "name": "api:entur",
+   "url": "https://api.entur.io/geocoder/v1/autocomplete?text=oslo&size=1",
+   "http": 200,
+   "ms": 619,
+   "error": ""
+  },
+  {
+   "name": "api:eurostat",
+   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_pjan?geo=PT&sex=T&age=TOTAL&lastTimePeriod=1",
+   "http": 200,
+   "ms": 854,
+   "error": ""
+  },
+  {
+   "name": "api:fcc-area",
+   "url": "https://geo.fcc.gov/api/census/area?lat=39.1653&lon=-86.5264&format=json",
+   "http": 200,
+   "ms": 705,
+   "error": ""
+  },
+  {
+   "name": "api:federal-register",
+   "url": "https://www.federalregister.gov/api/v1/documents.json?per_page=1",
+   "http": 200,
+   "ms": 371,
+   "error": ""
+  },
+  {
+   "name": "api:fema-declarations",
+   "url": "https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?$top=2&$orderby=declarationDate%20desc&$filter=state%20eq%20%27IN%27",
+   "http": 200,
+   "ms": 138,
+   "error": ""
+  },
+  {
+   "name": "api:frankfurter",
+   "url": "https://api.frankfurter.dev/v1/latest?base=USD&symbols=EUR",
+   "http": 200,
+   "ms": 100,
+   "error": ""
+  },
+  {
+   "name": "api:gbfs-baywheels",
+   "url": "https://gbfs.lyftbikes.com/gbfs/en/station_status.json",
+   "http": 200,
+   "ms": 1235,
+   "error": ""
+  },
+  {
+   "name": "api:gbfs-biketown",
+   "url": "https://gbfs.biketownpdx.com/gbfs/en/station_status.json",
+   "http": 200,
+   "ms": 502,
+   "error": ""
+  },
+  {
+   "name": "api:gbfs-bluebikes",
+   "url": "https://gbfs.bluebikes.com/gbfs/en/station_status.json",
+   "http": 200,
+   "ms": 624,
+   "error": ""
+  },
+  {
+   "name": "api:gbfs-capital-bikeshare",
+   "url": "https://gbfs.capitalbikeshare.com/gbfs/en/station_status.json",
+   "http": 200,
+   "ms": 593,
+   "error": ""
+  },
+  {
+   "name": "api:gbfs-citibike",
+   "url": "https://gbfs.citibikenyc.com/gbfs/en/station_status.json",
+   "http": 200,
+   "ms": 156,
+   "error": ""
+  },
+  {
+   "name": "api:gbfs-divvy",
+   "url": "https://gbfs.divvybikes.com/gbfs/en/station_status.json",
+   "http": 200,
+   "ms": 633,
+   "error": ""
+  },
+  {
+   "name": "api:geoapi-pt",
+   "url": "https://json.geoapi.pt/gps/38.7223,-9.1393",
+   "http": 200,
+   "ms": 7636,
+   "error": ""
+  },
+  {
+   "name": "api:gutendex",
+   "url": "https://gutendex.com/books/?search=dickens",
+   "http": 200,
+   "ms": 166,
+   "error": ""
+  },
+  {
+   "name": "api:ipma-forecast",
+   "url": "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json",
+   "http": 200,
+   "ms": 851,
+   "error": ""
+  },
+  {
+   "name": "api:ipma-sea",
+   "url": "https://api.ipma.pt/open-data/forecast/oceanography/daily/hp-daily-sea-forecast-day0.json",
+   "http": 200,
+   "ms": 1179,
+   "error": ""
+  },
+  {
+   "name": "api:irail",
+   "url": "https://api.irail.be/v1/liveboard/?station=Gent-Sint-Pieters&format=json&lang=en",
+   "http": 200,
+   "ms": 673,
+   "error": ""
+  },
+  {
+   "name": "api:kc-311",
+   "url": "https://data.kcmo.org/resource/d4px-6rwg.json?$limit=1",
+   "http": 200,
+   "ms": 653,
+   "error": ""
+  },
+  {
+   "name": "api:la-crime",
+   "url": "https://data.lacity.org/resource/k7nn-b2ep.json?$limit=1",
+   "http": 200,
+   "ms": 595,
+   "error": ""
+  },
+  {
+   "name": "api:launch-library",
+   "url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?limit=1&mode=list",
+   "http": 200,
+   "ms": 297,
+   "error": ""
+  },
+  {
+   "name": "api:loc",
+   "url": "https://www.loc.gov/search/?q=bloomington&fo=json&c=1",
+   "http": 200,
+   "ms": 146,
+   "error": ""
+  },
+  {
+   "name": "api:mbta-alerts",
+   "url": "https://api-v3.mbta.com/alerts?filter[activity]=BOARD&page[limit]=2",
+   "http": 200,
+   "ms": 601,
+   "error": ""
+  },
+  {
+   "name": "api:mbta-gtfs-rt",
+   "url": "https://cdn.mbta.com/realtime/TripUpdates.pb",
+   "http": 200,
+   "ms": 1320,
+   "error": ""
+  },
+  {
+   "name": "api:mbta-v3",
+   "url": "https://api-v3.mbta.com/predictions?filter[stop]=place-pktrm&page[limit]=2",
+   "http": 200,
+   "ms": 440,
+   "error": ""
+  },
+  {
+   "name": "api:met-museum",
+   "url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436535",
+   "http": 200,
+   "ms": 879,
+   "error": ""
+  },
+  {
+   "name": "api:met-no",
+   "url": "https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=38.7223&lon=-9.1393",
+   "http": 200,
+   "ms": 806,
+   "error": ""
+  },
+  {
+   "name": "api:mta-gtfs-rt",
+   "url": "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-ace",
+   "http": 200,
+   "ms": 1112,
+   "error": ""
+  },
+  {
+   "name": "api:mta-subway-alerts",
+   "url": "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/camsys%2Fsubway-alerts.json",
+   "http": 200,
+   "ms": 1117,
+   "error": ""
+  },
+  {
+   "name": "api:nager-date",
+   "url": "https://date.nager.at/api/v3/PublicHolidays/2026/US",
+   "http": 200,
+   "ms": 154,
+   "error": ""
+  },
+  {
+   "name": "api:nager-next",
+   "url": "https://date.nager.at/api/v3/NextPublicHolidays/PT",
+   "http": 200,
+   "ms": 150,
+   "error": ""
+  },
+  {
+   "name": "api:nasa-eonet",
+   "url": "https://eonet.gsfc.nasa.gov/api/v3/events?limit=3&status=open",
+   "http": 200,
+   "ms": 2576,
+   "error": ""
+  },
+  {
+   "name": "api:nasa-power",
+   "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=ALLSKY_SFC_SW_DWN&community=RE&longitude=-86.5264&latitude=39.1653&start=20260901&end=20260902&format=JSON",
+   "http": 200,
+   "ms": 215,
+   "error": ""
+  },
+  {
+   "name": "api:nhc-storms",
+   "url": "https://www.nhc.noaa.gov/CurrentStorms.json",
+   "http": 200,
+   "ms": 106,
+   "error": ""
+  },
+  {
+   "name": "api:nhtsa-recalls",
+   "url": "https://api.nhtsa.gov/recalls/recallsByVehicle?make=honda&model=accord&modelYear=2012",
+   "http": 200,
+   "ms": 115,
+   "error": ""
+  },
+  {
+   "name": "api:nhtsa-vpic",
+   "url": "https://vpic.nhtsa.dot.gov/api/vehicles/decodevinvalues/1HGCM82633A004352?format=json",
+   "http": 200,
+   "ms": 268,
+   "error": ""
+  },
+  {
+   "name": "api:noaa-tides",
+   "url": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?date=today&station=8443970&product=predictions&datum=MLLW&time_zone=lst_ldt&units=english&interval=hilo&format=json&application=civicbot",
+   "http": 200,
+   "ms": 343,
+   "error": ""
+  },
+  {
+   "name": "api:noaa-water-level",
+   "url": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?date=latest&station=8443970&product=water_level&datum=MLLW&time_zone=lst_ldt&units=english&format=json&application=civicbot",
+   "http": 200,
+   "ms": 499,
+   "error": ""
+  },
+  {
+   "name": "api:nola-311",
+   "url": "https://data.nola.gov/resource/2jgv-pqrq.json?$limit=1",
+   "http": 200,
+   "ms": 599,
+   "error": ""
+  },
+  {
+   "name": "api:nominatim",
+   "url": "https://nominatim.openstreetmap.org/search?q=Rossio%2C%20Lisboa&format=jsonv2&limit=1",
+   "http": 200,
+   "ms": 135,
+   "error": ""
+  },
+  {
+   "name": "api:nws-alerts",
+   "url": "https://api.weather.gov/alerts/active?point=39.1653,-86.5264",
+   "http": 200,
+   "ms": 138,
+   "error": ""
+  },
+  {
+   "name": "api:nws-points",
+   "url": "https://api.weather.gov/points/39.1653,-86.5264",
+   "http": 200,
+   "ms": 187,
+   "error": ""
+  },
+  {
+   "name": "api:nws-stations-obs",
+   "url": "https://api.weather.gov/stations/KBMG/observations/latest",
+   "http": 200,
+   "ms": 158,
+   "error": ""
+  },
+  {
+   "name": "api:nyc-311",
+   "url": "https://data.cityofnewyork.us/resource/erm2-nwe9.json?$limit=1",
+   "http": 200,
+   "ms": 671,
+   "error": ""
+  },
+  {
+   "name": "api:nyc-restaurants",
+   "url": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?$limit=1",
+   "http": 200,
+   "ms": 778,
+   "error": ""
+  },
+  {
+   "name": "api:open-food-facts",
+   "url": "https://world.openfoodfacts.org/api/v2/product/737628064502.json?fields=product_name,brands",
+   "http": 200,
+   "ms": 681,
+   "error": ""
+  },
+  {
+   "name": "api:open-library",
+   "url": "https://openlibrary.org/search.json?q=the+power+broker&limit=1",
+   "http": 200,
+   "ms": 805,
+   "error": ""
+  },
+  {
+   "name": "api:open-meteo-air",
+   "url": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=39.1653&longitude=-86.5264&current=us_aqi,pm2_5",
+   "http": 200,
+   "ms": 778,
+   "error": ""
+  },
+  {
+   "name": "api:open-meteo-archive",
+   "url": "https://archive-api.open-meteo.com/v1/archive?latitude=39.1653&longitude=-86.5264&start_date=2026-10-01&end_date=2026-10-02&daily=temperature_2m_max",
+   "http": 200,
+   "ms": 803,
+   "error": ""
+  },
+  {
+   "name": "api:open-meteo-climate",
+   "url": "https://climate-api.open-meteo.com/v1/climate?latitude=39.1653&longitude=-86.5264&start_date=2030-01-01&end_date=2030-01-02&models=MRI_AGCM3_2_S&daily=temperature_2m_max",
+   "http": 200,
+   "ms": 947,
+   "error": ""
+  },
+  {
+   "name": "api:open-meteo-elevation",
+   "url": "https://api.open-meteo.com/v1/elevation?latitude=39.1653&longitude=-86.5264",
+   "http": 200,
+   "ms": 768,
+   "error": ""
+  },
+  {
+   "name": "api:open-meteo-ensemble",
+   "url": "https://ensemble-api.open-meteo.com/v1/ensemble?latitude=39.1653&longitude=-86.5264&hourly=temperature_2m&models=icon_seamless&forecast_days=1",
+   "http": 200,
+   "ms": 913,
+   "error": ""
+  },
+  {
+   "name": "api:open-meteo-flood",
+   "url": "https://flood-api.open-meteo.com/v1/flood?latitude=39.1653&longitude=-86.5264&daily=river_discharge&forecast_days=3",
+   "http": 200,
+   "ms": 862,
+   "error": ""
+  },
+  {
+   "name": "api:open-meteo-forecast",
+   "url": "https://api.open-meteo.com/v1/forecast?latitude=39.1653&longitude=-86.5264&current=temperature_2m,weather_code",
+   "http": 200,
+   "ms": 818,
+   "error": ""
+  },
+  {
+   "name": "api:open-meteo-geocoding",
+   "url": "https://geocoding-api.open-meteo.com/v1/search?name=Lisbon&count=1",
+   "http": 200,
+   "ms": 895,
+   "error": ""
+  },
+  {
+   "name": "api:open-meteo-marine",
+   "url": "https://marine-api.open-meteo.com/v1/marine?latitude=38.68&longitude=-9.35&current=wave_height",
+   "http": 200,
+   "ms": 856,
+   "error": ""
+  },
+  {
+   "name": "api:open311-austin",
+   "url": "https://311.austintexas.gov/open311/v2/services.json",
+   "http": 200,
+   "ms": 413,
+   "error": ""
+  },
+  {
+   "name": "api:open311-bloomington",
+   "url": "https://bloomington.in.gov/crm/open311/v2/services.json",
+   "http": 200,
+   "ms": 403,
+   "error": ""
+  },
+  {
+   "name": "api:open311-boston",
+   "url": "https://311.boston.gov/open311/v2/services.json",
+   "http": 200,
+   "ms": 512,
+   "error": ""
+  },
+  {
+   "name": "api:open311-brookline",
+   "url": "https://spot.brooklinema.gov/open311/v2/services.json",
+   "http": 200,
+   "ms": 654,
+   "error": ""
+  },
+  {
+   "name": "api:openfda-food",
+   "url": "https://api.fda.gov/food/enforcement.json?limit=1",
+   "http": 200,
+   "ms": 249,
+   "error": ""
+  },
+  {
+   "name": "api:openholidays",
+   "url": "https://openholidaysapi.org/PublicHolidays?countryIsoCode=PT&languageIsoCode=EN&validFrom=2026-01-01&validTo=2026-12-31",
+   "http": 200,
+   "ms": 942,
+   "error": ""
+  },
+  {
+   "name": "api:photon",
+   "url": "https://photon.komoot.io/api/?q=lisboa&limit=1",
+   "http": 200,
+   "ms": 819,
+   "error": ""
+  },
+  {
+   "name": "api:postcodes-io",
+   "url": "https://api.postcodes.io/postcodes/SW1A1AA",
+   "http": 200,
+   "ms": 147,
+   "error": ""
+  },
+  {
+   "name": "api:rainviewer",
+   "url": "https://api.rainviewer.com/public/weather-maps.json",
+   "http": 200,
+   "ms": 936,
+   "error": ""
+  },
+  {
+   "name": "api:seattle-911-fire",
+   "url": "https://data.seattle.gov/resource/kzjm-xkqj.json?$limit=1",
+   "http": 200,
+   "ms": 975,
+   "error": ""
+  },
+  {
+   "name": "api:seattle-csr",
+   "url": "https://data.seattle.gov/resource/5ngg-rpne.json?$limit=1",
+   "http": 200,
+   "ms": 684,
+   "error": ""
+  },
+  {
+   "name": "api:seeclickfix",
+   "url": "https://seeclickfix.com/api/v2/issues?lat=41.3083&lng=-72.9259&per_page=2",
+   "http": 200,
+   "ms": 1308,
+   "error": ""
+  },
+  {
+   "name": "api:sensor-community",
+   "url": "https://data.sensor.community/airrohr/v1/filter/area=38.7223,-9.1393,2",
+   "http": 200,
+   "ms": 1042,
+   "error": ""
+  },
+  {
+   "name": "api:sf-311",
+   "url": "https://data.sf.gov/resource/vw6y-z8j6.json?$limit=1",
+   "http": 200,
+   "ms": 691,
+   "error": ""
+  },
+  {
+   "name": "api:sf-fire-calls",
+   "url": "https://data.sf.gov/resource/nuek-vuh3.json?$limit=1",
+   "http": 200,
+   "ms": 525,
+   "error": ""
+  },
+  {
+   "name": "api:socrata-discovery",
+   "url": "https://api.us.socrata.com/api/catalog/v1?q=311&limit=1",
+   "http": 200,
+   "ms": 544,
+   "error": ""
+  },
+  {
+   "name": "api:sunrise-sunset",
+   "url": "https://api.sunrise-sunset.org/json?lat=39.1653&lng=-86.5264&formatted=0",
+   "http": 200,
+   "ms": 270,
+   "error": ""
+  },
+  {
+   "name": "api:swiss-transport",
+   "url": "https://transport.opendata.ch/v1/stationboard?station=Zurich%20HB&limit=2",
+   "http": 200,
+   "ms": 763,
+   "error": ""
+  },
+  {
+   "name": "api:swpc-aurora",
+   "url": "https://services.swpc.noaa.gov/json/ovation_aurora_latest.json",
+   "http": 200,
+   "ms": 135,
+   "error": ""
+  },
+  {
+   "name": "api:swpc-kp",
+   "url": "https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json",
+   "http": 200,
+   "ms": 108,
+   "error": ""
+  },
+  {
+   "name": "api:tfl-bikepoints",
+   "url": "https://api.tfl.gov.uk/BikePoint/BikePoints_1",
+   "http": 200,
+   "ms": 272,
+   "error": ""
+  },
+  {
+   "name": "api:tfl-status",
+   "url": "https://api.tfl.gov.uk/Line/Mode/tube/Status",
+   "http": 200,
+   "ms": 307,
+   "error": ""
+  },
+  {
+   "name": "api:timeapi",
+   "url": "https://timeapi.io/api/time/current/zone?timeZone=Europe%2FLisbon",
+   "http": 200,
+   "ms": 815,
+   "error": ""
+  },
+  {
+   "name": "api:treasury-fiscal",
+   "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/debt_to_penny?sort=-record_date&page%5Bsize%5D=1",
+   "http": 200,
+   "ms": 763,
+   "error": ""
+  },
+  {
+   "name": "api:uk-carbon-intensity",
+   "url": "https://api.carbonintensity.org.uk/intensity",
+   "http": 200,
+   "ms": 1258,
+   "error": ""
+  },
+  {
+   "name": "api:uk-floods",
+   "url": "https://environment.data.gov.uk/flood-monitoring/id/floods?_limit=3",
+   "http": 200,
+   "ms": 752,
+   "error": ""
+  },
+  {
+   "name": "api:uk-police",
+   "url": "https://data.police.uk/api/crimes-street/all-crime?lat=51.5074&lng=-0.1278",
+   "http": 200,
+   "ms": 1387,
+   "error": ""
+  },
+  {
+   "name": "api:usaspending",
+   "url": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+   "http": 200,
+   "ms": 312,
+   "error": ""
+  },
+  {
+   "name": "api:usgs-quakes-feed",
+   "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojson",
+   "http": 200,
+   "ms": 99,
+   "error": ""
+  },
+  {
+   "name": "api:usgs-quakes-query",
+   "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&latitude=39.1653&longitude=-86.5264&maxradiuskm=1000&limit=3&orderby=time",
+   "http": 200,
+   "ms": 128,
+   "error": ""
+  },
+  {
+   "name": "api:usgs-water-iv",
+   "url": "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=03353000&parameterCd=00060",
+   "http": 200,
+   "ms": 727,
+   "error": ""
+  },
+  {
+   "name": "api:usgs-waterdata",
+   "url": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/monitoring-locations/items?f=json&limit=1",
+   "http": 200,
+   "ms": 177,
+   "error": ""
+  },
+  {
+   "name": "api:usno-moon",
+   "url": "https://aa.usno.navy.mil/api/moon/phases/date?date=2026-10-10&nump=4",
+   "http": 200,
+   "ms": 937,
+   "error": ""
+  },
+  {
+   "name": "api:usno-rstt",
+   "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-10-10&coords=39.1653,-86.5264&tz=-4",
+   "http": 200,
+   "ms": 763,
+   "error": ""
+  },
+  {
+   "name": "api:wheretheiss",
+   "url": "https://api.wheretheiss.at/v1/satellites/25544",
+   "http": 200,
+   "ms": 593,
+   "error": ""
+  },
+  {
+   "name": "api:wikipedia-geosearch",
+   "url": "https://en.wikipedia.org/w/api.php?action=query&list=geosearch&gscoord=39.1653%7C-86.5264&gsradius=2000&gslimit=3&format=json&origin=*",
+   "http": 200,
+   "ms": 371,
+   "error": ""
+  },
+  {
+   "name": "api:wikipedia-onthisday",
+   "url": "https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/selected/10/10",
+   "http": 200,
+   "ms": 241,
+   "error": ""
+  },
+  {
+   "name": "api:wikipedia-summary",
+   "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Lisbon",
+   "http": 200,
+   "ms": 218,
+   "error": ""
+  },
+  {
+   "name": "api:zippopotam",
+   "url": "https://api.zippopotam.us/us/47401",
+   "http": 200,
+   "ms": 100,
+   "error": ""
+  },
+  {
+   "name": "geocoder",
+   "url": "https://geocoding-api.open-meteo.com/v1/search?name=Bloomington&count=5&language=en&format=json",
+   "http": 200,
+   "ms": 983,
+   "error": ""
+  },
+  {
+   "name": "skill:active-storms",
+   "url": "https://www.nhc.noaa.gov/CurrentStorms.json",
+   "http": 200,
+   "ms": 114,
+   "error": ""
+  },
+  {
+   "name": "skill:air-quality",
+   "url": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=39.1653&longitude=-86.5264&current=us_aqi,pm2_5,ozone&timezone=auto",
+   "http": 200,
+   "ms": 885,
+   "error": ""
+  },
+  {
+   "name": "skill:book-lookup",
+   "url": "https://openlibrary.org/search.json?q=the%20power%20broker&limit=1&fields=title,author_name,first_publish_year",
+   "http": 200,
+   "ms": 916,
+   "error": ""
+  },
+  {
+   "name": "skill:carris-metropolitana-arrivals",
+   "url": "https://api.carrismetropolitana.pt/v2/arrivals/by_stop/020429",
+   "http": 200,
+   "ms": 1417,
+   "error": ""
+  },
+  {
+   "name": "skill:census-district",
+   "url": "https://geocoding.geo.census.gov/geocoder/geographies/coordinates?x=-86.5264&y=39.1653&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+   "http": 200,
+   "ms": 625,
+   "error": ""
+  },
+  {
+   "name": "skill:chicago-311-nearby",
+   "url": "https://data.cityofchicago.org/resource/v6vf-nfxy.json?$select=sr_type,status,created_date&$where=within_circle(location,%2041.8837,%20-87.6324,%20400)%20AND%20created_date%20%3E%20'2026-09-10T00:00:00'&$order=created_date%20DESC&$limit=4",
+   "http": 200,
+   "ms": 10257,
+   "error": ""
+  },
+  {
+   "name": "skill:currency-convert",
+   "url": "https://api.frankfurter.dev/v1/latest?base=USD&symbols=EUR",
+   "http": 200,
+   "ms": 159,
+   "error": ""
+  },
+  {
+   "name": "skill:earthquakes-near",
+   "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&latitude=61.2181&longitude=-149.9003&maxradiuskm=500&starttime=2026-10-03&minmagnitude=2.5&orderby=time&limit=3",
+   "http": 200,
+   "ms": 141,
+   "error": ""
+  },
+  {
+   "name": "skill:elevation",
+   "url": "https://api.open-meteo.com/v1/elevation?latitude=39.1653&longitude=-86.5264",
+   "http": 200,
+   "ms": 730,
+   "error": ""
+  },
+  {
+   "name": "skill:emsc-earthquakes",
+   "url": "https://www.seismicportal.eu/fdsnws/event/1/query?format=json&lat=38.7223&lon=-9.1393&maxradius=4.5&limit=3&orderby=time",
+   "http": 200,
+   "ms": 925,
+   "error": ""
+  },
+  {
+   "name": "skill:fema-disasters",
+   "url": "https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?$filter=state%20eq%20'TX'&$orderby=declarationDate%20desc&$top=3&$select=declarationTitle,declarationDate,incidentType,designatedArea",
+   "http": 200,
+   "ms": 142,
+   "error": ""
+  },
+  {
+   "name": "skill:food-barcode",
+   "url": "https://world.openfoodfacts.org/api/v2/product/3017624010701.json?fields=product_name,brands,nutriscore_grade",
+   "http": 200,
+   "ms": 684,
+   "error": ""
+  },
+  {
+   "name": "skill:food-recalls",
+   "url": "https://api.fda.gov/food/enforcement.json?sort=report_date:desc&limit=3",
+   "http": 200,
+   "ms": 246,
+   "error": ""
+  },
+  {
+   "name": "skill:ipma-forecast",
+   "url": "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json",
+   "http": 200,
+   "ms": 797,
+   "error": ""
+  },
+  {
+   "name": "skill:iss-location",
+   "url": "https://api.wheretheiss.at/v1/satellites/25544",
+   "http": 200,
+   "ms": 599,
+   "error": ""
+  },
+  {
+   "name": "skill:marine-waves",
+   "url": "https://marine-api.open-meteo.com/v1/marine?latitude=38.6913&longitude=-9.4215&current=wave_height,wave_period,sea_surface_temperature&timezone=auto",
+   "http": 200,
+   "ms": 882,
+   "error": ""
+  },
+  {
+   "name": "skill:mbta-alerts",
+   "url": "https://api-v3.mbta.com/alerts?filter%5Broute_type%5D=0,1&filter%5Bactivity%5D=BOARD,EXIT,RIDE&filter%5Bdatetime%5D=NOW&page%5Blimit%5D=4&fields%5Balert%5D=service_effect,short_header,severity&sort=-severity",
+   "http": 200,
+   "ms": 472,
+   "error": ""
+  },
+  {
+   "name": "skill:mbta-next-trains",
+   "url": "https://api-v3.mbta.com/predictions?filter%5Bstop%5D=place-pktrm&sort=departure_time&page%5Blimit%5D=25&fields%5Bprediction%5D=arrival_time,departure_time,direction_id",
+   "http": 200,
+   "ms": 478,
+   "error": ""
+  },
+  {
+   "name": "skill:moon-phase",
+   "url": "https://aa.usno.navy.mil/api/moon/phases/date?date=2026-10-10&nump=2",
+   "http": 200,
+   "ms": 1468,
+   "error": ""
+  },
+  {
+   "name": "skill:natural-events",
+   "url": "https://eonet.gsfc.nasa.gov/api/v3/events?status=open&limit=4&days=14",
+   "http": 200,
+   "ms": 519,
+   "error": ""
+  },
+  {
+   "name": "skill:next-launch",
+   "url": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?limit=1&mode=list&hide_recent_previous=true",
+   "http": 200,
+   "ms": 313,
+   "error": ""
+  },
+  {
+   "name": "skill:nws-alerts",
+   "url": "https://api.weather.gov/alerts/active?point=39.1653,-86.5264",
+   "http": 200,
+   "ms": 245,
+   "error": ""
+  },
+  {
+   "name": "skill:nyc-311-nearby",
+   "url": "https://data.cityofnewyork.us/resource/erm2-nwe9.json?$where=within_circle(location,%2040.7128,%20-74.006,%20500)&$order=created_date%20DESC&$limit=3&$select=complaint_type,descriptor,status,created_date",
+   "http": 200,
+   "ms": 581,
+   "error": ""
+  },
+  {
+   "name": "skill:open-meteo-tomorrow",
+   "url": "https://api.open-meteo.com/v1/forecast?latitude=39.1653&longitude=-86.5264&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weather_code&temperature_unit=fahrenheit&timezone=auto&forecast_days=2",
+   "http": 200,
+   "ms": 736,
+   "error": ""
+  },
+  {
+   "name": "skill:open-meteo-weather",
+   "url": "https://api.open-meteo.com/v1/forecast?latitude=39.1653&longitude=-86.5264&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=auto",
+   "http": 200,
+   "ms": 824,
+   "error": ""
+  },
+  {
+   "name": "skill:public-holidays",
+   "url": "https://date.nager.at/api/v3/NextPublicHolidays/PT",
+   "http": 200,
+   "ms": 166,
+   "error": ""
+  },
+  {
+   "name": "skill:river-flow",
+   "url": "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=01646500&parameterCd=00060,00065&siteStatus=active",
+   "http": 200,
+   "ms": 476,
+   "error": ""
+  },
+  {
+   "name": "skill:seeclickfix-nearby",
+   "url": "https://seeclickfix.com/api/v2/issues?lat=41.3083&lng=-72.9259&per_page=3&sort=created_at&status=open,acknowledged",
+   "http": 200,
+   "ms": 1391,
+   "error": ""
+  },
+  {
+   "name": "skill:sun-times",
+   "url": "https://api.open-meteo.com/v1/forecast?latitude=39.1653&longitude=-86.5264&daily=sunrise,sunset,daylight_duration&timezone=auto&forecast_days=1",
+   "http": 200,
+   "ms": 753,
+   "error": ""
+  },
+  {
+   "name": "skill:tides-today",
+   "url": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=predictions&station=8443970&date=today&datum=MLLW&interval=hilo&units=english&time_zone=lst_ldt&format=json&application=civicbot",
+   "http": 200,
+   "ms": 386,
+   "error": ""
+  },
+  {
+   "name": "skill:tube-status",
+   "url": "https://api.tfl.gov.uk/Line/Mode/tube/Status",
+   "http": 200,
+   "ms": 300,
+   "error": ""
+  },
+  {
+   "name": "skill:uk-carbon-intensity",
+   "url": "https://api.carbonintensity.org.uk/intensity",
+   "http": 200,
+   "ms": 1144,
+   "error": ""
+  },
+  {
+   "name": "skill:uv-index",
+   "url": "https://api.open-meteo.com/v1/forecast?latitude=39.1653&longitude=-86.5264&current=uv_index&daily=uv_index_max&timezone=auto&forecast_days=1",
+   "http": 200,
+   "ms": 798,
+   "error": ""
+  },
+  {
+   "name": "skill:vehicle-recalls",
+   "url": "https://api.nhtsa.gov/recalls/recallsByVehicle?make=honda&model=civic&modelYear=2018",
+   "http": 200,
+   "ms": 100,
+   "error": ""
+  },
+  {
+   "name": "skill:wikipedia-nearby",
+   "url": "https://en.wikipedia.org/w/api.php?action=query&list=geosearch&gscoord=38.7223%7C-9.1393&gsradius=2000&gslimit=4&format=json",
+   "http": 200,
+   "ms": 461,
+   "error": ""
+  },
+  {
+   "name": "skill:wikipedia-summary",
+   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro=1&explaintext=1&exsentences=2&redirects=1&format=json&formatversion=2&titles=Lisbon",
+   "http": 200,
+   "ms": 252,
+   "error": ""
+  },
+  {
+   "name": "skill:zip-lookup",
+   "url": "https://api.zippopotam.us/us/47401",
+   "http": 200,
+   "ms": 97,
+   "error": ""
+  }
+ ]
+}

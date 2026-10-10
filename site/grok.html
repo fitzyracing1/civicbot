@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Use civicbot free with Grok (or any AI assistant)</title>
+<meta name="description" content="Use civicbot for $0 inside Grok on X, grok.com or the Grok app: paste one prompt, and Grok answers local questions from free public APIs and drafts 311 reports you submit yourself. No account, no API keys, no X API fees.">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="alternate" type="text/plain" href="grok.txt" title="civicbot instructions for AI assistants">
+<style>
+.copy{display:flex;gap:.5rem;align-items:flex-start;margin:.4rem 0 1rem}
+.copy textarea{flex:1;min-height:4.2rem;font:inherit;font-size:.92rem;padding:.55rem;border-radius:8px;border:1px solid #8884;background:transparent;color:inherit;resize:vertical}
+.copy button,.cbtn{cursor:pointer;border:0;border-radius:8px;padding:.55rem .9rem;font:inherit;font-weight:600;background:#2d6cdf;color:#fff;white-space:nowrap}
+.copy button.done,.cbtn.done{background:#1e8e3e}
+#city{max-width:18rem}
+.card .copy{flex-direction:column}.card .copy textarea{width:100%;min-height:9rem}
+ol.steps li{margin:.35rem 0}
+</style></head>
+<body>
+<main>
+<section class="hero">
+  <p class="pill ok">$0 · no install · no account</p>
+  <h1>Use civicbot free, right inside Grok.</h1>
+  <p class="lead">Grok can read a web page you point it to. civicbot publishes its whole brain as one plain-text page:
+  <a href="grok.txt">grok.txt</a>. It has the instructions and <b id="nsk">37</b> ready-to-fill links to free public
+  data (weather alerts, air quality, tides, quakes, transit, recalls and more), plus how to draft a 311 report
+  that <em>you</em> submit. Paste one prompt into Grok in the X app, on grok.com or in the Grok app. Nobody pays
+  X API fees, and nothing is posted.</p>
+</section>
+
+<h2>1. Paste this prompt</h2>
+<p><label for="city">Your place: </label><input type="text" id="city" value="Bloomington, IN" autocomplete="off"></p>
+<div class="copy"><textarea id="p-main" readonly></textarea><button data-copy="p-main">Copy</button></div>
+<p class="small">Open Grok (the Grok tab in the X app, grok.com or the Grok app), paste, send. Grok opens grok.txt, then
+the matching free API, and answers with the numbers and the source. You can ask follow-ups in the same chat
+without repeating the link.</p>
+
+<h3>More things to ask</h3>
+<div id="examples"></div>
+
+<h2>2. Make it stick (optional, free)</h2>
+<div class="grid">
+  <div class="card"><h3>Custom instructions</h3><p>In Grok's settings, open the custom instructions
+  (Personalization) and paste this. After that a plain question like “any weather alerts?” is enough. Replace
+  <code>{your city, state}</code> with your place.</p>
+  <div class="copy"><textarea id="p-ci" readonly>loading…</textarea><button data-copy="p-ci">Copy</button></div></div>
+  <div class="card"><h3>A Grok Project</h3><p>On grok.com, create a Project called “civicbot” and paste this as
+  its instructions. Every chat in that Project is civicbot. Your other chats stay normal.</p>
+  <div class="copy"><textarea id="p-proj" readonly>loading…</textarea><button data-copy="p-proj">Copy</button></div></div>
+  <div class="card"><h3>A daily brief (Automations)</h3><p>On grok.com or in the Grok app, Automations can run a prompt
+  on a schedule. Per xAI, scheduled automations are available on the free tier. Each run uses your normal free
+  usage. Try this daily at 7:00:</p>
+  <div class="copy"><textarea id="p-auto" readonly></textarea><button data-copy="p-auto">Copy</button></div></div>
+</div>
+
+<h2>3. Reporting a problem (311)</h2>
+<p>Say “there's a pothole at 5th and Walnut, help me report it”. Grok reads your city's list of 311 services and
+writes a ready-to-paste report (service, location, description, photo tip). It also gives you the official city
+link or app. <b>You</b> submit it. Grok is told never to file, submit or post anything. civicbot knows Chicago, Boston,
+Bloomington IN, Austin and Brookline. Anywhere else it uses SeeClickFix's public service list or points you to
+your city's own 311 site. In an emergency, call 911.</p>
+
+<h2>4. Any other AI assistant</h2>
+<p>The same prompt works in assistants that can open web pages (ChatGPT, Claude, Gemini, Perplexity, Copilot and
+others, depending on your plan and settings). If yours can't open links, copy the whole instruction file and paste
+it in first, then ask your question. Without live browsing it can draft 311 reports but can't fetch live data.</p>
+<p><button class="cbtn" id="copy-all">Copy all of grok.txt</button> &nbsp; <span class="small">Files:
+<a href="grok.txt">grok.txt</a> · <a href="grok-apis.txt">grok-apis.txt</a> (<span id="napi">116</span> keyless APIs) ·
+<a href="llms.txt">llms.txt</a> · <a href="data/grok-pack.json">grok-pack.json</a></span></p>
+
+<h2 id="x">What about tagging @grok on X?</h2>
+<p>We don't recommend it, and there is no how-to here. Since March 2026, X's “Ask Grok” reply button has reportedly
+been limited to Premium. Public <code>@grok</code> mentions get replies only selectively, and xAI hasn't published
+an official policy we could confirm. A mention is also <b>public</b>: never put your home address in one. Use the
+private Grok chat instead (the Grok tab in the X app is the same Grok).</p>
+
+<h2 id="limits">Honest limits</h2>
+<ul>
+  <li><b>Free Grok has usage limits.</b> xAI doesn't publish the numbers. They reset on their own schedule, and real-time
+  web search is marked “Limited” on the free plan.</li>
+  <li><b>Grok summarizes pages; it isn't a raw HTTP client.</b> It usually reads JSON fine, but it can misread or skip a
+  value, or fail to open an API. The instructions tell it to say so instead of guessing. For anything safety-critical,
+  check the official source (for example weather.gov).</li>
+  <li><b>It's an assistant following a text file, not the civicbot program.</b> There are no reviewed skill pins,
+  rate limits or SSRF guard as in the Python robot. Grok decides what to open. You stay in charge: nothing is
+  filed or posted unless you do it.</li>
+  <li>The APIs are free for light personal use. Each has its own terms (see the <a href="apis.html">directory</a>).</li>
+  <li>Want the full robot, with your own X account, reviewed skills and offline mode? See <a href="guide.html">Run your own robot</a>.</li>
+</ul>
+
+<h2>Sources (checked 2026-10-10)</h2>
+<ul class="small">
+  <li>xAI pricing (Free plan, “Limited” real-time search): <a href="https://x.ai/pricing">x.ai/pricing</a></li>
+  <li>Grok FAQ (free limits reset on their own schedule; Projects on grok.com): <a href="https://docs.x.ai/grok/faq">docs.x.ai/grok/faq</a></li>
+  <li>Automations launch, July 16, 2026: <a href="https://x.ai/news/grok-automations">x.ai/news/grok-automations</a></li>
+  <li>Connectors (all Grok users; custom MCP): <a href="https://docs.x.ai/grok/connectors">docs.x.ai/grok/connectors</a></li>
+  <li>Reporting on “Ask Grok” becoming Premium-only (March 2026): <a href="https://www.unilad.com/news/social-media/ask-grok-no-longer-free-x-twitter-943603-20260315">UNILAD</a>,
+  <a href="https://vidcella.ai/posts/x-restricted-ask-grok-to-premium-users">Vidcella</a></li>
+</ul>
+</main>
+<script src="assets/nav.js"></script>
+<script src="assets/grok.js"></script>
+</body></html>
