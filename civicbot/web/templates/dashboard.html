@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block title %}My robots{% endblock %}
+{% block content %}
+<div class="row spread"><h1>My robots</h1>{% if cards|length < settings.max_robots_per_owner %}<a class="btn small" href="/setup/robot-account">+ Add a robot</a>{% endif %}</div>
+{% if worker_age is none or worker_age > 120 %}
+<div class="flash warn">The robot runner isn't running right now, so robots won't answer until it's back.{% if dev %} Dev: start <code>python -m civicbot.web.worker</code> or use "Run the runner now" below.{% endif %}</div>
+{% endif %}
+{% if not cards %}<div class="card"><p>No robots yet. <a href="/setup/robot-account">Set one up</a>.</p></div>{% endif %}
+
+{% for c in cards %}{% set p = c.p %}{% set r = c.row %}
+<section class="card robot">
+  <div class="row spread">
+    <h2>@{{ p.robot_handle }}</h2>
+    <span class="status {{ r.status }}">{{ {'active':'● Running','paused':'❚❚ Paused','needs_reconnect':'⚠ Needs reconnect','disconnected':'○ Disconnected'}[r.status] }}</span>
+  </div>
+  <dl class="facts">
+    <dt>Home city</dt><dd>{{ p.home_city or 'not set' }} · <a href="/robots/{{ p.robot_id }}/city">change</a></dd>
+    <dt>Last checked</dt><dd>{{ r.last_poll_at|ago if r.last_poll_at else 'not yet' }}</dd>
+    <dt>Today (UTC)</dt><dd>{{ c.mentions }} mention(s) read · {{ c.replies }} repl{{ 'y' if c.replies == 1 else 'ies' }} · est. X API cost ${{ '%.3f'|format(c.cost) }}</dd>
+    <dt>Skills</dt><dd>{{ c.skills|join(', ') or 'none' }} · <a href="/robots/{{ p.robot_id }}/skills">edit</a></dd>
+    <dt>Consent</dt><dd>{% if p.consent %}given {{ p.consent.version }}{% if p.status_updates %} (incl. follow-up updates){% endif %}{% else %}none{% endif %}</dd>
+    {% if r.last_error %}<dt>Last problem</dt><dd class="err">{{ r.last_error }}</dd>{% endif %}
+  </dl>
+
+  <div class="controls">
+    {% if r.status == 'active' %}
+      <form method="post" action="/robots/{{ p.robot_id }}/pause"><input type="hidden" name="csrf_token" value="{{ csrf }}"><button class="btn secondary">Pause</button></form>
+    {% elif r.status == 'paused' %}
+      <form method="post" action="/robots/{{ p.robot_id }}/resume"><input type="hidden" name="csrf_token" value="{{ csrf }}"><button class="btn">Resume</button></form>
+    {% else %}
+      <a class="btn" href="/setup/connect?robot={{ p.robot_id }}">Reconnect</a>
+    {% endif %}
+    {% if r.status != 'disconnected' %}
+      <form method="post" action="/robots/{{ p.robot_id }}/disconnect"><input type="hidden" name="csrf_token" value="{{ csrf }}"><button class="btn secondary">Disconnect (revoke access)</button></form>
+    {% endif %}
+  </div>
+
+  <details class="sending">
+    <summary>311 sending: <b>{{ 'ON, files real requests after your YES' if p.send_enabled else 'off (dry run)' }}</b></summary>
+    {% if p.send_enabled %}
+      <form method="post" action="/robots/{{ p.robot_id }}/sending"><input type="hidden" name="csrf_token" value="{{ csrf }}"><input type="hidden" name="enable" value="0"><button class="btn secondary">Turn sending off</button></form>
+    {% else %}
+      <div class="warn-card card">
+        <p><b>⚠️ Real reports go to real city staff.</b> With sending on, after you reply YES your robot submits a 311 service request to the city under civicbot's API access. Cities may follow up, and false or joke reports waste public resources. Only report real problems you've seen.</p>
+        {% if not settings.allow_311_sending %}<p class="muted">Note: this site hasn't enabled real 311 filing yet, so even with this on, nothing is filed for now.</p>{% endif %}
+        <form method="post" action="/robots/{{ p.robot_id }}/sending"><input type="hidden" name="csrf_token" value="{{ csrf }}"><input type="hidden" name="enable" value="1">
+          <label class="check"><input type="checkbox" name="confirm"> I understand that @{{ p.robot_handle }} will file real 311 requests after I reply YES.</label>
+          <button class="btn danger">Turn sending on</button></form>
+      </div>
+    {% endif %}
+  </details>
+
+  <details>
+    <summary>Try it: things to post from @{{ owner.handle }}</summary>
+    <table class="examples">{% for text, what in c.examples %}<tr><td><code>{{ text }}</code></td><td class="muted">{{ what }}</td></tr>{% endfor %}</table>
+  </details>
+
+  <h3>Recent activity</h3>
+  {% if c.events %}<ul class="events">{% for e in c.events %}<li><span class="tag">{{ e.kind }}</span> {{ e.summary }}</li>{% endfor %}</ul>{% else %}<p class="muted">Nothing yet.</p>{% endif %}
+
+  {% if dev %}
+  <div class="card devpanel">
+    <h3>🧪 Dev: fake X</h3>
+    <form method="post" action="/dev/robots/{{ p.robot_id }}/mention" class="row">
+      <input type="hidden" name="csrf_token" value="{{ csrf }}">
+      <input name="author" value="{{ owner.handle }}" size="12" aria-label="from">
+      <input name="text" placeholder="pothole at 401 N Morton St" size="34" aria-label="mention text" required>
+      <button class="btn small">Send fake mention</button>
+    </form>
+    {% if c.fake_posts %}<p><b>What @{{ p.robot_handle }} posted on fake X:</b></p><ul class="events">{% for fp in c.fake_posts %}<li>↩ {{ fp.text }}</li>{% endfor %}</ul>{% endif %}
+  </div>
+  {% endif %}
+
+  <details class="danger-zone">
+    <summary>Delete this robot</summary>
+    <form method="post" action="/robots/{{ p.robot_id }}/delete"><input type="hidden" name="csrf_token" value="{{ csrf }}">
+      <p>Revokes access and deletes @{{ p.robot_handle }}'s settings, history and usage from civicbot. The X account itself stays yours.</p>
+      <label>Type <b>{{ p.robot_id }}</b> to confirm <input name="confirm_handle" autocomplete="off"></label>
+      <button class="btn danger">Delete robot data</button></form>
+  </details>
+</section>
+{% endfor %}
+
+{% if dev and cards %}
+<form method="post" action="/dev/tick" class="card devpanel"><input type="hidden" name="csrf_token" value="{{ csrf }}"><button class="btn">▶ Run the runner now (dev)</button> <span class="muted">One worker tick: poll fake mentions for every robot and reply.</span></form>
+{% endif %}
+<p class="muted small">Estimated X API prices the app pays: ${{ prices.read }} per mention read, ${{ prices.user }} per author lookup, ${{ prices.reply }} per reply.</p>
+{% endblock %}

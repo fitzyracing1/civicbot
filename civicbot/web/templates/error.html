@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+<div class="card warn-card">
+  <h1>{{ title }}</h1>
+  <p>{{ message }}</p>
+  {% if retry %}<a class="btn" href="{{ retry }}">Try again</a>{% endif %}
+  <a class="btn secondary" href="/">Home</a>
+</div>
+{% endblock %}

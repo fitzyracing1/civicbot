@@ -18,6 +18,9 @@ GEOCODES = {
     "121 n lasalle": (41.883700, -87.631900, "121 N LASALLE ST, CHICAGO, IL, 60602"),
     "bloomington, in": (39.165300, -86.526400, "Bloomington, Indiana"),
     "new haven, ct": (41.308300, -72.925900, "New Haven, Connecticut"),
+    "boston, ma": (42.360100, -71.058900, "Boston, Massachusetts"),
+    "chicago, il": (41.878100, -87.629800, "Chicago, Illinois"),
+    "springfield, mo": (37.209000, -93.292300, "Springfield, Missouri"),  # no 311 API: demo of the fallback
 }
 
 

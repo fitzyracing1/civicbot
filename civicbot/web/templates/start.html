@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Step 1: sign in{% endblock %}
+{% block content %}
+<h1>Step 1: Sign in with your personal X account</h1>
+<p class="lead">This tells civicbot who the robot's owner is. Your robot will only take orders from this account.</p>
+<div class="card">
+  <ul class="checks plain">
+    <li>✅ We only ask X to confirm your username: read-only permissions.</li>
+    <li>✅ We give that access straight back to X (revoke it) once we know who you are. We don't post as you, ever.</li>
+    <li>✅ You'll connect the <em>robot</em> account separately in step 3.</li>
+  </ul>
+  <form method="post" action="/auth/owner">
+    <input type="hidden" name="csrf_token" value="{{ csrf }}">
+    <button class="btn big">Sign in with X</button>
+  </form>
+</div>
+{% endblock %}

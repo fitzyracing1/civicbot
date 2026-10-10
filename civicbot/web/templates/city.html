@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Step 4: home city{% endblock %}
+{% block content %}
+<h1>Step 4: Where does @{{ robot.robot_handle }} live?</h1>
+<p class="lead">Your home city fills in the blanks when you say "pothole at Main &amp; 3rd". Use your city and state, not your home address.</p>
+<form method="post" action="/robots/{{ robot.robot_id }}/city" class="card">
+  <input type="hidden" name="csrf_token" value="{{ csrf }}">
+  <label for="place"><b>City and state</b></label>
+  <div class="row"><input id="place" name="place" value="{{ place or robot.home_city }}" placeholder="Bloomington, IN" maxlength="120" required>
+  <button class="btn">Check 311 coverage</button></div>
+  {% if dev %}<p class="muted">Dev mode uses offline data. Try: Bloomington, IN · New Haven, CT · Boston, MA · Springfield, MO (no 311 API).</p>{% endif %}
+</form>
+
+{% if res %}
+<div class="card {% if res.found %}ok-card{% else %}warn-card{% endif %}">
+  {% if res.found %}
+    <h3>✅ 311 is available here</h3>
+    <p><b>{{ res.endpoint.name }}</b>{% if res.method == "seeclickfix" %} via SeeClickFix{% endif %} accepts service requests through an API, so your robot can prepare reports for {{ place }}.</p>
+  {% else %}
+    <h3>No 311 API here yet</h3>
+    <p>We couldn't find a city 311 system with a public API for {{ place }} (most US towns don't have one). Your robot will skip 311 reports and can still do <b>weather and transit skills</b>.</p>
+  {% endif %}
+  <p class="muted">Matched: {{ res.geocode.matched if res.geocode else place }} · {{ res.reason }}</p>
+  <form method="post" action="/robots/{{ robot.robot_id }}/city/save">
+    <input type="hidden" name="csrf_token" value="{{ csrf }}">
+    <input type="hidden" name="place" value="{{ place }}">
+    <input type="hidden" name="lat" value="{{ res.lat }}"><input type="hidden" name="lng" value="{{ res.lng }}">
+    <input type="hidden" name="has311" value="{{ '1' if res.found else '0' }}">
+    <input type="hidden" name="wizard" value="1">
+    <button class="btn">Use {{ place }} and continue</button>
+  </form>
+</div>
+{% endif %}
+{% endblock %}

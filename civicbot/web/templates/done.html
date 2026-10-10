@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Your robot is ready{% endblock %}
+{% block content %}
+<h1>🎉 @{{ robot.robot_handle }} is ready</h1>
+<p class="lead">From <b>your</b> account (@{{ owner.handle }}), post one of these. Your robot checks for mentions every couple of minutes and replies in the thread.</p>
+<div class="card">
+  <table class="examples">
+  {% for text, what in examples %}<tr><td><code>{{ text }}</code></td><td class="muted">{{ what }}</td></tr>{% endfor %}
+  </table>
+</div>
+<div class="card note">
+  <ul>
+    <li>311 reports are a <b>dry run</b> until you turn sending on in your dashboard. Even then, nothing is filed until you reply <b>YES</b>.</li>
+    <li>It only answers you. Want a friend to use it too? That's coming to the dashboard soon.</li>
+    <li>Reply <b>STOP</b> any time and it stops replying to you.</li>
+  </ul>
+</div>
+<a class="btn big" href="/dashboard">Go to my dashboard</a>
+{% endblock %}

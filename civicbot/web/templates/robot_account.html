@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Step 2: make a robot account{% endblock %}
+{% block content %}
+<h1>Step 2: Make a separate X account for your robot</h1>
+<p class="lead">Hi @{{ owner.handle }}! X's rules say bots need their <b>own</b> account, clearly labeled as automated. Your personal account stays just yours.</p>
+
+<div class="card">
+<h3>Do this in X (about 5 minutes)</h3>
+<ol class="how">
+  <li><b>Sign out of X, or open a private/incognito window</b>, and create a new account at <a href="https://x.com/i/flow/signup" rel="noopener noreferrer">x.com</a>. Pick a name like <code>@{{ owner.handle[:9] }}_robot</code>. You'll need an email or phone number that isn't already on your personal account.</li>
+  <li>In the robot's profile <b>bio</b>, say it's a bot and who runs it, e.g. <i>"Robot run by @{{ owner.handle }}. Helps with 311 &amp; city info."</i></li>
+  <li>Still signed in as the robot, go to <b>Settings and privacy → Your account → Account information → Automation</b> (direct link: <a href="https://x.com/settings/account/automation" rel="noopener noreferrer">x.com/settings/account/automation</a>). Choose <b>Managing account</b>, enter <b>@{{ owner.handle }}</b>, then confirm by signing in as @{{ owner.handle }}. The robot's profile will then show <i>"Automated by @{{ owner.handle }}"</i>.</li>
+</ol>
+<p class="muted">Don't see "Automation"? X is still rolling the label out. Finish the other steps; your robot's bio already says it's a bot. Check again later.</p>
+</div>
+
+<form method="post" action="/setup/robot-account" class="card">
+  <input type="hidden" name="csrf_token" value="{{ csrf }}">
+  <h3>Checklist</h3>
+  {% for key, label in checks %}
+  <label class="check"><input type="checkbox" name="{{ key }}" {% if ticked and key in ticked %}checked{% endif %}> {{ label }}</label>
+  {% endfor %}
+  <label for="robot_handle"><b>Your robot's @handle</b></label>
+  <div class="row"><span class="at">@</span><input id="robot_handle" name="robot_handle" value="{{ robot_hint }}" maxlength="16" placeholder="{{ owner.handle[:9] }}_robot" required pattern="@?[A-Za-z0-9_]{1,15}" autocomplete="off"></div>
+  <button class="btn">Next: connect the robot</button>
+</form>
+{% endblock %}

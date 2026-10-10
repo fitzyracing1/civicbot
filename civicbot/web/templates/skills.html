@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Step 5: skills{% endblock %}
+{% block content %}
+<h1>Step 5: What should @{{ robot.robot_handle }} know how to do?</h1>
+<p class="lead">Pick skills. Each one only talks to the website listed, and every skill in the catalog was reviewed. You can change this later.</p>
+<form method="post" action="/robots/{{ robot.robot_id }}/skills">
+  <input type="hidden" name="csrf_token" value="{{ csrf }}">
+  <input type="hidden" name="wizard" value="1">
+  <h3>Built in</h3>
+  <div class="skills">
+  {% for s in builtins %}
+    <label class="skill card {% if s.blocked %}disabled{% endif %}">
+      <input type="checkbox" name="skill" value="{{ s.name }}" {% if s.on and not s.blocked %}checked{% endif %} {% if s.blocked %}disabled{% endif %}>
+      <span><b>{{ s.title }}</b> <span class="tag {{ s.kind }}">{{ 'can file reports' if s.kind == 'write' else 'read-only' }}</span><br>
+      <span class="muted">{{ s.description }}{% if s.blocked %} · {{ s.blocked }}{% endif %}</span></span>
+    </label>
+  {% endfor %}
+  </div>
+  <h3>From the catalog</h3>
+  <div class="skills">
+  {% for s in catalog %}
+    <label class="skill card">
+      <input type="checkbox" name="skill" value="{{ s.name }}" {% if s.on %}checked{% endif %}>
+      <span><b>{{ s.title }}</b> <span class="tag {{ s.kind }}">{{ 'read-only' if s.kind == 'read' else s.kind }}</span> <span class="tag">{{ s.review }}</span><br>
+      <span class="muted">{{ s.description }}</span><br><span class="muted small">Talks to: {{ s.domains|join(', ') }}</span></span>
+    </label>
+  {% endfor %}
+  </div>
+  <button class="btn big">Save skills</button>
+</form>
+{% endblock %}

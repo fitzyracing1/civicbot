@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Your own robot for city stuff{% endblock %}
+{% block content %}
+<section class="hero">
+  <h1>Your own robot on X that helps with city stuff.</h1>
+  <p class="lead">Mention your robot from your X account: <em>"pothole at 5th &amp; Main"</em>, <em>"weather"</em>, <em>"next train"</em>. It finds the right city service and answers you, from its own account, only for you.</p>
+  <a class="btn big" href="/start">Get your robot (about 10 minutes)</a>
+  <p class="muted">Free while in testing. You keep control: pause it, disconnect it or delete everything at any time.</p>
+</section>
+
+<section class="grid3">
+  <div class="card"><h3>📍 Reports problems to the city</h3><p>Potholes, broken streetlights, graffiti… Your robot finds which 311 system covers the spot (Open311 or SeeClickFix) and prepares the report. It only files after you reply <b>YES</b>, and only if you switch sending on.</p></div>
+  <div class="card"><h3>🚌 Answers quick questions</h3><p>Add skills from a reviewed list: weather, next trains and buses, recent 311 activity nearby. More cities over time.</p></div>
+  <div class="card"><h3>🔒 It's <em>your</em> robot</h3><p>It's a separate X account that you own, labeled as automated and linked to you. It replies only to you. Say <b>STOP</b> and it stops.</p></div>
+</section>
+
+<section>
+  <h2>How it works</h2>
+  <ol class="how">
+    <li><b>Sign in with X</b> using your normal account, so we know who you are. We don't keep access to it.</li>
+    <li><b>Make a robot account</b>: a second X account just for your robot. We walk you through it, including X's "Automated" label.</li>
+    <li><b>Connect the robot</b>: sign in to X as the robot and allow civicbot to read its mentions and reply.</li>
+    <li><b>Pick your city and skills</b>, then mention your robot from your account.</li>
+  </ol>
+</section>
+
+<section class="card note">
+  <h3>Good to know</h3>
+  <ul>
+    <li>Your robot only replies to posts that mention it. It never posts on its own, never DMs and never follows anyone.</li>
+    <li>Many US towns don't have a 311 API yet. We'll tell you up front; weather and transit skills still work.</li>
+    <li>civicbot is an independent open-source project, in testing. Read the <a href="/privacy">privacy notice</a> (draft).</li>
+  </ul>
+</section>
+{% endblock %}

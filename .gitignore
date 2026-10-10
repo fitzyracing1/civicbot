@@ -34,3 +34,5 @@ profiles*.json
 .DS_Store
 .idea/
 .vscode/
+civicbot-data/
+!.env.example

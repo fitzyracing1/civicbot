@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Step 3: connect your robot{% endblock %}
+{% block content %}
+<h1>Step 3: Connect @{{ robot_hint }}</h1>
+<div class="card warn-card">
+  <h3>⚠️ Sign in to X as the robot, not as yourself</h3>
+  <p>X will ask the account that's <b>currently signed in</b>. Before you click, switch accounts in X to <b>@{{ robot_hint }}</b>, or copy this page into a private window, sign in there as the robot and continue. If you approve with your personal account, we'll stop and ask you to try again.</p>
+</div>
+
+<form method="post" action="/setup/connect" class="card">
+  <input type="hidden" name="csrf_token" value="{{ csrf }}">
+  <h3>What @{{ robot_hint }} will do (please read)</h3>
+  <p>When you connect, civicbot gets permission to use the robot account: read posts, write posts, keep access while you're away (it can refresh its access). It will use that only to:</p>
+  <ul>{% for a in actions %}<li>{{ a }}</li>{% endfor %}</ul>
+  <p class="muted">It never posts on its own, never DMs, never follows, likes or reposts. You can pause or disconnect any time from your dashboard, or reply STOP to the robot. If what it does changes, we'll ask you again. (Consent version {{ consent_version }}.)</p>
+  <label class="check"><input type="checkbox" name="consent"> <b>I agree to these automated actions on @{{ robot_hint }}, which I own.</b></label>
+  <label class="check"><input type="checkbox" name="followups"> Optional: also {{ followup }}.</label>
+  <button class="btn big">Connect @{{ robot_hint }} with X</button>
+  <p class="muted">Wrong handle? <a href="/setup/robot-account">Go back</a>.</p>
+</form>
+{% endblock %}

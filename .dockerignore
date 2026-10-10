@@ -1,0 +1,11 @@
+.git
+.venv
+**/__pycache__
+build
+dist
+*.egg-info
+.env
+.env.*
+civicbot-data
+tests
+docs

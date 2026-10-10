@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Privacy (draft){% endblock %}
+{% block content %}
+<div class="flash warn"><b>DRAFT, needs legal review.</b> This notice describes how this software works. It hasn't been reviewed by a lawyer and isn't a final privacy policy.</div>
+<h1>Privacy notice (draft)</h1>
+<div class="card prose">
+<h3>What we collect</h3>
+<ul>
+  <li><b>Your X identity</b>: your X user id and @handle, from signing in. We revoke the sign-in access right after reading them.</li>
+  <li><b>Your robot's X access</b>: OAuth tokens for the robot account you connect, encrypted at rest. Never shown, logged or exported.</li>
+  <li><b>Robot settings</b>: home city (rounded to about 10 m), chosen skills, sending switch, and your consent record (what you agreed to and when).</li>
+  <li><b>Activity</b>: what your robot replied, kept so you can see it in your dashboard, plus usage counts for cost limits. Robot working state (which mentions were handled, pending reports) is kept so it doesn't answer twice.</li>
+</ul>
+<h3>What we do with it</h3>
+<p>Only run your robot as you set it up: read posts that mention it, reply to you, look up city services and, if you switch sending on and reply YES, send a 311 request to the city. Addresses you mention are sent to geocoders (US Census, OpenStreetMap Nominatim) and to the city's 311 system. Skills send the place you ask about to the website listed on that skill.</p>
+<h3>What we don't do</h3>
+<p>No ads, no selling data, no posting as you, no DMs, no following or liking.</p>
+<h3>Your choices</h3>
+<ul>
+  <li>Pause or disconnect a robot at any time (disconnect revokes its access with X).</li>
+  <li><a href="/account">Download</a> your data as JSON.</li>
+  <li><a href="/account">Delete</a> everything. We remove it from our database right away; backups expire on the host's schedule.</li>
+  <li>Reply STOP to a robot and it stops replying to you.</li>
+</ul>
+<h3>Retention</h3>
+<p>Kept while your account exists. [TODO: set retention for activity logs and server logs, backups, and the data controller and contact details.]</p>
+<h3>Contact</h3>
+<p>[TODO: operator name and contact email.]</p>
+</div>
+{% endblock %}
