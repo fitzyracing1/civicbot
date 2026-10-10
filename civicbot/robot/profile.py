@@ -38,6 +38,10 @@ class RobotProfile:
     transit_feed_url: str = ""
     transit_stop_id: str = ""
     connected_at: Optional[float] = None
+    # user-taught skills (validated specs; never contain secrets) and their switches
+    skills: Dict[str, dict] = field(default_factory=dict)
+    write_enabled: List[str] = field(default_factory=list)   # write skills the owner explicitly enabled
+    disabled_builtins: List[str] = field(default_factory=list)
 
     def __post_init__(self):
         self.robot_handle = self.robot_handle.lstrip("@")

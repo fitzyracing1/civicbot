@@ -78,12 +78,14 @@ class XApiV2Adapter:
             self.me()
         params = {"since_id": since_id, "max_results": 100,
                   "expansions": "author_id", "user.fields": "username",
-                  "tweet.fields": "author_id,conversation_id,created_at,geo"}
+                  "tweet.fields": "author_id,conversation_id,created_at,geo,entities"}
         data = self._call(self.http.get_json, f"{API}/users/{self.robot_user_id}/mentions", params)
         users = {u["id"]: u["username"] for u in (data.get("includes") or {}).get("users", [])}
         out = [Mention(id=t["id"], author=users.get(t.get("author_id"), t.get("author_id", "")),
                        text=t.get("text", ""), conversation_id=t.get("conversation_id", ""),
-                       robot=self.robot_id)
+                       robot=self.robot_id,
+                       urls=[u.get("expanded_url") or u.get("url", "")
+                             for u in ((t.get("entities") or {}).get("urls") or [])])
                for t in data.get("data", [])]
         return sorted(out, key=lambda m: int(m.id)) if all(m.id.isdigit() for m in out) else out
 

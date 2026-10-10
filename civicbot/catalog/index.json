@@ -1,0 +1,69 @@
+{
+  "catalog_version": 1,
+  "skills": [
+    {
+      "name": "carris-metropolitana-arrivals",
+      "file": "skills/carris-metropolitana-arrivals.json",
+      "title": "Carris Metropolitana next buses (Lisbon area)",
+      "kind": "read",
+      "domains": [
+        "api.carrismetropolitana.pt"
+      ],
+      "sha256": "fc30c12f4311bce9967f853bd883ee022a57b86c594ce15d96ff1a03c4c008cc",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (CIVICBOT_LIVE=1 pytest -m live)"
+      }
+    },
+    {
+      "name": "chicago-311-nearby",
+      "file": "skills/chicago-311-nearby.json",
+      "title": "Recent Chicago 311 requests nearby (Socrata)",
+      "kind": "read",
+      "domains": [
+        "data.cityofchicago.org"
+      ],
+      "sha256": "8c9b238f8000cb06d01b040f073f88ee808c6a12c49f12b2da505bb4ea45a55d",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (CIVICBOT_LIVE=1 pytest -m live)"
+      }
+    },
+    {
+      "name": "mbta-next-trains",
+      "file": "skills/mbta-next-trains.json",
+      "title": "MBTA next departures (Boston)",
+      "kind": "read",
+      "domains": [
+        "api-v3.mbta.com"
+      ],
+      "sha256": "d4cbff2da978cc251fb9e50dd5077a23a1f5074d883df3db6bc875bfd0b54f2f",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (CIVICBOT_LIVE=1 pytest -m live)"
+      }
+    },
+    {
+      "name": "open-meteo-weather",
+      "file": "skills/open-meteo-weather.json",
+      "title": "Current weather (Open-Meteo)",
+      "kind": "read",
+      "domains": [
+        "api.open-meteo.com"
+      ],
+      "sha256": "377a9aacd56fd73506be941deac501e539a2ef715bc855ab7080c5b1de23063b",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (CIVICBOT_LIVE=1 pytest -m live)"
+      }
+    }
+  ]
+}

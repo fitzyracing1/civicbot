@@ -1,0 +1,75 @@
+{
+  "spec_version": 1,
+  "name": "carris-metropolitana-arrivals",
+  "title": "Carris Metropolitana next buses (Lisbon area)",
+  "description": "Next Carris Metropolitana bus arrivals at a 6-digit stop id in the Lisbon metropolitan area, from the public api.carrismetropolitana.pt v2 API. No key needed.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "terms": {
+    "url": "https://github.com/carrismetropolitana/api",
+    "attribution": "Data: Carris Metropolitana",
+    "notes": "Public open-data API; stop ids are 6 digits, e.g. 020429 = Cacilhas (Terminal) P6."
+  },
+  "triggers": {
+    "keywords": [
+      "carris",
+      "autocarro",
+      "autocarros",
+      "paragem",
+      "cacilhas",
+      "almada",
+      "lisboa",
+      "lisbon"
+    ],
+    "phrases": [
+      "next bus",
+      "próximo autocarro"
+    ],
+    "min_score": 1
+  },
+  "inputs": {
+    "stop": {
+      "regex": "\\b([0-9]{6})\\b",
+      "default": "020429",
+      "pattern": "^[0-9]{6}$",
+      "description": "6-digit Carris Metropolitana stop id"
+    }
+  },
+  "location": "none",
+  "request": {
+    "base_url": "https://api.carrismetropolitana.pt",
+    "path": "/v2/arrivals/by_stop/{inputs.stop}",
+    "method": "GET"
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "api.carrismetropolitana.pt"
+  ],
+  "response": {
+    "list": {
+      "path": "$",
+      "item": "{line_id} to {headsign} in {estimated_arrival_unix||scheduled_arrival_unix|minutes_from_now} min",
+      "skip_past": "estimated_arrival_unix||scheduled_arrival_unix",
+      "sort": "estimated_arrival_unix||scheduled_arrival_unix",
+      "max": 3,
+      "join": "; "
+    },
+    "replies": [
+      "Stop {inputs.stop}: {items}. Data: Carris Metropolitana",
+      "Próximos autocarros em {inputs.stop}: {items} (Carris Metropolitana)",
+      "Next buses at {inputs.stop}: {items}. Source: Carris Metropolitana"
+    ],
+    "empty_replies": [
+      "No more Carris Metropolitana buses scheduled at stop {inputs.stop} for now."
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 524288,
+    "min_interval_s": 5,
+    "max_calls_per_day": 300
+  }
+}

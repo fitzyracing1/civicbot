@@ -21,13 +21,15 @@ AdapterFactory = Callable[[RobotProfile], XAdapter]
 class Fleet:
     def __init__(self, profiles: ProfileStore, adapter_factory: AdapterFactory,
                  resolver: Optional[JurisdictionResolver] = None, api_keys: Optional[Dict[str, str]] = None,
-                 state_dir: Optional[str] = None, min_poll_interval: float = 60.0):
+                 state_dir: Optional[str] = None, min_poll_interval: float = 60.0,
+                 fetcher=None, secrets=None, catalog=None):
         self.profiles = profiles
         self.adapter_factory = adapter_factory
         self.resolver = resolver or JurisdictionResolver()
         self.api_keys = api_keys or {}
         self.state_dir = state_dir
         self.guard = FleetDuplicateGuard()
+        self.fetcher, self.secrets, self.catalog = fetcher, secrets, catalog  # shared, but secrets are per-robot
         # GET /2/users/:id/mentions is 300 req/15min per user and 450/15min per APP: with many
         # robots the per-app ceiling binds first (450/15min = 1 poll/2s across the whole fleet).
         self.min_poll_interval = min_poll_interval
@@ -42,7 +44,9 @@ class Fleet:
                 raise KeyError(robot_id)
             state_path = f"{self.state_dir}/{p.robot_id}.state.json" if self.state_dir else None
             self._robots[robot_id] = Robot(p, resolver=self.resolver, api_keys=self.api_keys,
-                                           state_path=state_path, guard=self.guard)
+                                           state_path=state_path, guard=self.guard, fetcher=self.fetcher,
+                                           secrets=self.secrets, catalog=self.catalog,
+                                           on_profile_change=self.profiles.put)
         return self._robots[robot_id]
 
     def adapter(self, robot_id: str) -> XAdapter:

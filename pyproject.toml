@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "civicbot"
-version = "0.2.0"
+version = "0.3.0"
 description = "Let robots and agents call city-operated APIs: Open311 311 requests, jurisdiction resolution, transit, and an X robot layer."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -24,7 +24,7 @@ civicbot = "civicbot.__main__:main"
 include = ["civicbot*"]
 
 [tool.setuptools.package-data]
-civicbot = ["data/*.json"]
+civicbot = ["data/*.json", "skills/schema.json", "catalog/index.json", "catalog/skills/*.json"]
 
 [tool.pytest.ini_options]
 markers = ["live: hits real city APIs (read-only); run with CIVICBOT_LIVE=1"]
