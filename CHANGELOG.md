@@ -1,5 +1,21 @@
 # Changelog
 
+## Unreleased (site only, 2026-10-10): use civicbot free inside Grok
+
+No Python package changes, so no new PyPI release. Website and scripts only:
+
+- **Grok / LLM pack** (`scripts/build_grok_pack.py`, built into the Pages site by `scripts/build_site.py`):
+  - `grok.txt`: instructions plus every free catalog skill as a GET URL template
+  - `grok-apis.txt`: the keyless directory APIs
+  - `llms.txt`
+  - `grok-instructions.txt` and `grok-project.txt`
+  - `data/grok-pack.json`
+  - 311 is draft-and-link only.
+- **Use with Grok page** (`site/grok.html`): copy buttons, example prompts, custom-instructions, Project and Automation
+  text, a fallback for other assistants, and honest limits.
+- **`scripts/check_grok_pack.py`**: live-checks every URL in the pack.
+- **`tests/test_grok_pack.py`**: each filled template equals the request the Python robot builds.
+
 ## 0.4.0 (2026-10-10): free mode
 
 Additive release: nothing was removed, and every v0.3 test passes unchanged.

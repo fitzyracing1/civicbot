@@ -37,6 +37,10 @@ def main(out: str = "_site") -> int:
         skills.append({"name": n, "title": s.get("title", n), "description": s["description"], "free": e.get("free", False),
                        "api_id": s.get("api_id", ""), "domains": s["allowed_domains"], "try": tries.get(n, n)})
     (dst / "data" / "skills.json").write_text(json.dumps({"skills": skills}, ensure_ascii=False, indent=1) + "\n")
+    gspec = importlib.util.spec_from_file_location("build_grok_pack", ROOT / "scripts" / "build_grok_pack.py")
+    gmod = importlib.util.module_from_spec(gspec)
+    gspec.loader.exec_module(gmod)
+    print("grok pack:", gmod.write(dst))
     (dst / ".nojekyll").write_text("")
     print(f"built {dst} ({len(skills)} skills)")
     return 0

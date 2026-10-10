@@ -4,7 +4,7 @@ name: pages
 on:
   push:
     branches: [main]
-    paths: ["site/**", "civicbot/data/**", "civicbot/catalog/**", "scripts/build_site.py", ".github/workflows/pages.yml"]
+    paths: ["site/**", "civicbot/data/**", "civicbot/catalog/**", "scripts/build_site.py", "scripts/build_grok_pack.py", "scripts/free_apis/check_skills.py", ".github/workflows/pages.yml"]
   workflow_dispatch:
 
 permissions:
