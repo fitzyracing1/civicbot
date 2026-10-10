@@ -1,21 +1,47 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "civicbot"
 version = "0.3.0"
-description = "Let robots and agents call city-operated APIs: Open311 311 requests, jurisdiction resolution, transit, and an X robot layer."
+description = "Personal robots that call city APIs (Open311 311 reports, transit, open data) from your own X robot account. Dry-run by default."
 readme = "README.md"
 requires-python = ">=3.10"
-license = { text = "MIT" }
+license = "MIT"
+license-files = ["LICENSE"]
 authors = [{ name = "Joshua Almeida" }]
 dependencies = []
+keywords = ["open311", "311", "civic-tech", "govtech", "x-bot", "twitter-bot", "robotics", "gtfs", "open-data",
+            "socrata", "seeclickfix", "smart-city"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Information Technology",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Communications",
+  "Topic :: Internet :: WWW/HTTP",
+  "Topic :: Sociology",
+]
 
 [project.optional-dependencies]
 transit = ["gtfs-realtime-bindings>=1.0"]
 secure = ["cryptography>=41"]
 dev = ["pytest>=7", "gtfs-realtime-bindings>=1.0", "cryptography>=41"]
+
+[project.urls]
+Homepage = "https://github.com/fitzyracing1/civicbot"
+Source = "https://github.com/fitzyracing1/civicbot"
+Issues = "https://github.com/fitzyracing1/civicbot/issues"
+Documentation = "https://github.com/fitzyracing1/civicbot#readme"
+Changelog = "https://github.com/fitzyracing1/civicbot/releases"
 
 [project.scripts]
 civicbot = "civicbot.__main__:main"

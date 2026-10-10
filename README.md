@@ -32,7 +32,7 @@ Zero runtime dependencies (stdlib `urllib`). Transit parsing needs `civicbot[tra
 
 ## Coverage: why this is hard, and where the leverage is
 
-These figures come from [`docs/research.md`](docs/research.md), which has sources and dates.
+These figures come from [`docs/research.md`](https://github.com/fitzyracing1/civicbot/blob/main/docs/research.md), which has sources and dates.
 
 - The US has **19,491 municipal governments** (Census of Governments, 2022). Almost none have a callable "do something" API.
 - About **5 city-run Open311 endpoints** are live and document write access: Chicago, Boston, Bloomington IN, Austin, and Brookline MA. The official Open311 server list is stale. SF officially dropped Open311, NYC's endpoint is retired, and DC is down.
@@ -190,7 +190,7 @@ civicbot secret set socrata_app_token --robot joshs_robot   # prompts; stored en
   (`path`, `item`, `max`, `join`, `sort`, `skip_past`, `require`). Filters: `round`, `int`, `upper`, `lower`,
   `title`, `date`, `time_hm`, `minutes_from_now`, `wmo`. Give several `replies` phrasings. The robot picks one
   per mention and never posts the same text as another robot (fleet-wide duplicate guard).
-- Full schema: [`civicbot/skills/schema.json`](civicbot/skills/schema.json).
+- Full schema: [`civicbot/skills/schema.json`](https://github.com/fitzyracing1/civicbot/blob/main/civicbot/skills/schema.json).
 
 ### Community catalog (`civicbot/catalog/`)
 
