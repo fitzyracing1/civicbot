@@ -6,8 +6,9 @@ owner posts "@joshs_robot streetlight out at 401 N Morton St", the robot works o
 address is in, picks the right 311 request type, prepares the Open311 request, and replies **from
 the owner's robot account**.
 
-> Prototype (v0.2, Oct 2026). Private repo for review; not published to PyPI; never posts to X. **Dry-run by default: it never files a real 311 request unless you
-> explicitly enable sending.** Not published to PyPI. The `civicbot` name was free on PyPI on 2026-10-10.
+> **Early prototype (v0.2, Oct 2026), open source under the MIT license.** Dry-run by default: it never
+> files a real 311 request or posts to X unless you explicitly enable sending. Not yet published to PyPI;
+> install from source. Issues and PRs welcome.
 
 ## What's in the box
 
@@ -38,7 +39,7 @@ These figures come from [`docs/research.md`](docs/research.md), which has source
 ## Quickstart
 
 ```bash
-cd civicbot   # repo root
+git clone https://github.com/fitzyracing1/civicbot && cd civicbot
 python -m venv .venv && . .venv/bin/activate
 pip install -e '.[dev]'
 pytest -q                                   # unit tests (mocked HTTP)
