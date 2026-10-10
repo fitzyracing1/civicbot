@@ -6,6 +6,8 @@
   "kind": "read",
   "version": "1.0.0",
   "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "mbta-v3",
   "terms": {
     "url": "https://www.mbta.com/developers/v3-api",
     "attribution": "Data: MBTA",

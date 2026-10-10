@@ -6,6 +6,8 @@
   "kind": "read",
   "version": "1.0.0",
   "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "carris-metropolitana",
   "terms": {
     "url": "https://github.com/carrismetropolitana/api",
     "attribution": "Data: Carris Metropolitana",

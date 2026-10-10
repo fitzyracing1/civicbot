@@ -13,7 +13,7 @@ import urllib.parse
 import urllib.request
 from typing import Any, Dict, Mapping, Optional
 
-DEFAULT_USER_AGENT = "civicbot/0.3 (prototype; city API client)"
+DEFAULT_USER_AGENT = "civicbot/0.4 (+https://github.com/fitzyracing1/civicbot; city API client)"
 
 
 class HttpError(Exception):

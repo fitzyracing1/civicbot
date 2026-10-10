@@ -1,0 +1,112 @@
+{
+ "date": "2026-10-10",
+ "checked": 132,
+ "listed": 120,
+ "failed": [
+  {
+   "id": "gdacs",
+   "ok": false,
+   "status": 403,
+   "ms": 707,
+   "cors": false,
+   "why": "HTTP 403",
+   "retried": true
+  },
+  {
+   "id": "db-rest",
+   "ok": false,
+   "status": 503,
+   "ms": 10719,
+   "cors": false,
+   "why": "HTTP 503",
+   "retried": true
+  },
+  {
+   "id": "opensky",
+   "ok": false,
+   "status": null,
+   "ms": 10009,
+   "cors": false,
+   "why": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>",
+   "retried": true
+  },
+  {
+   "id": "nrel-ev",
+   "ok": false,
+   "status": null,
+   "ms": 78,
+   "cors": false,
+   "why": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>",
+   "retried": true
+  },
+  {
+   "id": "open311-chicago",
+   "ok": false,
+   "status": null,
+   "ms": 272,
+   "cors": false,
+   "why": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for '311api.cityofchicago.org'. (_ssl.c:1029)>",
+   "retried": true
+  },
+  {
+   "id": "data-gov",
+   "ok": false,
+   "status": 404,
+   "ms": 133,
+   "cors": false,
+   "why": "HTTP 404"
+  },
+  {
+   "id": "census-acs",
+   "ok": false,
+   "status": 302,
+   "ms": 394,
+   "cors": false,
+   "why": "HTTP 302 redirect -> https://api.census.gov/data/missing_key.html"
+  },
+  {
+   "id": "lisboa-ckan",
+   "ok": false,
+   "status": 403,
+   "ms": 99,
+   "cors": false,
+   "why": "HTTP 403",
+   "retried": true
+  },
+  {
+   "id": "overpass",
+   "ok": false,
+   "status": null,
+   "ms": 10010,
+   "cors": false,
+   "why": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)>",
+   "retried": true
+  },
+  {
+   "id": "rest-countries",
+   "ok": false,
+   "status": 301,
+   "ms": 176,
+   "cors": false,
+   "why": "HTTP 301 redirect -> https://files-03.restcountries.com/countries.00/legacy.json"
+  },
+  {
+   "id": "dictionaryapi",
+   "ok": false,
+   "status": 522,
+   "ms": 19851,
+   "cors": false,
+   "why": "HTTP 522",
+   "retried": true
+  },
+  {
+   "id": "nasa-apod",
+   "ok": false,
+   "status": 500,
+   "ms": 12774,
+   "cors": true,
+   "why": "HTTP 500",
+   "retried": true
+  }
+ ]
+}

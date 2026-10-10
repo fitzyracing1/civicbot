@@ -34,3 +34,7 @@ profiles*.json
 .DS_Store
 .idea/
 .vscode/
+
+# GitHub Pages build output and local robot state (v0.4)
+_site/
+.civicbot/

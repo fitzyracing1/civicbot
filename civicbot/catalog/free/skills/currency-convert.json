@@ -1,0 +1,79 @@
+{
+  "spec_version": 1,
+  "name": "currency-convert",
+  "title": "Currency conversion (Frankfurter / ECB)",
+  "description": "Convert between currencies using ECB reference rates, e.g. '100 usd to eur'. No key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "frankfurter",
+  "terms": {
+    "url": "https://frankfurter.dev/",
+    "attribution": "Rates: European Central Bank via Frankfurter",
+    "notes": "Free, no key; ECB rates update once per working day."
+  },
+  "triggers": {
+    "keywords": [
+      "convert",
+      "exchange",
+      "currency",
+      "fx"
+    ],
+    "phrases": [
+      "exchange rate",
+      " to eur",
+      " to usd",
+      " in euros",
+      " in dollars"
+    ]
+  },
+  "inputs": {
+    "from": {
+      "regex": "\\b([A-Za-z]{3})\\s+(?:to|in|into)\\s+[A-Za-z]{3}\\b",
+      "default": "USD",
+      "case": "upper",
+      "pattern": "^[A-Z]{3}$",
+      "description": "currency code"
+    },
+    "to": {
+      "regex": "\\b[A-Za-z]{3}\\s+(?:to|in|into)\\s+([A-Za-z]{3})\\b",
+      "default": "EUR",
+      "case": "upper",
+      "pattern": "^[A-Z]{3}$",
+      "description": "currency code"
+    }
+  },
+  "location": "none",
+  "request": {
+    "base_url": "https://api.frankfurter.dev",
+    "path": "/v1/latest",
+    "method": "GET",
+    "params": {
+      "base": "{inputs.from}",
+      "symbols": "{inputs.to}"
+    }
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "api.frankfurter.dev"
+  ],
+  "response": {
+    "extract": {
+      "rate": "rates.{inputs.to}",
+      "d": "date"
+    },
+    "replies": [
+      "1 {inputs.from} = {rate|rate} {inputs.to} (ECB reference rate, {d}). Data: Frankfurter",
+      "{inputs.from} to {inputs.to}: {rate|rate} on {d} (ECB via Frankfurter)"
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

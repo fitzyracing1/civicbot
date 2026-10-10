@@ -53,7 +53,57 @@ class Catalog:
             e = {"name": spec["name"], "file": f"skills/{f.name}", "title": spec.get("title", spec["name"]),
                  "kind": spec["kind"], "domains": spec["allowed_domains"], "sha256": hashlib.sha256(raw).hexdigest(),
                  "review": (reviewed or {}).get(spec["name"]) or prev.get("review") or {"status": "unreviewed"}}
+            if "cost" in spec:
+                e["cost"] = spec["cost"]
+                e["free"] = is_free(spec)
+            if "api_id" in spec:
+                e["api_id"] = spec["api_id"]
             out.append(e)
         index = {"catalog_version": 1, "skills": out}
         (d / "index.json").write_text(json.dumps(index, indent=2, ensure_ascii=False) + "\n")
         return index
+
+
+def is_free(spec: dict) -> bool:
+    """Free mode rule: the spec says cost "free" AND it needs no credential (auth none, or an optional key)."""
+    auth = spec.get("auth") or {"type": "none"}
+    return spec.get("cost") == "free" and (auth.get("type", "none") == "none" or auth.get("required") is False)
+
+
+class CatalogSet:
+    """Several catalogs searched in order (first match wins). Same read interface as Catalog."""
+
+    def __init__(self, catalogs: List[Catalog]):
+        self.catalogs = list(catalogs)
+        self.dir = self.catalogs[0].dir
+
+    def _find(self, name: str) -> Optional[Catalog]:
+        return next((c for c in self.catalogs if name in c.index), None)
+
+    def names(self) -> List[str]:
+        return sorted({n for c in self.catalogs for n in c.names()})
+
+    def entry(self, name: str) -> Optional[dict]:
+        c = self._find(name)
+        return c.entry(name) if c else None
+
+    def get(self, name: str) -> dict:
+        c = self._find(name)
+        if not c:
+            raise KeyError(f"'{name}' is not in the catalog")
+        return c.get(name)
+
+    def free_names(self) -> List[str]:
+        return [n for n in self.names() if (self.entry(n) or {}).get("free")]
+
+
+def free_catalog_dir() -> Path:
+    return _default_dir() / "free"
+
+
+def default_catalog() -> CatalogSet:
+    """The core reviewed catalog plus the free-API catalog added in v0.4 (catalog/free/)."""
+    cats = [Catalog()]
+    if (free_catalog_dir() / "index.json").exists():
+        cats.append(Catalog(str(free_catalog_dir())))
+    return CatalogSet(cats)

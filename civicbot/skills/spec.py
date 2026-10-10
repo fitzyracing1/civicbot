@@ -7,7 +7,7 @@ from importlib import resources
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from .template import PLACEHOLDER_RE, URL_RE, placeholders
+from .template import FILTERS, PLACEHOLDER_RE, URL_RE, placeholders
 
 SCHEMA = json.loads(resources.files("civicbot.skills").joinpath("schema.json").read_text("utf-8"))
 
@@ -172,6 +172,10 @@ def validate_spec(spec: Any, *, allow_builtin: bool = False) -> Dict[str, Any]:
         problems.append("request uses location.* but location is 'none'")
     # replies: no links (cost + spam), no @mentions, sane placeholders
     resp = spec["response"]
+    for k, pth in (resp.get("extract") or {}).items():
+        for name, flt in placeholders(pth):
+            if flt or not (name.startswith("inputs.") and name[len("inputs."):] in inputs):
+                problems.append(f"$.response.extract.{k}: only {{inputs.<name>}} placeholders are allowed in extract paths")
     names = set(resp.get("extract", {})) | {"items", "count"} | FREE_TEXT_VARS | {f"inputs.{k}" for k in inputs}
     for p, s in _walk_strings({"replies": resp["replies"], "empty_replies": resp.get("empty_replies", [])}, "$.response"):
         if URL_RE.search(s):
@@ -181,6 +185,12 @@ def validate_spec(spec: Any, *, allow_builtin: bool = False) -> Dict[str, Any]:
         for name, flt in placeholders(s):
             if name not in names and not name.startswith("location."):
                 problems.append(f"{p}: '{{{name}}}' is not extracted or known")
+            if flt and flt not in FILTERS:
+                problems.append(f"{p}: unknown filter '|{flt}'")
+    if "list" in resp:
+        for name, flt in placeholders(resp["list"].get("item", "")):
+            if flt and flt not in FILTERS:
+                problems.append(f"$.response.list.item: unknown filter '|{flt}'")
     if "list" in resp and not any("{items}" in r for r in resp["replies"]):
         problems.append("response.list is set but no reply uses {items}")
     if problems:

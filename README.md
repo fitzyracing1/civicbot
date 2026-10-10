@@ -9,9 +9,11 @@ the owner's robot account**.
 Owners can also **teach their robot new APIs** over time (weather, transit, open data, ...) by
 installing reviewed skills from the community catalog or their own spec files.
 
-> **Early prototype (v0.3, Oct 2026), open source under the MIT license.** Dry-run by default: it never
+> **Early prototype (v0.4, Oct 2026), open source under the MIT license.** Dry-run by default: it never
 > files a real 311 request, never sends a write-skill request, and never posts to X unless you explicitly
-> enable each of those. Not yet published to PyPI; install from source. Issues and PRs welcome.
+> enable each of those. **New in 0.4: free mode** with 37 free, keyless catalog skills, a directory of 120
+> free public APIs (each checked live), a `civicbot chat` REPL and a no-install web playground:
+> **https://fitzyracing1.github.io/civicbot/**. Issues and PRs welcome.
 
 ## What's in the box
 
@@ -67,6 +69,52 @@ python -m civicbot services bloomington-in
 python -m civicbot resolve "1 City Hall Sq, Boston, MA"
 python -m civicbot transit https://cdn.mbta.com/realtime/TripUpdates.pb --route Red
 ```
+
+## Free mode and the free API directory (v0.4)
+
+Anyone can use civicbot for free. The software is free, every catalog skill calls a free API that needs no key, and
+you can talk to a robot without an X account.
+
+```bash
+pip install civicbot
+civicbot chat --free --city "Bloomington, IN"        # REPL; nothing is posted, no 311 is filed
+civicbot chat --offline -c "weather tomorrow"         # recorded sample data, no network
+civicbot simulate --demo skills --offline --free      # fake X, shows exactly what would be posted
+civicbot apis --category "Water, tides & marine"      # the verified free-API directory (also --json, --cors, --no-key)
+civicbot skill catalog                                # 4 core + 33 free skills, review status, "free" flag
+```
+
+**Free mode** is turned on by `--free`, `CIVICBOT_FREE=1` or a profile with `"plan": "free"`. It is additive: without it
+nothing changes. In free mode:
+- the robot only learns catalog skills tagged `"cost": "free"` that need no credential (auth `none`, or an optional key),
+  and it refuses skills from URLs and files;
+- non-free skills already installed are hidden;
+- `city-311-report` still drafts the report but **never files it**, even with `send_enabled` and a city key;
+- write skills can't be enabled.
+
+**Free catalog** (`civicbot/catalog/free/`, merged with the core catalog by `default_catalog()`): 33 reviewed,
+sha256-pinned read-only skills. Each was checked live on 2026-10-10 (`scripts/free_apis/check_skills.py`) and is
+replayed offline in CI from recorded responses. They cover weather tomorrow, air quality, UV, sunrise/sunset, waves,
+elevation, GB grid carbon, IPMA (Portugal), NWS alerts, USGS and EMSC earthquakes, NHC storms, NASA EONET,
+FEMA declarations, USGS river gauges, NOAA tides, MBTA alerts, Tube status, SeeClickFix and NYC 311 nearby,
+congressional district, ZIP lookup, Wikipedia (summary and nearby), moon phases, public holidays, currency (ECB),
+Open Library, FDA food recalls, NHTSA vehicle recalls, Open Food Facts barcodes, the ISS and the next rocket launch.
+
+**Spec additions (backward compatible):** optional `cost` (`free`/`free-key`/`paid`) and `api_id`; input
+`"case": "upper"|"lower"`; `{inputs.x}` inside `response.extract` paths (e.g. `rates.{inputs.to}`); and the reply filters
+`rate`, `money`, `ms_date` and `ms_time`. Unknown filters are now rejected at validation time. Old specs validate unchanged.
+
+**Free API directory** (`civicbot/data/free_apis.json`, built by `scripts/free_apis/verify.py`): 132 candidates were
+each called once with an identifying User-Agent, at most one call per host every 1.2 s, with no redirects followed
+and one retry. On 2026-10-10, 120 answered correctly and are listed with category, what they answer, base URL, auth,
+limits and terms, docs, a CORS flag and the verified date. The 12 that failed that day are left out. Browse it at
+https://fitzyracing1.github.io/civicbot/apis.html.
+
+**Running a real robot on X is not free.** The X API is pay-per-use: mentions are read per resource, and summoned
+replies cost $0.010 each (see https://docs.x.com/x-api/getting-started/pricing, checked 2026-10-10). The honest guide,
+including a GitHub Actions template that runs **your** robot on a schedule in shadow mode by default
+(`examples/github-actions/civicbot-robot.yml`, plus `civicbot connect --listen` and `civicbot run --once`), is at
+https://fitzyracing1.github.io/civicbot/guide.html.
 
 ## Bring your own robot account (setup for each person)
 
@@ -375,8 +423,9 @@ per-app ceiling (item 8); (e) each city's API key and terms for real filing.
 
 ## Tests
 
-`pytest -q -m "not live"` runs 137 unit tests with mocked HTTP; the 9 live tests are skipped unless
-`CIVICBOT_LIVE=1`. They cover:
+`pytest -q -m "not live"` runs 221 unit tests with mocked HTTP (137 from v0.3, unchanged, plus 84 for v0.4: free mode,
+spec additions, CLI `chat`/`apis`/`simulate --free`/`run` (shadow), the directory's shape, and each free skill replayed from its
+recorded live response and routed from its sample question). The 42 live tests are skipped unless `CIVICBOT_LIVE=1`. They cover:
 - PKCE S256, the authorize URL, code exchange (state check, TTL, Basic auth), refresh and revoke
 - the encrypted token store (no plaintext on disk, mode 600, wrong key fails)
 - the adapter's disabled guard, mentions/reply payloads, token auto-refresh and 429 handling
@@ -388,7 +437,7 @@ per-app ceiling (item 8); (e) each city's API key and terms for real filing.
   YES, per-robot secrets, catalog hash pinning, OpenAPI import, the `skill` CLI and the skills demo
 
 `CIVICBOT_LIVE=1 pytest -m live` adds the read-only live city checks (Bloomington, Boston, SeeClickFix
-New Haven, a live-schema dry run, MBTA GTFS-RT) and the four catalog skills.
+New Haven, a live-schema dry run, MBTA GTFS-RT), the four core catalog skills and the 33 free catalog skills.
 
 ## Limitations / next steps
 

@@ -1,0 +1,1 @@
+{"skill": "nws-alerts", "text": "any alerts", "home_city": "Bloomington, IN", "lat": 39.1653, "lng": -86.5264, "now": 1791673045.5575414, "recorded": "2026-10-10", "response": {"@context": {"@version": "1.1"}, "type": "FeatureCollection", "features": [], "title": "Current watches, warnings, and advisories for 39.1653 N, 86.5264 W", "updated": "2026-10-10T22:55:07+00:00"}}

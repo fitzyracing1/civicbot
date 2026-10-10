@@ -6,6 +6,8 @@
   "kind": "read",
   "version": "1.0.0",
   "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "open-meteo-forecast",
   "terms": {
     "url": "https://open-meteo.com/en/terms",
     "attribution": "Weather data by Open-Meteo.com (CC BY 4.0)",

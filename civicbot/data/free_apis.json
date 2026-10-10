@@ -1,0 +1,2621 @@
+{
+ "generated": "2026-10-10",
+ "checked_with": "civicbot/0.4 (+https://github.com/fitzyracing1/civicbot; free API directory check)",
+ "count": 120,
+ "categories": [
+  "311 & service requests",
+  "Air quality & environment",
+  "Alerts & hazards",
+  "Bikeshare & micromobility",
+  "Books, words & knowledge",
+  "City open data",
+  "Flights & space",
+  "Geocoding & places",
+  "Government & safety",
+  "Money",
+  "Portugal & EU",
+  "Sun, time & holidays",
+  "Transit",
+  "Water, tides & marine",
+  "Weather & climate"
+ ],
+ "note": "Each entry was called live on the 'verified.date'. 'auth: none' = no key or signup. Respect each API's limits/terms; civicbot is not affiliated with any provider.",
+ "apis": [
+  {
+   "id": "open-meteo-forecast",
+   "name": "Open-Meteo Forecast",
+   "category": "Weather & climate",
+   "answers": "Current weather, hourly and 16-day forecasts anywhere",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://open-meteo.com/en/docs",
+   "limits": "Free for non-commercial use, < 10,000 calls/day; CC BY 4.0 attribution",
+   "format": "json",
+   "base_url": "https://api.open-meteo.com",
+   "example": "https://api.open-meteo.com/v1/forecast?latitude=39.1653&longitude=-86.5264&current=temperature_2m,weather_code",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 638,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "open-meteo-tomorrow",
+    "open-meteo-weather",
+    "sun-times",
+    "uv-index"
+   ]
+  },
+  {
+   "id": "open-meteo-archive",
+   "name": "Open-Meteo Historical Weather",
+   "category": "Weather & climate",
+   "answers": "What the weather was on a past date (back to 1940)",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://open-meteo.com/en/docs/historical-weather-api",
+   "limits": "Non-commercial free tier; CC BY 4.0",
+   "format": "json",
+   "base_url": "https://archive-api.open-meteo.com",
+   "example": "https://archive-api.open-meteo.com/v1/archive?latitude=39.1653&longitude=-86.5264&start_date=2026-10-01&end_date=2026-10-02&daily=temperature_2m_max",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 693,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "open-meteo-climate",
+   "name": "Open-Meteo Climate Change",
+   "category": "Weather & climate",
+   "answers": "Long-range climate projections for a place",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://open-meteo.com/en/docs/climate-api",
+   "limits": "Non-commercial free tier; CC BY 4.0",
+   "format": "json",
+   "base_url": "https://climate-api.open-meteo.com",
+   "example": "https://climate-api.open-meteo.com/v1/climate?latitude=39.1653&longitude=-86.5264&start_date=2030-01-01&end_date=2030-01-02&models=MRI_AGCM3_2_S&daily=temperature_2m_max",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 1002,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "open-meteo-ensemble",
+   "name": "Open-Meteo Ensemble",
+   "category": "Weather & climate",
+   "answers": "How uncertain the forecast is (ensemble spread)",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://open-meteo.com/en/docs/ensemble-api",
+   "limits": "Non-commercial free tier; CC BY 4.0",
+   "format": "json",
+   "base_url": "https://ensemble-api.open-meteo.com",
+   "example": "https://ensemble-api.open-meteo.com/v1/ensemble?latitude=39.1653&longitude=-86.5264&hourly=temperature_2m&models=icon_seamless&forecast_days=1",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 957,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "nws-points",
+   "name": "US National Weather Service (forecast)",
+   "category": "Weather & climate",
+   "answers": "Official NWS forecast for a US point",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://www.weather.gov/documentation/services-web-api",
+   "limits": "No key; send a User-Agent identifying your app; public domain",
+   "format": "json",
+   "base_url": "https://api.weather.gov",
+   "example": "https://api.weather.gov/points/39.1653,-86.5264",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 154,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "nws-stations-obs",
+   "name": "NWS latest observation",
+   "category": "Weather & climate",
+   "answers": "Latest observed conditions at a weather station",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://www.weather.gov/documentation/services-web-api",
+   "limits": "No key; User-Agent required",
+   "format": "json",
+   "base_url": "https://api.weather.gov",
+   "example": "https://api.weather.gov/stations/KBMG/observations/latest",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 204,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "met-no",
+   "name": "MET Norway Locationforecast",
+   "category": "Weather & climate",
+   "answers": "Global forecast from the Norwegian Meteorological Institute",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://api.met.no/weatherapi/locationforecast/2.0/documentation",
+   "limits": "No key; identifying User-Agent required; cache responses; CC BY 4.0",
+   "format": "json",
+   "base_url": "https://api.met.no",
+   "example": "https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=38.7223&lon=-9.1393",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 830,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "ipma-forecast",
+   "name": "IPMA Portugal city forecast",
+   "category": "Weather & climate",
+   "answers": "5-day forecast for Portuguese cities (Lisbon = 1110600)",
+   "auth": "none",
+   "region": "PT",
+   "docs": "https://api.ipma.pt/",
+   "limits": "No key; IPMA open data terms (attribution)",
+   "format": "json",
+   "base_url": "https://api.ipma.pt",
+   "example": "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 1172,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "ipma-forecast"
+   ]
+  },
+  {
+   "id": "ipma-sea",
+   "name": "IPMA sea state",
+   "category": "Weather & climate",
+   "answers": "Wave height and sea temperature forecast for Portugal's coast",
+   "auth": "none",
+   "region": "PT",
+   "docs": "https://api.ipma.pt/",
+   "limits": "No key; attribution",
+   "format": "json",
+   "base_url": "https://api.ipma.pt",
+   "example": "https://api.ipma.pt/open-data/forecast/oceanography/daily/hp-daily-sea-forecast-day0.json",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 1443,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "rainviewer",
+   "name": "RainViewer weather maps",
+   "category": "Weather & climate",
+   "answers": "Is it raining nearby? Radar frames index",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://www.rainviewer.com/api.html",
+   "limits": "Free for personal/non-commercial use; attribution",
+   "format": "json",
+   "base_url": "https://api.rainviewer.com",
+   "example": "https://api.rainviewer.com/public/weather-maps.json",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 833,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "dwd-brightsky",
+   "name": "Bright Sky (DWD, Germany)",
+   "category": "Weather & climate",
+   "answers": "German Weather Service forecasts and observations",
+   "auth": "none",
+   "region": "DE",
+   "docs": "https://brightsky.dev/docs/",
+   "limits": "No key; DWD open data",
+   "format": "json",
+   "base_url": "https://api.brightsky.dev",
+   "example": "https://api.brightsky.dev/current_weather?lat=52.52&lon=13.40",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 678,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "open-meteo-air",
+   "name": "Open-Meteo Air Quality",
+   "category": "Air quality & environment",
+   "answers": "US AQI, PM2.5, ozone, pollen (Europe) for a place",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://open-meteo.com/en/docs/air-quality-api",
+   "limits": "Non-commercial free tier; CAMS data, CC BY 4.0",
+   "format": "json",
+   "base_url": "https://air-quality-api.open-meteo.com",
+   "example": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=39.1653&longitude=-86.5264&current=us_aqi,pm2_5",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 878,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "air-quality"
+   ]
+  },
+  {
+   "id": "uk-carbon-intensity",
+   "name": "UK Carbon Intensity",
+   "category": "Air quality & environment",
+   "answers": "How clean the UK grid is right now (good time to run the dishwasher?)",
+   "auth": "none",
+   "region": "UK",
+   "docs": "https://carbon-intensity.github.io/api-definitions/",
+   "limits": "No key; CC BY 4.0",
+   "format": "json",
+   "base_url": "https://api.carbonintensity.org.uk",
+   "example": "https://api.carbonintensity.org.uk/intensity",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 892,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "uk-carbon-intensity"
+   ]
+  },
+  {
+   "id": "sensor-community",
+   "name": "Sensor.Community",
+   "category": "Air quality & environment",
+   "answers": "Citizen-science PM sensors near a point",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://github.com/opendata-stuttgart/meta/wiki/EN-APIs",
+   "limits": "No key; ODbL; don't poll faster than 5 min",
+   "format": "json",
+   "base_url": "https://data.sensor.community",
+   "example": "https://data.sensor.community/airrohr/v1/filter/area=38.7223,-9.1393,2",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 1259,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "currentuvindex",
+   "name": "Current UV Index",
+   "category": "Air quality & environment",
+   "answers": "UV index now and forecast for a place",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://currentuvindex.com/api",
+   "limits": "No key; free; fair use",
+   "format": "json",
+   "base_url": "https://currentuvindex.com",
+   "example": "https://currentuvindex.com/api/v1/uvi?latitude=39.1653&longitude=-86.5264",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 240,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "openaq",
+   "name": "OpenAQ",
+   "category": "Air quality & environment",
+   "answers": "Official air-quality station readings worldwide",
+   "auth": "free-key",
+   "region": "Global",
+   "docs": "https://docs.openaq.org/",
+   "limits": "Free key; 60 req/min",
+   "format": "json",
+   "base_url": "https://api.openaq.org",
+   "example": "https://api.openaq.org/v3/locations?limit=1",
+   "key_note": "Free API key (X-API-Key header) since v3",
+   "cors": false,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 401,
+    "ms": 862,
+    "mode": "reachable (key required, not called with a key)"
+   },
+   "skills": []
+  },
+  {
+   "id": "nasa-power",
+   "name": "NASA POWER",
+   "category": "Air quality & environment",
+   "answers": "Solar radiation and climate data for a point (solar panel questions)",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://power.larc.nasa.gov/docs/services/api/",
+   "limits": "No key; NASA open data",
+   "format": "json",
+   "base_url": "https://power.larc.nasa.gov",
+   "example": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=ALLSKY_SFC_SW_DWN&community=RE&longitude=-86.5264&latitude=39.1653&start=20260901&end=20260902&format=JSON",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 209,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "nws-alerts",
+   "name": "NWS active alerts",
+   "category": "Alerts & hazards",
+   "answers": "Weather warnings and watches for a US point",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://www.weather.gov/documentation/services-web-api",
+   "limits": "No key; User-Agent required",
+   "format": "json",
+   "base_url": "https://api.weather.gov",
+   "example": "https://api.weather.gov/alerts/active?point=39.1653,-86.5264",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 336,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "nws-alerts"
+   ]
+  },
+  {
+   "id": "usgs-quakes-feed",
+   "name": "USGS earthquakes (feed)",
+   "category": "Alerts & hazards",
+   "answers": "Earthquakes M2.5+ worldwide in the last day",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php",
+   "limits": "No key; public domain",
+   "format": "json",
+   "base_url": "https://earthquake.usgs.gov",
+   "example": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojson",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 108,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "usgs-quakes-query",
+   "name": "USGS earthquake search",
+   "category": "Alerts & hazards",
+   "answers": "Recent earthquakes near a place",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://earthquake.usgs.gov/fdsnws/event/1/",
+   "limits": "No key; public domain",
+   "format": "json",
+   "base_url": "https://earthquake.usgs.gov",
+   "example": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&latitude=39.1653&longitude=-86.5264&maxradiuskm=1000&limit=3&orderby=time",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 475,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "earthquakes-near"
+   ]
+  },
+  {
+   "id": "emsc-quakes",
+   "name": "EMSC Seismic Portal",
+   "category": "Alerts & hazards",
+   "answers": "European-Mediterranean earthquakes (great for Portugal)",
+   "auth": "none",
+   "region": "EU",
+   "docs": "https://www.seismicportal.eu/fdsn-wsevent.html",
+   "limits": "No key; fair use",
+   "format": "json",
+   "base_url": "https://www.seismicportal.eu",
+   "example": "https://www.seismicportal.eu/fdsnws/event/1/query?format=json&limit=3",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 2095,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "emsc-earthquakes"
+   ]
+  },
+  {
+   "id": "nasa-eonet",
+   "name": "NASA EONET",
+   "category": "Alerts & hazards",
+   "answers": "Open natural events: wildfires, storms, volcanoes",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://eonet.gsfc.nasa.gov/docs/v3",
+   "limits": "No key; NASA open data",
+   "format": "json",
+   "base_url": "https://eonet.gsfc.nasa.gov",
+   "example": "https://eonet.gsfc.nasa.gov/api/v3/events?limit=3&status=open",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 1429,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "natural-events"
+   ]
+  },
+  {
+   "id": "nhc-storms",
+   "name": "NOAA National Hurricane Center",
+   "category": "Alerts & hazards",
+   "answers": "Active Atlantic/Pacific tropical storms",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://www.nhc.noaa.gov/aboutrss.shtml",
+   "limits": "No key; public domain",
+   "format": "json",
+   "base_url": "https://www.nhc.noaa.gov",
+   "example": "https://www.nhc.noaa.gov/CurrentStorms.json",
+   "cors": false,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 101,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "active-storms"
+   ]
+  },
+  {
+   "id": "fema-declarations",
+   "name": "OpenFEMA disaster declarations",
+   "category": "Alerts & hazards",
+   "answers": "Recent federal disaster declarations for a state",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://www.fema.gov/about/openfema/api",
+   "limits": "No key; public domain",
+   "format": "json",
+   "base_url": "https://www.fema.gov",
+   "example": "https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?$top=2&$orderby=declarationDate%20desc&$filter=state%20eq%20%27IN%27",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 148,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "fema-disasters"
+   ]
+  },
+  {
+   "id": "swpc-kp",
+   "name": "NOAA Space Weather (Kp)",
+   "category": "Alerts & hazards",
+   "answers": "Geomagnetic activity: chance of northern lights",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://www.swpc.noaa.gov/products/planetary-k-index",
+   "limits": "No key; public domain",
+   "format": "json",
+   "base_url": "https://services.swpc.noaa.gov",
+   "example": "https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 96,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "swpc-aurora",
+   "name": "NOAA aurora forecast",
+   "category": "Alerts & hazards",
+   "answers": "30-minute aurora probability grid",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://www.swpc.noaa.gov/products/aurora-30-minute-forecast",
+   "limits": "No key; public domain; large (~1 MB)",
+   "format": "json",
+   "base_url": "https://services.swpc.noaa.gov",
+   "example": "https://services.swpc.noaa.gov/json/ovation_aurora_latest.json",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 133,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "uk-floods",
+   "name": "UK Environment Agency floods",
+   "category": "Alerts & hazards",
+   "answers": "Current flood warnings in England",
+   "auth": "none",
+   "region": "UK",
+   "docs": "https://environment.data.gov.uk/flood-monitoring/doc/reference",
+   "limits": "No key; Open Government Licence",
+   "format": "json",
+   "base_url": "https://environment.data.gov.uk",
+   "example": "https://environment.data.gov.uk/flood-monitoring/id/floods?_limit=3",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 761,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "noaa-tides",
+   "name": "NOAA tide predictions",
+   "category": "Water, tides & marine",
+   "answers": "Today's high and low tides at a US station",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://api.tidesandcurrents.noaa.gov/api/prod/",
+   "limits": "No key; public domain; pass application=<your app>",
+   "format": "json",
+   "base_url": "https://api.tidesandcurrents.noaa.gov",
+   "example": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?date=today&station=8443970&product=predictions&datum=MLLW&time_zone=lst_ldt&units=english&interval=hilo&format=json&application=civicbot",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 478,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "tides-today"
+   ]
+  },
+  {
+   "id": "noaa-water-level",
+   "name": "NOAA water level",
+   "category": "Water, tides & marine",
+   "answers": "Latest observed water level at a tide gauge",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://api.tidesandcurrents.noaa.gov/api/prod/",
+   "limits": "No key; public domain",
+   "format": "json",
+   "base_url": "https://api.tidesandcurrents.noaa.gov",
+   "example": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?date=latest&station=8443970&product=water_level&datum=MLLW&time_zone=lst_ldt&units=english&format=json&application=civicbot",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 378,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "usgs-water-iv",
+   "name": "USGS Water Services (instantaneous)",
+   "category": "Water, tides & marine",
+   "answers": "River flow and gauge height right now",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://waterservices.usgs.gov/docs/instantaneous-values/",
+   "limits": "No key; public domain (legacy service; USGS is moving to api.waterdata.usgs.gov)",
+   "format": "json",
+   "base_url": "https://waterservices.usgs.gov",
+   "example": "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=03353000&parameterCd=00060",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 480,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "river-flow"
+   ]
+  },
+  {
+   "id": "usgs-waterdata",
+   "name": "USGS Water Data OGC API",
+   "category": "Water, tides & marine",
+   "answers": "Monitoring locations and latest values (new USGS API)",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://api.waterdata.usgs.gov/",
+   "limits": "No key for low volume (free key raises limits); public domain",
+   "format": "json",
+   "base_url": "https://api.waterdata.usgs.gov",
+   "example": "https://api.waterdata.usgs.gov/ogcapi/v0/collections/monitoring-locations/items?f=json&limit=1",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 220,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "open-meteo-marine",
+   "name": "Open-Meteo Marine",
+   "category": "Water, tides & marine",
+   "answers": "Wave height and swell for a coastal point",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://open-meteo.com/en/docs/marine-weather-api",
+   "limits": "Non-commercial free tier; CC BY 4.0",
+   "format": "json",
+   "base_url": "https://marine-api.open-meteo.com",
+   "example": "https://marine-api.open-meteo.com/v1/marine?latitude=38.68&longitude=-9.35&current=wave_height",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 867,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "marine-waves"
+   ]
+  },
+  {
+   "id": "open-meteo-flood",
+   "name": "Open-Meteo Flood (GloFAS)",
+   "category": "Water, tides & marine",
+   "answers": "River discharge forecast near a place",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://open-meteo.com/en/docs/flood-api",
+   "limits": "Non-commercial free tier; CC BY 4.0",
+   "format": "json",
+   "base_url": "https://flood-api.open-meteo.com",
+   "example": "https://flood-api.open-meteo.com/v1/flood?latitude=39.1653&longitude=-86.5264&daily=river_discharge&forecast_days=3",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 944,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "mbta-v3",
+   "name": "MBTA V3",
+   "category": "Transit",
+   "answers": "Boston subway/bus predictions, alerts, stops",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://www.mbta.com/developers/v3-api",
+   "limits": "No key: 20 req/min; free key: 1000 req/min",
+   "format": "json",
+   "base_url": "https://api-v3.mbta.com",
+   "example": "https://api-v3.mbta.com/predictions?filter[stop]=place-pktrm&page[limit]=2",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 474,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "mbta-next-trains"
+   ]
+  },
+  {
+   "id": "mbta-alerts",
+   "name": "MBTA service alerts",
+   "category": "Transit",
+   "answers": "Current Boston transit disruptions",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://www.mbta.com/developers/v3-api",
+   "limits": "No key: 20 req/min",
+   "format": "json",
+   "base_url": "https://api-v3.mbta.com",
+   "example": "https://api-v3.mbta.com/alerts?filter[activity]=BOARD&page[limit]=2",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 600,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "mbta-alerts"
+   ]
+  },
+  {
+   "id": "tfl-status",
+   "name": "TfL Unified API (line status)",
+   "category": "Transit",
+   "answers": "London Tube line status",
+   "auth": "none",
+   "region": "UK",
+   "docs": "https://api-portal.tfl.gov.uk/",
+   "limits": "Works without a key at low volume; free key for 500 req/min",
+   "format": "json",
+   "base_url": "https://api.tfl.gov.uk",
+   "example": "https://api.tfl.gov.uk/Line/Mode/tube/Status",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 1286,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "tube-status"
+   ]
+  },
+  {
+   "id": "tfl-bikepoints",
+   "name": "TfL BikePoints",
+   "category": "Transit",
+   "answers": "Santander Cycles docks in London",
+   "auth": "none",
+   "region": "UK",
+   "docs": "https://api-portal.tfl.gov.uk/",
+   "limits": "No key at low volume",
+   "format": "json",
+   "base_url": "https://api.tfl.gov.uk",
+   "example": "https://api.tfl.gov.uk/BikePoint/BikePoints_1",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 314,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "carris-metropolitana",
+   "name": "Carris Metropolitana",
+   "category": "Transit",
+   "answers": "Lisbon-area bus arrivals, stops, alerts",
+   "auth": "none",
+   "region": "PT",
+   "docs": "https://github.com/carrismetropolitana/api",
+   "limits": "No key; fair use",
+   "format": "json",
+   "base_url": "https://api.carrismetropolitana.pt",
+   "example": "https://api.carrismetropolitana.pt/v2/arrivals/by_stop/020429",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 1166,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "carris-metropolitana-arrivals"
+   ]
+  },
+  {
+   "id": "carris-alerts",
+   "name": "Carris Metropolitana alerts",
+   "category": "Transit",
+   "answers": "Service alerts for Lisbon-area buses",
+   "auth": "none",
+   "region": "PT",
+   "docs": "https://github.com/carrismetropolitana/api",
+   "limits": "No key",
+   "format": "json",
+   "base_url": "https://api.carrismetropolitana.pt",
+   "example": "https://api.carrismetropolitana.pt/v2/alerts",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 1232,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "mta-subway-alerts",
+   "name": "MTA subway alerts (JSON)",
+   "category": "Transit",
+   "answers": "NYC subway service alerts",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://api.mta.info/",
+   "limits": "No key (since 2024)",
+   "format": "json",
+   "base_url": "https://api-endpoint.mta.info",
+   "example": "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/camsys%2Fsubway-alerts.json",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 1372,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "mta-gtfs-rt",
+   "name": "MTA subway GTFS-Realtime",
+   "category": "Transit",
+   "answers": "NYC subway arrivals (protobuf; civicbot's gtfs-transit built-in reads it)",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://api.mta.info/",
+   "limits": "No key",
+   "format": "protobuf",
+   "base_url": "https://api-endpoint.mta.info",
+   "example": "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-ace",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 772,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "mbta-gtfs-rt",
+   "name": "MBTA GTFS-Realtime",
+   "category": "Transit",
+   "answers": "Boston trip updates (protobuf)",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://www.mbta.com/developers/gtfs-realtime",
+   "limits": "No key",
+   "format": "protobuf",
+   "base_url": "https://cdn.mbta.com",
+   "example": "https://cdn.mbta.com/realtime/TripUpdates.pb",
+   "cors": false,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 1365,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "bart-legacy",
+   "name": "BART API",
+   "category": "Transit",
+   "answers": "SF Bay Area real-time departures",
+   "auth": "demo-key",
+   "region": "US",
+   "docs": "https://api.bart.gov/docs/overview/index.aspx",
+   "limits": "",
+   "format": "json",
+   "base_url": "https://api.bart.gov",
+   "example": "https://api.bart.gov/api/etd.aspx?cmd=etd&orig=12th&key=MW9S-E7SL-26DU-VV8V&json=y",
+   "key_note": "BART publishes a shared public key in its docs; register for your own",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 216,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "irail",
+   "name": "iRail (Belgian railways)",
+   "category": "Transit",
+   "answers": "Belgian train departures",
+   "auth": "none",
+   "region": "EU",
+   "docs": "https://docs.irail.be/",
+   "limits": "No key; 3 req/s; send User-Agent",
+   "format": "json",
+   "base_url": "https://api.irail.be",
+   "example": "https://api.irail.be/v1/liveboard/?station=Gent-Sint-Pieters&format=json&lang=en",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 337,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "swiss-transport",
+   "name": "Swiss public transport (transport.opendata.ch)",
+   "category": "Transit",
+   "answers": "Swiss departures and connections",
+   "auth": "none",
+   "region": "EU",
+   "docs": "https://transport.opendata.ch/docs.html",
+   "limits": "No key; fair use",
+   "format": "json",
+   "base_url": "https://transport.opendata.ch",
+   "example": "https://transport.opendata.ch/v1/stationboard?station=Zurich%20HB&limit=2",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 1126,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "entur",
+   "name": "Entur (Norway)",
+   "category": "Transit",
+   "answers": "Norwegian journey planner (GraphQL, POST)",
+   "auth": "none",
+   "region": "EU",
+   "docs": "https://developer.entur.org/",
+   "limits": "No key; send ET-Client-Name header",
+   "format": "json",
+   "base_url": "https://api.entur.io",
+   "example": "https://api.entur.io/geocoder/v1/autocomplete?text=oslo&size=1",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 747,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "adsb-lol",
+   "name": "adsb.lol",
+   "category": "Flights & space",
+   "answers": "Aircraft within N nautical miles of a point",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://api.adsb.lol/docs",
+   "limits": "No key; ODbL; fair use",
+   "format": "json",
+   "base_url": "https://api.adsb.lol",
+   "example": "https://api.adsb.lol/v2/point/40.64/-73.78/5",
+   "cors": false,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 840,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "gbfs-citibike",
+   "name": "Citi Bike (NYC) GBFS",
+   "category": "Bikeshare & micromobility",
+   "answers": "Bikes and docks available at each station",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://github.com/MobilityData/gbfs",
+   "limits": "No key; GBFS open data (operator license)",
+   "format": "json",
+   "base_url": "https://gbfs.citibikenyc.com",
+   "example": "https://gbfs.citibikenyc.com/gbfs/en/station_status.json",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 792,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "gbfs-divvy",
+   "name": "Divvy (Chicago) GBFS",
+   "category": "Bikeshare & micromobility",
+   "answers": "Bikes and docks available at each station",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://github.com/MobilityData/gbfs",
+   "limits": "No key; GBFS open data (operator license)",
+   "format": "json",
+   "base_url": "https://gbfs.divvybikes.com",
+   "example": "https://gbfs.divvybikes.com/gbfs/en/station_status.json",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 654,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "gbfs-baywheels",
+   "name": "Bay Wheels (SF) GBFS",
+   "category": "Bikeshare & micromobility",
+   "answers": "Bikes and docks available at each station",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://github.com/MobilityData/gbfs",
+   "limits": "No key; GBFS open data (operator license)",
+   "format": "json",
+   "base_url": "https://gbfs.lyftbikes.com",
+   "example": "https://gbfs.lyftbikes.com/gbfs/en/station_status.json",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 1270,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "gbfs-capital-bikeshare",
+   "name": "Capital Bikeshare (DC) GBFS",
+   "category": "Bikeshare & micromobility",
+   "answers": "Bikes and docks available at each station",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://github.com/MobilityData/gbfs",
+   "limits": "No key; GBFS open data (operator license)",
+   "format": "json",
+   "base_url": "https://gbfs.capitalbikeshare.com",
+   "example": "https://gbfs.capitalbikeshare.com/gbfs/en/station_status.json",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 598,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "gbfs-bluebikes",
+   "name": "Bluebikes (Boston) GBFS",
+   "category": "Bikeshare & micromobility",
+   "answers": "Bikes and docks available at each station",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://github.com/MobilityData/gbfs",
+   "limits": "No key; GBFS open data (operator license)",
+   "format": "json",
+   "base_url": "https://gbfs.bluebikes.com",
+   "example": "https://gbfs.bluebikes.com/gbfs/en/station_status.json",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 644,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "gbfs-biketown",
+   "name": "BIKETOWN (Portland) GBFS",
+   "category": "Bikeshare & micromobility",
+   "answers": "Bikes and docks available at each station",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://github.com/MobilityData/gbfs",
+   "limits": "No key; GBFS open data (operator license)",
+   "format": "json",
+   "base_url": "https://gbfs.biketownpdx.com",
+   "example": "https://gbfs.biketownpdx.com/gbfs/en/station_status.json",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 519,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "citybikes",
+   "name": "CityBikes API",
+   "category": "Bikeshare & micromobility",
+   "answers": "Bikeshare availability in 600+ cities (incl. Lisbon GIRA)",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://api.citybik.es/v2/",
+   "limits": "No key; fair use; AGPL project",
+   "format": "json",
+   "base_url": "https://api.citybik.es",
+   "example": "https://api.citybik.es/v2/networks/gira",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 1035,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "open-charge-map",
+   "name": "Open Charge Map",
+   "category": "Bikeshare & micromobility",
+   "answers": "EV chargers worldwide",
+   "auth": "free-key",
+   "region": "Global",
+   "docs": "https://openchargemap.org/site/develop/api",
+   "limits": "Free key; CC BY-SA 4.0",
+   "format": "json",
+   "base_url": "https://api.openchargemap.io",
+   "example": "https://api.openchargemap.io/v3/poi?maxresults=1&countrycode=PT",
+   "key_note": "Free API key required",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 403,
+    "ms": 180,
+    "mode": "reachable (key required, not called with a key)"
+   },
+   "skills": []
+  },
+  {
+   "id": "open311-bloomington",
+   "name": "Bloomington, IN Open311",
+   "category": "311 & service requests",
+   "answers": "Which problems the city accepts (GET services); reads are keyless",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://wiki.open311.org/GeoReport_v2/",
+   "limits": "Reads keyless; FILING needs a city-issued key (civicbot keeps filing dry-run)",
+   "format": "json",
+   "base_url": "https://bloomington.in.gov",
+   "example": "https://bloomington.in.gov/crm/open311/v2/services.json",
+   "cors": false,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 452,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "open311-boston",
+   "name": "Boston Open311",
+   "category": "311 & service requests",
+   "answers": "Which problems the city accepts (GET services); reads are keyless",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://wiki.open311.org/GeoReport_v2/",
+   "limits": "Reads keyless; FILING needs a city-issued key (civicbot keeps filing dry-run)",
+   "format": "json",
+   "base_url": "https://311.boston.gov",
+   "example": "https://311.boston.gov/open311/v2/services.json",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 553,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "open311-austin",
+   "name": "Austin Open311",
+   "category": "311 & service requests",
+   "answers": "Which problems the city accepts (GET services); reads are keyless",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://wiki.open311.org/GeoReport_v2/",
+   "limits": "Reads keyless; FILING needs a city-issued key (civicbot keeps filing dry-run)",
+   "format": "json",
+   "base_url": "https://311.austintexas.gov",
+   "example": "https://311.austintexas.gov/open311/v2/services.json",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 443,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "open311-brookline",
+   "name": "Brookline, MA Open311",
+   "category": "311 & service requests",
+   "answers": "Which problems the city accepts (GET services); reads are keyless",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://wiki.open311.org/GeoReport_v2/",
+   "limits": "Reads keyless; FILING needs a city-issued key (civicbot keeps filing dry-run)",
+   "format": "json",
+   "base_url": "https://spot.brooklinema.gov",
+   "example": "https://spot.brooklinema.gov/open311/v2/services.json",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 682,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "seeclickfix",
+   "name": "SeeClickFix API v2",
+   "category": "311 & service requests",
+   "answers": "Recent issues reported near a point (hundreds of US towns)",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://dev.seeclickfix.com/",
+   "limits": "No key for reads; fair use",
+   "format": "json",
+   "base_url": "https://seeclickfix.com",
+   "example": "https://seeclickfix.com/api/v2/issues?lat=41.3083&lng=-72.9259&per_page=2",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 1181,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "seeclickfix-nearby"
+   ]
+  },
+  {
+   "id": "nyc-311",
+   "name": "NYC 311 requests (Socrata)",
+   "category": "311 & service requests",
+   "answers": "Recent NYC 311 complaints near a place",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://dev.socrata.com/foundry/data.cityofnewyork.us/erm2-nwe9",
+   "limits": "No key: throttled per IP; free app token raises limits",
+   "format": "json",
+   "base_url": "https://data.cityofnewyork.us",
+   "example": "https://data.cityofnewyork.us/resource/erm2-nwe9.json?$limit=1",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 787,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "nyc-311-nearby"
+   ]
+  },
+  {
+   "id": "chicago-311",
+   "name": "Chicago 311 requests (Socrata)",
+   "category": "311 & service requests",
+   "answers": "Recent Chicago 311 requests near a place",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://dev.socrata.com/foundry/data.cityofchicago.org/v6vf-nfxy",
+   "limits": "No key: throttled; free app token raises limits",
+   "format": "json",
+   "base_url": "https://data.cityofchicago.org",
+   "example": "https://data.cityofchicago.org/resource/v6vf-nfxy.json?$select=sr_type,status,created_date&$where=within_circle(location,41.8837,-87.6319,400)&$order=created_date%20DESC&$limit=2",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 693,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "chicago-311-nearby"
+   ]
+  },
+  {
+   "id": "sf-311",
+   "name": "San Francisco 311 cases (Socrata)",
+   "category": "311 & service requests",
+   "answers": "Recent SF 311 cases near a place",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://dev.socrata.com/foundry/data.sf.gov/vw6y-z8j6",
+   "limits": "No key: throttled",
+   "format": "json",
+   "base_url": "https://data.sf.gov",
+   "example": "https://data.sf.gov/resource/vw6y-z8j6.json?$limit=1",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 659,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "seattle-csr",
+   "name": "Seattle customer service requests (Socrata)",
+   "category": "311 & service requests",
+   "answers": "Recent Seattle service requests",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://dev.socrata.com/foundry/data.seattle.gov/5ngg-rpne",
+   "limits": "No key: throttled",
+   "format": "json",
+   "base_url": "https://data.seattle.gov",
+   "example": "https://data.seattle.gov/resource/5ngg-rpne.json?$limit=1",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 658,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "austin-311",
+   "name": "Austin 311 (Transportation & Public Works)",
+   "category": "311 & service requests",
+   "answers": "Recent Austin street/traffic 311 requests",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://dev.socrata.com/foundry/data.austintexas.gov/38mr-dwji",
+   "limits": "No key: throttled",
+   "format": "json",
+   "base_url": "https://data.austintexas.gov",
+   "example": "https://data.austintexas.gov/resource/38mr-dwji.json?$limit=1",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 661,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "nola-311",
+   "name": "New Orleans 311 (Socrata)",
+   "category": "311 & service requests",
+   "answers": "Recent New Orleans 311 calls",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://dev.socrata.com/foundry/data.nola.gov/2jgv-pqrq",
+   "limits": "No key: throttled",
+   "format": "json",
+   "base_url": "https://data.nola.gov",
+   "example": "https://data.nola.gov/resource/2jgv-pqrq.json?$limit=1",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 664,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "kc-311",
+   "name": "Kansas City 311 (Socrata)",
+   "category": "311 & service requests",
+   "answers": "Kansas City 311 reported issues",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://dev.socrata.com/foundry/data.kcmo.org/d4px-6rwg",
+   "limits": "No key: throttled",
+   "format": "json",
+   "base_url": "https://data.kcmo.org",
+   "example": "https://data.kcmo.org/resource/d4px-6rwg.json?$limit=1",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 779,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "boston-311-ckan",
+   "name": "Boston 311 (CKAN datastore)",
+   "category": "311 & service requests",
+   "answers": "Boston 311 requests, new system",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://data.boston.gov/dataset/311-service-requests",
+   "limits": "No key; ODC PDDL",
+   "format": "json",
+   "base_url": "https://data.boston.gov",
+   "example": "https://data.boston.gov/api/3/action/datastore_search?resource_id=254adca6-64ab-4c5c-9fc0-a6da622be185&limit=1",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 481,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "nyc-restaurants",
+   "name": "NYC restaurant inspections",
+   "category": "City open data",
+   "answers": "Latest health grade for a NYC restaurant",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://dev.socrata.com/foundry/data.cityofnewyork.us/43nn-pn8j",
+   "limits": "No key: throttled",
+   "format": "json",
+   "base_url": "https://data.cityofnewyork.us",
+   "example": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?$limit=1",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 1518,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "chicago-food",
+   "name": "Chicago food inspections",
+   "category": "City open data",
+   "answers": "Food inspection results by restaurant",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://dev.socrata.com/foundry/data.cityofchicago.org/4ijn-s7e5",
+   "limits": "No key: throttled",
+   "format": "json",
+   "base_url": "https://data.cityofchicago.org",
+   "example": "https://data.cityofchicago.org/resource/4ijn-s7e5.json?$limit=1",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 1098,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "chicago-crimes",
+   "name": "Chicago crimes",
+   "category": "City open data",
+   "answers": "Reported crimes near a place (last 7 days lag)",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://dev.socrata.com/foundry/data.cityofchicago.org/ijzp-q8t2",
+   "limits": "No key: throttled",
+   "format": "json",
+   "base_url": "https://data.cityofchicago.org",
+   "example": "https://data.cityofchicago.org/resource/ijzp-q8t2.json?$limit=1",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 1078,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "sf-fire-calls",
+   "name": "SF fire department calls",
+   "category": "City open data",
+   "answers": "Recent SF fire/EMS calls for service",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://dev.socrata.com/foundry/data.sf.gov/nuek-vuh3",
+   "limits": "No key: throttled",
+   "format": "json",
+   "base_url": "https://data.sf.gov",
+   "example": "https://data.sf.gov/resource/nuek-vuh3.json?$limit=1",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 588,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "seattle-911-fire",
+   "name": "Seattle Real-Time Fire 911",
+   "category": "City open data",
+   "answers": "Fire/EMS dispatches in Seattle, near real time",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://dev.socrata.com/foundry/data.seattle.gov/kzjm-xkqj",
+   "limits": "No key: throttled",
+   "format": "json",
+   "base_url": "https://data.seattle.gov",
+   "example": "https://data.seattle.gov/resource/kzjm-xkqj.json?$limit=1",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 937,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "la-crime",
+   "name": "Los Angeles NIBRS offenses",
+   "category": "City open data",
+   "answers": "Reported offenses in LA",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://dev.socrata.com/foundry/data.lacity.org/k7nn-b2ep",
+   "limits": "No key: throttled",
+   "format": "json",
+   "base_url": "https://data.lacity.org",
+   "example": "https://data.lacity.org/resource/k7nn-b2ep.json?$limit=1",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 552,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "socrata-discovery",
+   "name": "Socrata Discovery API",
+   "category": "City open data",
+   "answers": "Find datasets on 100s of city portals",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://dev.socrata.com/docs/other/discovery",
+   "limits": "No key",
+   "format": "json",
+   "base_url": "https://api.us.socrata.com",
+   "example": "https://api.us.socrata.com/api/catalog/v1?q=311&limit=1",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 652,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "dados-gov-pt",
+   "name": "dados.gov.pt",
+   "category": "Portugal & EU",
+   "answers": "Portugal's national open data portal",
+   "auth": "none",
+   "region": "PT",
+   "docs": "https://dados.gov.pt/pt/docapi/",
+   "limits": "No key",
+   "format": "json",
+   "base_url": "https://dados.gov.pt",
+   "example": "https://dados.gov.pt/api/1/datasets/?q=transportes&page_size=1",
+   "cors": false,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 926,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "geoapi-pt",
+   "name": "GeoAPI.pt",
+   "category": "Portugal & EU",
+   "answers": "Which Portuguese parish/municipality a point is in",
+   "auth": "none",
+   "region": "PT",
+   "docs": "https://geoapi.pt/",
+   "limits": "No key; fair use",
+   "format": "json",
+   "base_url": "https://json.geoapi.pt",
+   "example": "https://json.geoapi.pt/gps/38.7223,-9.1393",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 7678,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "data-europa",
+   "name": "data.europa.eu search",
+   "category": "Portugal & EU",
+   "answers": "Search EU open datasets",
+   "auth": "none",
+   "region": "EU",
+   "docs": "https://data.europa.eu/en/about/api",
+   "limits": "No key",
+   "format": "json",
+   "base_url": "https://data.europa.eu",
+   "example": "https://data.europa.eu/api/hub/search/search?q=bicycle&limit=1",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 1300,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "eurostat",
+   "name": "Eurostat statistics",
+   "category": "Portugal & EU",
+   "answers": "EU statistics (population, prices) by country",
+   "auth": "none",
+   "region": "EU",
+   "docs": "https://wikis.ec.europa.eu/display/EUROSTATHELP/API+Statistics+-+data+query",
+   "limits": "No key",
+   "format": "json",
+   "base_url": "https://ec.europa.eu",
+   "example": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_pjan?geo=PT&sex=T&age=TOTAL&lastTimePeriod=1",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 625,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "ecb-fx",
+   "name": "ECB exchange rates (SDMX)",
+   "category": "Money",
+   "answers": "Official euro reference rates",
+   "auth": "none",
+   "region": "EU",
+   "docs": "https://data.ecb.europa.eu/help/api/overview",
+   "limits": "No key",
+   "format": "json",
+   "base_url": "https://data-api.ecb.europa.eu",
+   "example": "https://data-api.ecb.europa.eu/service/data/EXR/D.USD.EUR.SP00.A?lastNObservations=1&format=jsondata",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 1027,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "uk-police",
+   "name": "UK Police data",
+   "category": "City open data",
+   "answers": "Street-level crimes near a UK point",
+   "auth": "none",
+   "region": "UK",
+   "docs": "https://data.police.uk/docs/",
+   "limits": "No key; 15 req/s; OGL",
+   "format": "json",
+   "base_url": "https://data.police.uk",
+   "example": "https://data.police.uk/api/crimes-street/all-crime?lat=51.5074&lng=-0.1278",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 1225,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "postcodes-io",
+   "name": "Postcodes.io",
+   "category": "Geocoding & places",
+   "answers": "UK postcode lookup",
+   "auth": "none",
+   "region": "UK",
+   "docs": "https://postcodes.io/docs",
+   "limits": "No key; MIT; OGL data",
+   "format": "json",
+   "base_url": "https://api.postcodes.io",
+   "example": "https://api.postcodes.io/postcodes/SW1A1AA",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 158,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "census-geocoder",
+   "name": "US Census Geocoder",
+   "category": "Geocoding & places",
+   "answers": "US street address to coordinates (+ districts)",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.html",
+   "limits": "No key; public domain",
+   "format": "json",
+   "base_url": "https://geocoding.geo.census.gov",
+   "example": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=401%20N%20Morton%20St%2C%20Bloomington%2C%20IN&benchmark=Public_AR_Current&format=json",
+   "cors": false,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 471,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "census-geographies",
+   "name": "Census geographies by point",
+   "category": "Geocoding & places",
+   "answers": "Which county, tract and congressional district a point is in",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.html",
+   "limits": "No key; public domain",
+   "format": "json",
+   "base_url": "https://geocoding.geo.census.gov",
+   "example": "https://geocoding.geo.census.gov/geocoder/geographies/coordinates?x=-86.5264&y=39.1653&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+   "cors": false,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 537,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "census-district"
+   ]
+  },
+  {
+   "id": "nominatim",
+   "name": "OpenStreetMap Nominatim",
+   "category": "Geocoding & places",
+   "answers": "Address/place search worldwide",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://nominatim.org/release-docs/latest/api/Search/",
+   "limits": "Max 1 req/s, identifying User-Agent, no bulk geocoding, attribution (ODbL)",
+   "format": "json",
+   "base_url": "https://nominatim.openstreetmap.org",
+   "example": "https://nominatim.openstreetmap.org/search?q=Rossio%2C%20Lisboa&format=jsonv2&limit=1",
+   "terms": "https://operations.osmfoundation.org/policies/nominatim/",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 138,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "photon",
+   "name": "Photon (komoot)",
+   "category": "Geocoding & places",
+   "answers": "Fast OSM place search / autocomplete",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://photon.komoot.io/",
+   "limits": "No key; fair use; ODbL",
+   "format": "json",
+   "base_url": "https://photon.komoot.io",
+   "example": "https://photon.komoot.io/api/?q=lisboa&limit=1",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 1057,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "open-meteo-geocoding",
+   "name": "Open-Meteo Geocoding",
+   "category": "Geocoding & places",
+   "answers": "City name to coordinates (great for chat)",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://open-meteo.com/en/docs/geocoding-api",
+   "limits": "Non-commercial free tier",
+   "format": "json",
+   "base_url": "https://geocoding-api.open-meteo.com",
+   "example": "https://geocoding-api.open-meteo.com/v1/search?name=Lisbon&count=1",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 960,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "fcc-area",
+   "name": "FCC Area API",
+   "category": "Geocoding & places",
+   "answers": "County and FIPS code for a US point",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://geo.fcc.gov/api/census/",
+   "limits": "No key",
+   "format": "json",
+   "base_url": "https://geo.fcc.gov",
+   "example": "https://geo.fcc.gov/api/census/area?lat=39.1653&lon=-86.5264&format=json",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 658,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "zippopotam",
+   "name": "Zippopotam.us",
+   "category": "Geocoding & places",
+   "answers": "Postal code to place name (60+ countries)",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://www.zippopotam.us/",
+   "limits": "No key",
+   "format": "json",
+   "base_url": "https://api.zippopotam.us",
+   "example": "https://api.zippopotam.us/us/47401",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 152,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "zip-lookup"
+   ]
+  },
+  {
+   "id": "open-meteo-elevation",
+   "name": "Open-Meteo Elevation",
+   "category": "Geocoding & places",
+   "answers": "Elevation of a point",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://open-meteo.com/en/docs/elevation-api",
+   "limits": "Non-commercial free tier",
+   "format": "json",
+   "base_url": "https://api.open-meteo.com",
+   "example": "https://api.open-meteo.com/v1/elevation?latitude=39.1653&longitude=-86.5264",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 700,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "elevation"
+   ]
+  },
+  {
+   "id": "wikipedia-geosearch",
+   "name": "Wikipedia nearby",
+   "category": "Geocoding & places",
+   "answers": "Wikipedia articles about places near a point",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://www.mediawiki.org/wiki/API:Geosearch",
+   "limits": "No key; send User-Agent; CC BY-SA",
+   "format": "json",
+   "base_url": "https://en.wikipedia.org",
+   "example": "https://en.wikipedia.org/w/api.php?action=query&list=geosearch&gscoord=39.1653%7C-86.5264&gsradius=2000&gslimit=3&format=json&origin=*",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 386,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "wikipedia-nearby"
+   ]
+  },
+  {
+   "id": "sunrise-sunset",
+   "name": "Sunrise-Sunset.org",
+   "category": "Sun, time & holidays",
+   "answers": "Sunrise, sunset and twilight for a place/date",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://sunrise-sunset.org/api",
+   "limits": "No key; attribution requested",
+   "format": "json",
+   "base_url": "https://api.sunrise-sunset.org",
+   "example": "https://api.sunrise-sunset.org/json?lat=39.1653&lng=-86.5264&formatted=0",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 260,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "usno-rstt",
+   "name": "US Naval Observatory sun & moon",
+   "category": "Sun, time & holidays",
+   "answers": "Sun/moon rise and set, moon phase",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://aa.usno.navy.mil/data/api",
+   "limits": "No key; public domain",
+   "format": "json",
+   "base_url": "https://aa.usno.navy.mil",
+   "example": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-10-10&coords=39.1653,-86.5264&tz=-4",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 979,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "usno-moon",
+   "name": "USNO moon phases",
+   "category": "Sun, time & holidays",
+   "answers": "Upcoming moon phases",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://aa.usno.navy.mil/data/api",
+   "limits": "No key",
+   "format": "json",
+   "base_url": "https://aa.usno.navy.mil",
+   "example": "https://aa.usno.navy.mil/api/moon/phases/date?date=2026-10-10&nump=4",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 1000,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "moon-phase"
+   ]
+  },
+  {
+   "id": "nager-date",
+   "name": "Nager.Date public holidays",
+   "category": "Sun, time & holidays",
+   "answers": "Public holidays for 100+ countries",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://date.nager.at/Api",
+   "limits": "No key; fair use; MIT",
+   "format": "json",
+   "base_url": "https://date.nager.at",
+   "example": "https://date.nager.at/api/v3/PublicHolidays/2026/US",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 145,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "nager-next",
+   "name": "Nager.Date next holidays",
+   "category": "Sun, time & holidays",
+   "answers": "Next public holidays in a country",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://date.nager.at/Api",
+   "limits": "No key",
+   "format": "json",
+   "base_url": "https://date.nager.at",
+   "example": "https://date.nager.at/api/v3/NextPublicHolidays/PT",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 173,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "public-holidays"
+   ]
+  },
+  {
+   "id": "openholidays",
+   "name": "OpenHolidays API",
+   "category": "Sun, time & holidays",
+   "answers": "Public and school holidays in Europe (by region)",
+   "auth": "none",
+   "region": "EU",
+   "docs": "https://www.openholidaysapi.org/en/",
+   "limits": "No key; fair use",
+   "format": "json",
+   "base_url": "https://openholidaysapi.org",
+   "example": "https://openholidaysapi.org/PublicHolidays?countryIsoCode=PT&languageIsoCode=EN&validFrom=2026-01-01&validTo=2026-12-31",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 991,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "timeapi",
+   "name": "TimeAPI.io",
+   "category": "Sun, time & holidays",
+   "answers": "Current time in a time zone",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://timeapi.io/swagger/index.html",
+   "limits": "No key; fair use",
+   "format": "json",
+   "base_url": "https://timeapi.io",
+   "example": "https://timeapi.io/api/time/current/zone?timeZone=Europe%2FLisbon",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 1134,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "frankfurter",
+   "name": "Frankfurter",
+   "category": "Money",
+   "answers": "Currency conversion (ECB reference rates)",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://frankfurter.dev/",
+   "limits": "No key; no limits stated; ECB data",
+   "format": "json",
+   "base_url": "https://api.frankfurter.dev",
+   "example": "https://api.frankfurter.dev/v1/latest?base=USD&symbols=EUR",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 196,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "currency-convert"
+   ]
+  },
+  {
+   "id": "treasury-fiscal",
+   "name": "US Treasury Fiscal Data",
+   "category": "Money",
+   "answers": "Debt to the penny, interest rates, exchange rates",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://fiscaldata.treasury.gov/api-documentation/",
+   "limits": "No key",
+   "format": "json",
+   "base_url": "https://api.fiscaldata.treasury.gov",
+   "example": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/debt_to_penny?sort=-record_date&page%5Bsize%5D=1",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 666,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "bls-v1",
+   "name": "BLS Public Data API v1",
+   "category": "Money",
+   "answers": "Consumer price index (inflation) and jobs data",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://www.bls.gov/developers/",
+   "limits": "v1 needs no key: 25 queries/day; free v2 key: 500/day",
+   "format": "json",
+   "base_url": "https://api.bls.gov",
+   "example": "https://api.bls.gov/publicAPI/v1/timeseries/data/CUUR0000SA0",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 418,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "coinbase-spot",
+   "name": "Coinbase spot price",
+   "category": "Money",
+   "answers": "Spot price of BTC/ETH in a currency",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://docs.cdp.coinbase.com/coinbase-app/track-apis/prices",
+   "limits": "No key for public prices",
+   "format": "json",
+   "base_url": "https://api.coinbase.com",
+   "example": "https://api.coinbase.com/v2/prices/BTC-USD/spot",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 249,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "wikipedia-summary",
+   "name": "Wikipedia page summary",
+   "category": "Books, words & knowledge",
+   "answers": "Short summary of any topic",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://en.wikipedia.org/api/rest_v1/",
+   "limits": "No key; 200 req/s; send User-Agent; CC BY-SA",
+   "format": "json",
+   "base_url": "https://en.wikipedia.org",
+   "example": "https://en.wikipedia.org/api/rest_v1/page/summary/Lisbon",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 163,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "wikipedia-summary"
+   ]
+  },
+  {
+   "id": "wikipedia-onthisday",
+   "name": "Wikipedia On this day",
+   "category": "Books, words & knowledge",
+   "answers": "Historical events on today's date",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://api.wikimedia.org/wiki/Feed_API/Reference/On_this_day",
+   "limits": "No key at low volume; CC BY-SA",
+   "format": "json",
+   "base_url": "https://api.wikimedia.org",
+   "example": "https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/selected/10/10",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 299,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "open-library",
+   "name": "Open Library search",
+   "category": "Books, words & knowledge",
+   "answers": "Find a book, author, first published year",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://openlibrary.org/developers/api",
+   "limits": "No key; send User-Agent; be gentle",
+   "format": "json",
+   "base_url": "https://openlibrary.org",
+   "example": "https://openlibrary.org/search.json?q=the+power+broker&limit=1",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 789,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "book-lookup"
+   ]
+  },
+  {
+   "id": "gutendex",
+   "name": "Gutendex (Project Gutenberg)",
+   "category": "Books, words & knowledge",
+   "answers": "Free public-domain e-books",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://gutendex.com/",
+   "limits": "No key",
+   "format": "json",
+   "base_url": "https://gutendex.com",
+   "example": "https://gutendex.com/books/?search=dickens",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 173,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "loc",
+   "name": "Library of Congress",
+   "category": "Books, words & knowledge",
+   "answers": "Search Library of Congress collections",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://www.loc.gov/apis/",
+   "limits": "No key; rate limited (~20 req/10 s)",
+   "format": "json",
+   "base_url": "https://www.loc.gov",
+   "example": "https://www.loc.gov/search/?q=bloomington&fo=json&c=1",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 163,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "datamuse",
+   "name": "Datamuse",
+   "category": "Books, words & knowledge",
+   "answers": "Words that mean/rhyme/sound like",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://www.datamuse.com/api/",
+   "limits": "No key; 100,000 req/day",
+   "format": "json",
+   "base_url": "https://api.datamuse.com",
+   "example": "https://api.datamuse.com/words?ml=city&max=3",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 753,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "artic",
+   "name": "Art Institute of Chicago",
+   "category": "Books, words & knowledge",
+   "answers": "Artworks, artists and exhibitions",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://api.artic.edu/docs/",
+   "limits": "No key; 60 req/min; CC0 data",
+   "format": "json",
+   "base_url": "https://api.artic.edu",
+   "example": "https://api.artic.edu/api/v1/artworks?limit=1&fields=id,title",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 210,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "met-museum",
+   "name": "The Met Collection",
+   "category": "Books, words & knowledge",
+   "answers": "Objects in The Metropolitan Museum of Art",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://metmuseum.github.io/",
+   "limits": "No key; 80 req/s; CC0",
+   "format": "json",
+   "base_url": "https://collectionapi.metmuseum.org",
+   "example": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436535",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 556,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "federal-register",
+   "name": "Federal Register",
+   "category": "Government & safety",
+   "answers": "New federal rules and notices",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://www.federalregister.gov/developers/documentation/api/v1",
+   "limits": "No key",
+   "format": "json",
+   "base_url": "https://www.federalregister.gov",
+   "example": "https://www.federalregister.gov/api/v1/documents.json?per_page=1",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 381,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "usaspending",
+   "name": "USAspending.gov",
+   "category": "Government & safety",
+   "answers": "Federal spending by agency or place",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://api.usaspending.gov/",
+   "limits": "No key",
+   "format": "json",
+   "base_url": "https://api.usaspending.gov",
+   "example": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 317,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "openfda-food",
+   "name": "openFDA food recalls",
+   "category": "Government & safety",
+   "answers": "Recent food recalls (by state or product)",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://open.fda.gov/apis/food/enforcement/",
+   "limits": "No key: 240 req/min, 1,000/day per IP; free key: 120,000/day",
+   "format": "json",
+   "base_url": "https://api.fda.gov",
+   "example": "https://api.fda.gov/food/enforcement.json?limit=1",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 237,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "food-recalls"
+   ]
+  },
+  {
+   "id": "nhtsa-recalls",
+   "name": "NHTSA vehicle recalls",
+   "category": "Government & safety",
+   "answers": "Recalls for a car make/model/year",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://www.nhtsa.gov/nhtsa-datasets-and-apis",
+   "limits": "No key",
+   "format": "json",
+   "base_url": "https://api.nhtsa.gov",
+   "example": "https://api.nhtsa.gov/recalls/recallsByVehicle?make=honda&model=accord&modelYear=2012",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 113,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "vehicle-recalls"
+   ]
+  },
+  {
+   "id": "nhtsa-vpic",
+   "name": "NHTSA vPIC VIN decoder",
+   "category": "Government & safety",
+   "answers": "Decode a VIN",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://vpic.nhtsa.dot.gov/api/",
+   "limits": "No key",
+   "format": "json",
+   "base_url": "https://vpic.nhtsa.dot.gov",
+   "example": "https://vpic.nhtsa.dot.gov/api/vehicles/decodevinvalues/1HGCM82633A004352?format=json",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 263,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "cpsc-recalls",
+   "name": "CPSC product recalls",
+   "category": "Government & safety",
+   "answers": "Consumer product recalls",
+   "auth": "none",
+   "region": "US",
+   "docs": "https://www.cpsc.gov/Recalls/CPSC-Recalls-Application-Program-Interface-API-Information",
+   "limits": "No key",
+   "format": "json",
+   "base_url": "https://www.saferproducts.gov",
+   "example": "https://www.saferproducts.gov/RestWebServices/Recall?format=json&RecallDateStart=2026-09-01",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 153,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  },
+  {
+   "id": "open-food-facts",
+   "name": "Open Food Facts",
+   "category": "Government & safety",
+   "answers": "Ingredients, allergens and Nutri-Score by barcode",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://openfoodfacts.github.io/openfoodfacts-server/api/",
+   "limits": "No key; 100 req/min for product reads; send User-Agent; ODbL",
+   "format": "json",
+   "base_url": "https://world.openfoodfacts.org",
+   "example": "https://world.openfoodfacts.org/api/v2/product/737628064502.json?fields=product_name,brands",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 604,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "food-barcode"
+   ]
+  },
+  {
+   "id": "wheretheiss",
+   "name": "Where the ISS at?",
+   "category": "Flights & space",
+   "answers": "Where the space station is right now",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://wheretheiss.at/w/developer",
+   "limits": "No key; ~1 req/s",
+   "format": "json",
+   "base_url": "https://api.wheretheiss.at",
+   "example": "https://api.wheretheiss.at/v1/satellites/25544",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 811,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "iss-location"
+   ]
+  },
+  {
+   "id": "launch-library",
+   "name": "Launch Library 2",
+   "category": "Flights & space",
+   "answers": "Next rocket launches",
+   "auth": "none",
+   "region": "Global",
+   "docs": "https://thespacedevs.com/llapi",
+   "limits": "No key: 15 req/hour",
+   "format": "json",
+   "base_url": "https://ll.thespacedevs.com",
+   "example": "https://ll.thespacedevs.com/2.3.0/launches/upcoming/?limit=1&mode=list",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 376,
+    "mode": "live GET ok"
+   },
+   "skills": [
+    "next-launch"
+   ]
+  },
+  {
+   "id": "nasa-neows",
+   "name": "NASA Near Earth Objects",
+   "category": "Flights & space",
+   "answers": "Asteroids passing Earth today",
+   "auth": "demo-key",
+   "region": "Global",
+   "docs": "https://api.nasa.gov/",
+   "limits": "",
+   "format": "json",
+   "base_url": "https://api.nasa.gov",
+   "example": "https://api.nasa.gov/neo/rest/v1/feed/today?detailed=false&api_key=DEMO_KEY",
+   "key_note": "DEMO_KEY rate limits as above",
+   "cors": true,
+   "verified": {
+    "date": "2026-10-10",
+    "http": 200,
+    "ms": 304,
+    "mode": "live GET ok"
+   },
+   "skills": []
+  }
+ ]
+}

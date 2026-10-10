@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>civicbot: a free civic robot you own</title>
+<meta name="description" content="civicbot is an open-source robot for X that answers local questions from free public APIs and drafts 311 reports. Free mode, 120 verified free APIs, and a no-install playground.">
+<link rel="stylesheet" href="assets/style.css"></head>
+<body>
+<main>
+<section class="hero">
+  <p class="pill ok">v0.4: free mode</p>
+  <h1>A civic robot you own, running on free public APIs.</h1>
+  <p class="lead">civicbot is an open-source robot for X. You @mention <em>your</em> robot to ask about weather, air
+  quality, transit, tides, earthquakes, recalls, holidays and nearby 311 reports. It can also draft a 311 report for you.
+  The software is free. So are the <b id="nskills">37</b> built-in catalog skills and the
+  <b id="napis">120</b> public APIs listed here, each checked live.</p>
+  <p><a class="btn" href="playground.html">Try it in your browser</a> &nbsp;
+     <a class="btn alt" href="apis.html">Browse free APIs</a> &nbsp;
+     <a class="btn alt" href="guide.html">Run your own robot</a></p>
+</section>
+
+<h2>Quickstart (no X account needed)</h2>
+<pre><code>pip install civicbot
+civicbot chat --free --city "Bloomington, IN"       # talk to your robot in the terminal
+civicbot chat --offline -c "weather tomorrow"        # recorded sample data, no network at all
+civicbot simulate --demo skills --offline            # watch two robots learn skills (nothing is posted)
+civicbot apis --category Transit                     # the verified free-API directory
+civicbot skill catalog                               # every catalog skill and its review status</code></pre>
+<p class="small">Python 3.10+. Chatting and simulating never contact X and never file a 311 request.</p>
+
+<h2>What “free mode” means</h2>
+<div class="grid">
+  <div class="card"><h3>Free, keyless skills only</h3><p><code>--free</code>, <code>CIVICBOT_FREE=1</code> or profile
+  <code>plan: free</code>. The robot only learns catalog skills tagged <code>cost: free</code> that need no API key.
+  It refuses skills from URLs and files.</p></div>
+  <div class="card"><h3>311 stays a dry run</h3><p>The robot still finds your city's 311 service and drafts the report.
+  In free mode it never files one, even if sending is enabled.</p></div>
+  <div class="card"><h3>Nothing removed</h3><p>Every v0.3 feature still works: bring-your-own-robot OAuth,
+  user-taught skills, encrypted secrets and write skills behind a YES. Free mode is an add-on, not a fork.</p></div>
+  <div class="card"><h3>Honest about X</h3><p>The software and these APIs are free. Posting on X through its API is
+  <b>pay-per-use</b>. See <a href="guide.html#cost">the cost section of the guide</a> for the options that cost nothing.</p></div>
+</div>
+
+<h2>Skills your robot can learn</h2>
+<p class="small">Say <code>@yourrobot learn &lt;skill&gt;</code>. Every skill below makes read-only GET requests to one
+allow-listed domain. Each was reviewed and checked live, and is pinned by sha256.</p>
+<div class="grid" id="skills"></div>
+
+<h2>How it works</h2>
+<div class="grid">
+  <div class="card"><h3>1. You own the robot</h3><p>Create a separate X account for your robot and connect it with
+  OAuth 2.0 PKCE. It only answers you (plus anyone you allowlist), and only after you consent.</p></div>
+  <div class="card"><h3>2. Skills are JSON</h3><p>A skill is a small reviewed spec: triggers, one GET request, and
+  reply templates. It has no code, no links in replies and no @mentions, and SSRF-guarded fetches run under rate limits.</p></div>
+  <div class="card"><h3>3. Free APIs do the work</h3><p>Open-Meteo, NWS, USGS, NOAA, FEMA, openFDA, NHTSA, MBTA,
+  TfL, IPMA, Wikipedia, Open Library and more. <a href="apis.html">See the directory</a>.</p></div>
+</div>
+</main>
+<script src="assets/nav.js"></script>
+<script>
+fetch("data/skills.json").then(r => r.json()).then(d => {
+  document.getElementById("nskills").textContent = d.skills.length;
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  document.getElementById("skills").innerHTML = d.skills.map(s =>
+    `<div class="card"><h3>${esc(s.title)}</h3><p>${esc(s.description)}</p>
+     <p><code>@yourrobot learn ${esc(s.name)}</code></p><p class="small">try: “${esc(s.try)}”</p></div>`).join("");
+}).catch(() => {});
+fetch("data/free_apis.json").then(r => r.json()).then(d => { document.getElementById("napis").textContent = d.count; }).catch(() => {});
+</script>
+</body></html>

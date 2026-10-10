@@ -1,0 +1,57 @@
+{
+  "spec_version": 1,
+  "name": "iss-location",
+  "title": "Where is the ISS? (wheretheiss.at)",
+  "description": "Current position, altitude and speed of the International Space Station. No key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "wheretheiss",
+  "terms": {
+    "url": "https://wheretheiss.at/w/developer",
+    "attribution": "Data: wheretheiss.at",
+    "notes": "No key; about 1 request/second."
+  },
+  "triggers": {
+    "keywords": [
+      "iss"
+    ],
+    "phrases": [
+      "space station",
+      "where is the iss"
+    ]
+  },
+  "location": "none",
+  "request": {
+    "base_url": "https://api.wheretheiss.at",
+    "path": "/v1/satellites/25544",
+    "method": "GET",
+    "params": {}
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "api.wheretheiss.at"
+  ],
+  "response": {
+    "extract": {
+      "lat": "latitude",
+      "lon": "longitude",
+      "alt": "altitude",
+      "vel": "velocity",
+      "vis": "visibility"
+    },
+    "replies": [
+      "The ISS is over {lat}°, {lon}° at {alt|round} km, moving {vel|round} km/h ({vis}). Data: wheretheiss.at",
+      "ISS right now: lat {lat}, lon {lon}, {alt|round} km up, {vel|round} km/h. (wheretheiss.at)"
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

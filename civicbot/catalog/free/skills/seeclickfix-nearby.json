@@ -1,0 +1,67 @@
+{
+  "spec_version": 1,
+  "name": "seeclickfix-nearby",
+  "title": "Recent SeeClickFix reports nearby",
+  "description": "Recent public issue reports (potholes, streetlights...) near a place, from SeeClickFix (many US towns). Read-only; no key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "seeclickfix",
+  "terms": {
+    "url": "https://dev.seeclickfix.com/",
+    "attribution": "Data: SeeClickFix",
+    "notes": "Public read API, no key for reads; be gentle (one request per question)."
+  },
+  "triggers": {
+    "keywords": [
+      "seeclickfix",
+      "issues"
+    ],
+    "phrases": [
+      "seeclickfix reports",
+      "open issues near",
+      "issues near"
+    ]
+  },
+  "location": "required",
+  "request": {
+    "base_url": "https://seeclickfix.com",
+    "path": "/api/v2/issues",
+    "method": "GET",
+    "params": {
+      "lat": "{location.lat}",
+      "lng": "{location.lng}",
+      "per_page": 3,
+      "sort": "created_at",
+      "status": "open,acknowledged"
+    }
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "seeclickfix.com"
+  ],
+  "response": {
+    "list": {
+      "path": "issues",
+      "item": "{summary} ({status|lower}, {created_at|date})",
+      "max": 3,
+      "join": "; "
+    },
+    "replies": [
+      "Open reports near {location.text}: {items}. Data: SeeClickFix",
+      "SeeClickFix near {location.text}: {items}"
+    ],
+    "empty_replies": [
+      "No open SeeClickFix reports near {location.text}."
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

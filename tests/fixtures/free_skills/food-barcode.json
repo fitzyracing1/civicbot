@@ -1,0 +1,1 @@
+{"skill": "food-barcode", "text": "barcode 3017624010701", "home_city": "", "lat": null, "lng": null, "now": 1791673035.241687, "recorded": "2026-10-10", "response": {"code": "3017624010701", "product": {"brands": "Ferrero", "nutriscore_grade": "e", "product_name": "Nutella"}, "status": 1, "status_verbose": "product found"}}

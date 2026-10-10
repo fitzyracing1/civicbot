@@ -96,7 +96,8 @@ def cmd_simulate(a) -> int:
     store = ProfileStore()
     for spec in specs:
         robot, owner, city = _parse_robot_spec(spec)
-        p = RobotProfile(robot_handle=robot, owner_handle=owner or (a.owner or a.user), home_city=city or a.home_city)
+        p = RobotProfile(robot_handle=robot, owner_handle=owner or (a.owner or a.user), home_city=city or a.home_city,
+                         plan="free" if getattr(a, "free", False) else "")
         p.grant_consent()  # simulated connect: owner accepted the consent screen
         store.put(p)
     adapters = {}
@@ -145,6 +146,8 @@ def cmd_connect(a) -> int:
     import os
     from .robot.profile import CONSENT_ACTIONS, FOLLOWUP_ACTION
     from .x.oauth import DEFAULT_SCOPES, OAuthConfig, XOAuth2
+    if not (a.client_id and a.redirect_uri):
+        raise SystemExit("connect: --client-id and --redirect-uri are required (or use --listen)")
     scopes = tuple(a.scopes.split()) if a.scopes else DEFAULT_SCOPES
     oauth = XOAuth2(OAuthConfig(client_id=a.client_id, redirect_uri=a.redirect_uri, scopes=scopes))
     url, pending = oauth.start(robot_hint=a.robot.lstrip("@"), owner_hint=a.owner.lstrip("@"))
@@ -200,7 +203,8 @@ def _load_any_spec(ref: str, fetcher=None):
         return validate_spec((fetcher or SafeFetcher()).get_spec(ref)), ref
     if os.path.exists(ref):
         return load_spec_file(ref), os.path.abspath(ref)
-    return Catalog().get(ref), f"catalog:{ref}"
+    from .skills import default_catalog
+    return default_catalog().get(ref), f"catalog:{ref}"
 
 
 def cmd_skill(a) -> int:
@@ -208,10 +212,12 @@ def cmd_skill(a) -> int:
     from .skills import BUILTIN_SKILLS, Catalog, SpecError, from_openapi, load_spec_file
     try:
         if a.action == "catalog":
-            cat = Catalog()
+            from .skills import default_catalog
+            cat = default_catalog()
             for n in cat.names():
                 e = cat.entry(n)
-                print(f"{n:32} {e['kind']:5}  {', '.join(e['domains']):30} {e['review'].get('status')}  {e['title']}")
+                print(f"{n:32} {e['kind']:5}  {', '.join(e['domains']):30} {e['review'].get('status')}"
+                      f"{'  free' if e.get('free') else ''}  {e['title']}")
             return 0
         if a.action == "validate":
             spec = load_spec_file(a.ref)
@@ -385,13 +391,19 @@ def main(argv: Optional[list] = None) -> int:
                    help="'robots': two users/robots/cities; 'skills': owners teach their robots catalog skills")
     s.add_argument("--offline", action="store_true", help="use bundled fixtures instead of the network")
     s.add_argument("-v", "--verbose", action="store_true")
+    s.add_argument("--free", action="store_true", help="free mode: only free keyless catalog skills; 311 dry-run")
     s.set_defaults(fn=cmd_simulate)
     c = sub.add_parser("connect", help="print the X OAuth 2.0 PKCE URL for a robot account (no network)")
     c.add_argument("--robot", required=True); c.add_argument("--owner", required=True)
-    c.add_argument("--client-id", required=True); c.add_argument("--redirect-uri", required=True)
+    c.add_argument("--client-id"); c.add_argument("--redirect-uri")
     c.add_argument("--scopes", help="space-separated; default 'tweet.read tweet.write users.read offline.access'")
     c.add_argument("--followups", action="store_true", help="also ask consent for status follow-up replies")
     c.add_argument("--pending-file", help="save state+PKCE verifier here (mode 600) for the callback")
+    c.add_argument("--listen", action="store_true", help="v0.4: catch the callback on 127.0.0.1 and store the "
+                   "encrypted token in --state-dir (uses X_CLIENT_ID/X_CLIENT_SECRET env)")
+    c.add_argument("--state-dir", default=".civicbot"); c.add_argument("--port", type=int, default=8765)
+    c.add_argument("--home-city", default=""); c.add_argument("--free", action="store_true")
+    c.add_argument("--consent", action="store_true", help="(--listen) owner already agreed; skip the YES prompt")
     c.set_defaults(fn=cmd_connect)
     sk = sub.add_parser("skill", help="teach a robot new API skills (catalog, file, URL, OpenAPI)")
     sk.add_argument("action", choices=["list", "catalog", "add", "remove", "enable", "disable", "test", "validate",
@@ -415,7 +427,12 @@ def main(argv: Optional[list] = None) -> int:
     r.add_argument("--lng", type=float); r.set_defaults(fn=cmd_resolve)
     t = sub.add_parser("transit"); t.add_argument("url"); t.add_argument("--stop"); t.add_argument("--route")
     t.set_defaults(fn=cmd_transit)
+    from .cli_extra import register
+    register(sub)
     a = p.parse_args(argv)
+    if getattr(a, "listen", False):
+        from .cli_extra import cmd_connect_listen
+        return cmd_connect_listen(a)
     return a.fn(a)
 
 

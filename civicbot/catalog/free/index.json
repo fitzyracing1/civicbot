@@ -1,0 +1,632 @@
+{
+  "catalog_version": 1,
+  "skills": [
+    {
+      "name": "active-storms",
+      "file": "skills/active-storms.json",
+      "title": "Active tropical storms (NOAA NHC)",
+      "kind": "read",
+      "domains": [
+        "www.nhc.noaa.gov"
+      ],
+      "sha256": "0c15ab81fd95bea8dfb3cbc8beef38fe686b40735e61ede89fafa8f3634040d6",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "nhc-storms"
+    },
+    {
+      "name": "air-quality",
+      "file": "skills/air-quality.json",
+      "title": "Air quality now (Open-Meteo)",
+      "kind": "read",
+      "domains": [
+        "air-quality-api.open-meteo.com"
+      ],
+      "sha256": "c52314a9448109a77492604d11774bcade1c90049092b79e637f61aed55647b5",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "open-meteo-air"
+    },
+    {
+      "name": "book-lookup",
+      "file": "skills/book-lookup.json",
+      "title": "Book lookup (Open Library)",
+      "kind": "read",
+      "domains": [
+        "openlibrary.org"
+      ],
+      "sha256": "9e80888ee0e4aa0d9725c9023bc905af04c1c339a09d0ecba547c0dbfa6512bb",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "open-library"
+    },
+    {
+      "name": "census-district",
+      "file": "skills/census-district.json",
+      "title": "County and congressional district (US Census)",
+      "kind": "read",
+      "domains": [
+        "geocoding.geo.census.gov"
+      ],
+      "sha256": "d93f8b090ef7b8e1b72a69b086389c9584877fdf4b5e6764e7d35a54af66631d",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "census-geographies"
+    },
+    {
+      "name": "currency-convert",
+      "file": "skills/currency-convert.json",
+      "title": "Currency conversion (Frankfurter / ECB)",
+      "kind": "read",
+      "domains": [
+        "api.frankfurter.dev"
+      ],
+      "sha256": "61a9596a4d6e9fc1ae01a5185380901475333c7773e362206c6f97644911f1f9",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "frankfurter"
+    },
+    {
+      "name": "earthquakes-near",
+      "file": "skills/earthquakes-near.json",
+      "title": "Recent earthquakes nearby (USGS)",
+      "kind": "read",
+      "domains": [
+        "earthquake.usgs.gov"
+      ],
+      "sha256": "37a96453bf9a8b19cba2b4a3f3f754faa9f822c250ad45a77f1764ad47273a41",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "usgs-quakes-query"
+    },
+    {
+      "name": "elevation",
+      "file": "skills/elevation.json",
+      "title": "Elevation (Open-Meteo)",
+      "kind": "read",
+      "domains": [
+        "api.open-meteo.com"
+      ],
+      "sha256": "49c521dfc2baba8d1bab6f7d3d5b8ccd884edd418cf30c8c0ab91a8aed9cb0f6",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "open-meteo-elevation"
+    },
+    {
+      "name": "emsc-earthquakes",
+      "file": "skills/emsc-earthquakes.json",
+      "title": "Recent earthquakes (EMSC, Europe-Mediterranean)",
+      "kind": "read",
+      "domains": [
+        "www.seismicportal.eu"
+      ],
+      "sha256": "b97feda5bd9728d395c5e9e41b9a45d1a7d95ab9e067ad500dcb95fa9b392029",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "emsc-quakes"
+    },
+    {
+      "name": "fema-disasters",
+      "file": "skills/fema-disasters.json",
+      "title": "Recent FEMA disaster declarations",
+      "kind": "read",
+      "domains": [
+        "www.fema.gov"
+      ],
+      "sha256": "f94cf63425eb7b623ac334dbbd49afbf4ad6cdbf19e95412960a37b90a7a53e6",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "fema-declarations"
+    },
+    {
+      "name": "food-barcode",
+      "file": "skills/food-barcode.json",
+      "title": "Food product by barcode (Open Food Facts)",
+      "kind": "read",
+      "domains": [
+        "world.openfoodfacts.org"
+      ],
+      "sha256": "685c914a71b445f534faf9ca57e15e29970a0874e13cfdbf99ab59478e39a01e",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "open-food-facts"
+    },
+    {
+      "name": "food-recalls",
+      "file": "skills/food-recalls.json",
+      "title": "Latest FDA food recalls",
+      "kind": "read",
+      "domains": [
+        "api.fda.gov"
+      ],
+      "sha256": "032ad003ba31fb8486eb0e5374bdc8f1be02529ac13843adcd473aea26029414",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "openfda-food"
+    },
+    {
+      "name": "ipma-forecast",
+      "file": "skills/ipma-forecast.json",
+      "title": "Portugal forecast (IPMA)",
+      "kind": "read",
+      "domains": [
+        "api.ipma.pt"
+      ],
+      "sha256": "4026643233228829244ec8960189e7a439b7d5c5725d943b45c135f90b5698a1",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "ipma-forecast"
+    },
+    {
+      "name": "iss-location",
+      "file": "skills/iss-location.json",
+      "title": "Where is the ISS? (wheretheiss.at)",
+      "kind": "read",
+      "domains": [
+        "api.wheretheiss.at"
+      ],
+      "sha256": "89cda69b694b4e9350563083dd175f1d79e09a2175174b3e1890d29394aba6cf",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "wheretheiss"
+    },
+    {
+      "name": "marine-waves",
+      "file": "skills/marine-waves.json",
+      "title": "Waves and sea temperature (Open-Meteo Marine)",
+      "kind": "read",
+      "domains": [
+        "marine-api.open-meteo.com"
+      ],
+      "sha256": "e9467043cd62a71efe02affeb20c46d03b4f9363c851adab5ffadeae21793fc5",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "open-meteo-marine"
+    },
+    {
+      "name": "mbta-alerts",
+      "file": "skills/mbta-alerts.json",
+      "title": "MBTA subway/light-rail alerts (Boston)",
+      "kind": "read",
+      "domains": [
+        "api-v3.mbta.com"
+      ],
+      "sha256": "c1ff78a8bd5e471fa9223f48761fb5ad64016c7c66ed3027ee1db848c977aef1",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "mbta-alerts"
+    },
+    {
+      "name": "moon-phase",
+      "file": "skills/moon-phase.json",
+      "title": "Next moon phases (US Naval Observatory)",
+      "kind": "read",
+      "domains": [
+        "aa.usno.navy.mil"
+      ],
+      "sha256": "6db6fccb4693f84d5c5bdcbb022b4601243291779d275f7f2d5db3cb9523fb09",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "usno-moon"
+    },
+    {
+      "name": "natural-events",
+      "file": "skills/natural-events.json",
+      "title": "Open natural events (NASA EONET)",
+      "kind": "read",
+      "domains": [
+        "eonet.gsfc.nasa.gov"
+      ],
+      "sha256": "42e9ac38380f85d22edc864710adc59a27275f5b926a29357a485aaee07d13a0",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "nasa-eonet"
+    },
+    {
+      "name": "next-launch",
+      "file": "skills/next-launch.json",
+      "title": "Next rocket launch (Launch Library 2)",
+      "kind": "read",
+      "domains": [
+        "ll.thespacedevs.com"
+      ],
+      "sha256": "201ad0d2f8aa4a103b2d692e6932c6647e419e7c84afaf340aa1a4fee825abc4",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "launch-library"
+    },
+    {
+      "name": "nws-alerts",
+      "file": "skills/nws-alerts.json",
+      "title": "Active weather alerts (US National Weather Service)",
+      "kind": "read",
+      "domains": [
+        "api.weather.gov"
+      ],
+      "sha256": "0719e7530b819678abca184bdc8fdf99ec5fb7bfdd865cd1a297409e7aa9220f",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "nws-alerts"
+    },
+    {
+      "name": "nyc-311-nearby",
+      "file": "skills/nyc-311-nearby.json",
+      "title": "Recent NYC 311 requests nearby",
+      "kind": "read",
+      "domains": [
+        "data.cityofnewyork.us"
+      ],
+      "sha256": "fb57761129d066421a28ec8bbb907357532c3f8ef799ef219cd9ff25ee5f3fe9",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "nyc-311"
+    },
+    {
+      "name": "open-meteo-tomorrow",
+      "file": "skills/open-meteo-tomorrow.json",
+      "title": "Tomorrow's forecast (Open-Meteo)",
+      "kind": "read",
+      "domains": [
+        "api.open-meteo.com"
+      ],
+      "sha256": "1c8a191d64f53270c0fa6fc87d68fbea2738712a643cbda5e1536052d4f95fb6",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "open-meteo-forecast"
+    },
+    {
+      "name": "public-holidays",
+      "file": "skills/public-holidays.json",
+      "title": "Next public holidays (Nager.Date)",
+      "kind": "read",
+      "domains": [
+        "date.nager.at"
+      ],
+      "sha256": "7e03d9769c8f2227ae46fcfea76e7c85dda3189f0b33176957548b8398c076e3",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "nager-next"
+    },
+    {
+      "name": "river-flow",
+      "file": "skills/river-flow.json",
+      "title": "River flow and gage height (USGS)",
+      "kind": "read",
+      "domains": [
+        "waterservices.usgs.gov"
+      ],
+      "sha256": "289c156f0f3abc2eba8c6a4ec2f1da5c5ecb9243ca11944c2096503fc030a27d",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "usgs-water-iv"
+    },
+    {
+      "name": "seeclickfix-nearby",
+      "file": "skills/seeclickfix-nearby.json",
+      "title": "Recent SeeClickFix reports nearby",
+      "kind": "read",
+      "domains": [
+        "seeclickfix.com"
+      ],
+      "sha256": "e71e7b9da416a8aa167d3336fa846d66a18fc8326a05171dbd710c6c198ad2ee",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "seeclickfix"
+    },
+    {
+      "name": "sun-times",
+      "file": "skills/sun-times.json",
+      "title": "Sunrise and sunset (Open-Meteo)",
+      "kind": "read",
+      "domains": [
+        "api.open-meteo.com"
+      ],
+      "sha256": "d39a40960f369695834551b7832da29edb579a3320e911740c306bb508e15754",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "open-meteo-forecast"
+    },
+    {
+      "name": "tides-today",
+      "file": "skills/tides-today.json",
+      "title": "Today's tides (NOAA)",
+      "kind": "read",
+      "domains": [
+        "api.tidesandcurrents.noaa.gov"
+      ],
+      "sha256": "b3c04d8efbfecb7da39c8846e34eee8c352b91eb917e0594dcec69afcb0ebc64",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "noaa-tides"
+    },
+    {
+      "name": "tube-status",
+      "file": "skills/tube-status.json",
+      "title": "London Underground status (TfL)",
+      "kind": "read",
+      "domains": [
+        "api.tfl.gov.uk"
+      ],
+      "sha256": "d8a7bcc8cb1bea68397a6d1d828cc3773bf7a9b139e0a7ba0b55f7234d21671a",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "tfl-status"
+    },
+    {
+      "name": "uk-carbon-intensity",
+      "file": "skills/uk-carbon-intensity.json",
+      "title": "UK grid carbon intensity (National Grid ESO)",
+      "kind": "read",
+      "domains": [
+        "api.carbonintensity.org.uk"
+      ],
+      "sha256": "f7c3ee07457aacc1a191d30b39815178b6a82b2996aca42326489e6e86388cb5",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "uk-carbon-intensity"
+    },
+    {
+      "name": "uv-index",
+      "file": "skills/uv-index.json",
+      "title": "UV index (Open-Meteo)",
+      "kind": "read",
+      "domains": [
+        "api.open-meteo.com"
+      ],
+      "sha256": "261c4a553c94c60cc144be492ca6d5ccebf832f44cb96bfff7a87c135e126c57",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "open-meteo-forecast"
+    },
+    {
+      "name": "vehicle-recalls",
+      "file": "skills/vehicle-recalls.json",
+      "title": "Vehicle recalls (NHTSA)",
+      "kind": "read",
+      "domains": [
+        "api.nhtsa.gov"
+      ],
+      "sha256": "05a0836f5612269b7ccbfdff7abdafefd6bbba54fcf5e243ec18cbbca801d1f2",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "nhtsa-recalls"
+    },
+    {
+      "name": "wikipedia-nearby",
+      "file": "skills/wikipedia-nearby.json",
+      "title": "Wikipedia places nearby",
+      "kind": "read",
+      "domains": [
+        "en.wikipedia.org"
+      ],
+      "sha256": "dea74e45b83b3f3a34bae54c9e41dbc71dba1afd67c7faa92be0f76d076f6974",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "wikipedia-geosearch"
+    },
+    {
+      "name": "wikipedia-summary",
+      "file": "skills/wikipedia-summary.json",
+      "title": "Wikipedia summary",
+      "kind": "read",
+      "domains": [
+        "en.wikipedia.org"
+      ],
+      "sha256": "349670f0c2cf852bc218bf2962d6839092371405b0e7f86c8a4b0db97737fde5",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "wikipedia-summary"
+    },
+    {
+      "name": "zip-lookup",
+      "file": "skills/zip-lookup.json",
+      "title": "US ZIP code lookup (Zippopotam.us)",
+      "kind": "read",
+      "domains": [
+        "api.zippopotam.us"
+      ],
+      "sha256": "e3f7f18c4713668b9c5f60d39303e47c25882f2652abf893a00a6a9348c23bad",
+      "review": {
+        "status": "reviewed",
+        "by": "civicbot maintainers",
+        "date": "2026-10-10",
+        "live_check": "passed 2026-10-10 (scripts/free_apis/check_skills.py)"
+      },
+      "cost": "free",
+      "free": true,
+      "api_id": "zippopotam"
+    }
+  ]
+}

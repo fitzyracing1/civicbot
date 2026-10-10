@@ -1,0 +1,67 @@
+{
+  "spec_version": 1,
+  "name": "nyc-311-nearby",
+  "title": "Recent NYC 311 requests nearby",
+  "description": "The latest NYC 311 service requests within 500 m of a place in New York City (NYC Open Data). Read-only; no key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "nyc-311",
+  "terms": {
+    "url": "https://opendata.cityofnewyork.us/overview/#termsofuse",
+    "attribution": "Data: NYC Open Data",
+    "notes": "Socrata SODA API: no app token needed for light use (throttled by IP); a free app token raises limits."
+  },
+  "triggers": {
+    "keywords": [
+      "nyc",
+      "311"
+    ],
+    "phrases": [
+      "nyc 311",
+      "311 near",
+      "complaints near"
+    ],
+    "min_score": 2
+  },
+  "location": "required",
+  "request": {
+    "base_url": "https://data.cityofnewyork.us",
+    "path": "/resource/erm2-nwe9.json",
+    "method": "GET",
+    "params": {
+      "$where": "within_circle(location, {location.lat}, {location.lng}, 500)",
+      "$order": "created_date DESC",
+      "$limit": 3,
+      "$select": "complaint_type,descriptor,status,created_date"
+    }
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "data.cityofnewyork.us"
+  ],
+  "response": {
+    "list": {
+      "path": "$",
+      "item": "{complaint_type} ({status|lower}, {created_date|date})",
+      "max": 3,
+      "join": "; "
+    },
+    "replies": [
+      "Latest NYC 311 near {location.text}: {items}. Data: NYC Open Data",
+      "NYC 311 around {location.text}: {items}"
+    ],
+    "empty_replies": [
+      "No recent NYC 311 requests within 500 m of {location.text}."
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

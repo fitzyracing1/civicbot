@@ -27,8 +27,8 @@ from .matcher import ServiceMatcher
 from .profile import RobotProfile
 from .replies import FleetDuplicateGuard, Phraser
 from .x_adapter import Mention, XAdapter
-from ..skills import (BUILTIN_SKILLS, Catalog, FetchBlocked, FetchError, SafeFetcher, SkillInputError,
-                      SkillRouter, SkillRunner, SpecError, usage_check, validate_spec)
+from ..skills import (BUILTIN_SKILLS, Catalog, CatalogSet, FetchBlocked, FetchError, SafeFetcher, SkillInputError,
+                      SkillRouter, SkillRunner, SpecError, default_catalog, is_free, usage_check, validate_spec)
 from ..secrets import InMemorySecretStore, SecretStore
 
 MAX_SKILLS = 25
@@ -36,6 +36,23 @@ CMD_INSTALL = re.compile(r"^(?:learn|install|add (?:api|skill))\s+(?P<arg>\S+)\s
 CMD_REMOVE = re.compile(r"^(?:forget|uninstall|remove (?:api|skill))\s+(?P<arg>[a-z0-9-]+)\s*$", re.I)
 CMD_LIST = re.compile(r"^(?:skills|list skills|my skills|what can you do)\??$", re.I)
 CMD_ENABLE = re.compile(r"^(?P<op>enable|disable) skill\s+(?P<arg>[a-z0-9-]+)\s*$", re.I)
+
+
+FREE_ENV = "CIVICBOT_FREE"
+
+
+def free_mode(profile: Optional[RobotProfile] = None) -> bool:
+    """Free mode is on when the profile's plan is 'free' or CIVICBOT_FREE=1 is set."""
+    import os
+    if profile is not None and getattr(profile, "plan", "") == "free":
+        return True
+    return os.environ.get(FREE_ENV, "").strip().lower() in ("1", "true", "yes", "on")
+
+
+def skill_allowed_in_free_mode(spec: dict) -> bool:
+    if spec.get("handler"):
+        return True  # built-ins: 311 (dry-run in free mode), status, transit
+    return str(spec.get("_source", "catalog:")).startswith("catalog:") and is_free(spec)
 
 
 @dataclass
@@ -81,7 +98,7 @@ class Robot:
                  transit_stop_id: Optional[str] = None, auto_status_updates: bool = False,
                  guard: Optional[FleetDuplicateGuard] = None, fetcher: Optional[SafeFetcher] = None,
                  secrets: Optional[SecretStore] = None, catalog: Optional[Catalog] = None,
-                 on_profile_change=None):
+                 on_profile_change=None, free: Optional[bool] = None):
         if profile is None:  # convenience for single-robot scripts/tests
             if not owner:
                 raise ValueError("pass a RobotProfile or owner=")
@@ -102,7 +119,9 @@ class Robot:
         self.phrase = Phraser(profile.robot_id, guard)
         self.fetcher = fetcher or SafeFetcher()
         self.secrets = secrets or InMemorySecretStore()
-        self.catalog = catalog or Catalog()
+        self.catalog = catalog or default_catalog()
+        # Free mode (v0.4): only free, keyless catalog skills; 311 stays dry-run; write skills can't be enabled.
+        self.free = free_mode(profile) if free is None else bool(free)
         self.router = SkillRouter()
         self.on_profile_change = on_profile_change or (lambda p: None)
         self.runner = SkillRunner(self.fetcher, self.resolver.geocoder,
@@ -112,7 +131,10 @@ class Robot:
     def skills(self) -> List[dict]:
         """Built-ins first (unless the owner removed them), then the owner's installed skills."""
         b = [s for n, s in BUILTIN_SKILLS.items() if n not in self.profile.disabled_builtins]
-        return b + list(self.profile.skills.values())
+        user = list(self.profile.skills.values())
+        if self.free:
+            user = [s for s in user if skill_allowed_in_free_mode(s)]
+        return b + user
 
     # convenience accessors (kept for older call sites)
     @property
@@ -215,6 +237,8 @@ class Robot:
             spec = self.profile.skills.get(name)
             if not spec or spec.get("kind") != "write":
                 act.reply = self.phrase.text(f"'{name}' isn't an installed write skill.")
+            elif on and self.free:
+                act.reply = self.phrase.text(f"Free mode: write skills stay dry-run, so '{name}' can't be enabled.")
             else:
                 if on and name not in self.profile.write_enabled:
                     self.profile.write_enabled.append(name)
@@ -231,6 +255,11 @@ class Robot:
                 self.profile.disabled_builtins.remove(name)
                 self.on_profile_change(self.profile)
             act.reply = self.phrase.text(f"Built-in '{name}' is on.")
+            return
+        if self.free and (re.match(r"^https?://", arg, re.I) or name not in self.catalog.names()):
+            act.log.append(f"free mode: refused install of {arg[:60]!r} (free mode learns free catalog skills only)")
+            act.reply = self.phrase.text("Free mode only learns skills from the civicbot catalog that are free and need "
+                                         "no key. Say 'skills' to see what I know.")
             return
         try:
             if re.match(r"^https?://", arg, re.I):
@@ -255,6 +284,12 @@ class Robot:
             return
         if spec["name"] in BUILTIN_SKILLS:
             act.reply = self.phrase.text("That name is reserved for a built-in skill.")
+            return
+        if self.free and not (source.startswith("catalog:") and is_free(spec)):
+            act.log.append(f"free mode: refused {spec['name']} from {source} (cost={spec.get('cost', 'unknown')}, "
+                           f"auth={(spec.get('auth') or {}).get('type', 'none')})")
+            act.reply = self.phrase.text(f"Free mode only learns catalog skills marked free with no key; "
+                                         f"'{spec['name'][:40]}' isn't one. Try 'skills' or a free catalog skill.")
             return
         if spec["name"] not in self.profile.skills and len(self.profile.skills) >= MAX_SKILLS:
             act.reply = self.phrase.text(f"I already know {MAX_SKILLS} skills; forget one first.")
@@ -441,7 +476,7 @@ class Robot:
             self._send_pending_skill(m, pending, act)
             return
         key = self.api_keys.get(pending["endpoint"])
-        if not (self.profile.send_enabled and key):
+        if not (self.profile.send_enabled and key) or self.free:
             act.log.append("send disabled - request NOT filed")
             act.reply = self.phrase.text(f"Sending is off for this robot, so '{pending['service_name']}' "
                                          "was not filed (needs send_enabled + a city API key).")

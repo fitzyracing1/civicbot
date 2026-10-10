@@ -1,0 +1,71 @@
+{
+  "spec_version": 1,
+  "name": "wikipedia-nearby",
+  "title": "Wikipedia places nearby",
+  "description": "Wikipedia articles about places within 2 km of where you are. No key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "wikipedia-geosearch",
+  "terms": {
+    "url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+    "attribution": "Text: Wikipedia (CC BY-SA 4.0)",
+    "notes": "No key. Wikimedia asks for an identifying User-Agent and serial requests."
+  },
+  "triggers": {
+    "keywords": [
+      "landmarks",
+      "landmark",
+      "sights",
+      "history"
+    ],
+    "phrases": [
+      "what's around",
+      "places near",
+      "nearby places",
+      "things near"
+    ]
+  },
+  "location": "required",
+  "request": {
+    "base_url": "https://en.wikipedia.org",
+    "path": "/w/api.php",
+    "method": "GET",
+    "params": {
+      "action": "query",
+      "list": "geosearch",
+      "gscoord": "{location.lat}|{location.lng}",
+      "gsradius": 2000,
+      "gslimit": 4,
+      "format": "json"
+    }
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "en.wikipedia.org"
+  ],
+  "response": {
+    "list": {
+      "path": "query.geosearch",
+      "item": "{title} ({dist|int} m)",
+      "max": 4,
+      "join": "; "
+    },
+    "replies": [
+      "Near {location.text} on Wikipedia: {items}",
+      "Wikipedia articles around {location.text}: {items}"
+    ],
+    "empty_replies": [
+      "No Wikipedia articles within 2 km of {location.text}."
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

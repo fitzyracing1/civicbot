@@ -1,0 +1,72 @@
+{
+  "spec_version": 1,
+  "name": "public-holidays",
+  "title": "Next public holidays (Nager.Date)",
+  "description": "The next public holidays for a country (two-letter code, e.g. 'holidays in PT'; default US). No key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "nager-next",
+  "terms": {
+    "url": "https://date.nager.at/",
+    "attribution": "Data: Nager.Date",
+    "notes": "Free, no key; open source (MIT)."
+  },
+  "triggers": {
+    "keywords": [
+      "holiday",
+      "holidays",
+      "feriado",
+      "feriados"
+    ],
+    "phrases": [
+      "public holiday",
+      "bank holiday",
+      "day off"
+    ]
+  },
+  "inputs": {
+    "country": {
+      "regex": "\\b(?:in|for)\\s+([A-Za-z]{2})\\b",
+      "default": "US",
+      "case": "upper",
+      "pattern": "^[A-Z]{2}$",
+      "description": "ISO country code (e.g. 'in PT')"
+    }
+  },
+  "location": "none",
+  "request": {
+    "base_url": "https://date.nager.at",
+    "path": "/api/v3/NextPublicHolidays/{inputs.country}",
+    "method": "GET",
+    "params": {}
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "date.nager.at"
+  ],
+  "response": {
+    "list": {
+      "path": "$",
+      "item": "{name} ({date})",
+      "max": 3,
+      "join": "; "
+    },
+    "replies": [
+      "Next public holidays in {inputs.country}: {items}. Data: Nager.Date",
+      "{inputs.country} holidays coming up: {items}"
+    ],
+    "empty_replies": [
+      "Nager.Date has no upcoming holidays listed for {inputs.country}."
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

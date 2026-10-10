@@ -42,6 +42,7 @@ class RobotProfile:
     skills: Dict[str, dict] = field(default_factory=dict)
     write_enabled: List[str] = field(default_factory=list)   # write skills the owner explicitly enabled
     disabled_builtins: List[str] = field(default_factory=list)
+    plan: str = ""  # v0.4: "free" = free mode (free keyless catalog skills only, 311 dry-run); "" = standard
 
     def __post_init__(self):
         self.robot_handle = self.robot_handle.lstrip("@")

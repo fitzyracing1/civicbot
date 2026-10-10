@@ -1,0 +1,74 @@
+{
+  "spec_version": 1,
+  "name": "wikipedia-summary",
+  "title": "Wikipedia summary",
+  "description": "A two-sentence Wikipedia summary, e.g. 'wiki Lisbon' or 'what is a roundabout'. No key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "wikipedia-summary",
+  "terms": {
+    "url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+    "attribution": "Text: Wikipedia (CC BY-SA 4.0)",
+    "notes": "No key. Wikimedia asks for an identifying User-Agent; summaries are CC BY-SA, so credit Wikipedia."
+  },
+  "triggers": {
+    "keywords": [
+      "wiki",
+      "wikipedia"
+    ],
+    "phrases": [
+      "wiki ",
+      "wikipedia ",
+      "tell me about"
+    ]
+  },
+  "inputs": {
+    "topic": {
+      "regex": "(?:wiki(?:pedia)?|what\\s+(?:is|are|was)|who\\s+(?:is|was)|tell\\s+me\\s+about)\\s+(?:an?\\s+|the\\s+)?([A-Za-z0-9][A-Za-z0-9 ,.'()-]{1,58})",
+      "required": true,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9 ,.'()-]{1,58}$",
+      "description": "a topic (e.g. 'wiki Lisbon')"
+    }
+  },
+  "location": "none",
+  "request": {
+    "base_url": "https://en.wikipedia.org",
+    "path": "/w/api.php",
+    "method": "GET",
+    "params": {
+      "action": "query",
+      "prop": "extracts",
+      "exintro": 1,
+      "explaintext": 1,
+      "exsentences": 2,
+      "redirects": 1,
+      "format": "json",
+      "formatversion": 2,
+      "titles": "{inputs.topic}"
+    }
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "en.wikipedia.org"
+  ],
+  "response": {
+    "extract": {
+      "title": "query.pages.0.title",
+      "x": "query.pages.0.extract"
+    },
+    "replies": [
+      "{x} (Wikipedia: {title})",
+      "{title}: {x} (Wikipedia)"
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

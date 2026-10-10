@@ -1,0 +1,71 @@
+{
+  "spec_version": 1,
+  "name": "earthquakes-near",
+  "title": "Recent earthquakes nearby (USGS)",
+  "description": "M2.5+ earthquakes within 500 km of a place in the last 7 days, from USGS. No key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "usgs-quakes-query",
+  "terms": {
+    "url": "https://earthquake.usgs.gov/fdsnws/event/1/",
+    "attribution": "Data: USGS Earthquake Hazards Program",
+    "notes": "US government data, public domain, no key."
+  },
+  "triggers": {
+    "keywords": [
+      "earthquake",
+      "earthquakes",
+      "quake",
+      "quakes",
+      "seismic",
+      "tremor"
+    ]
+  },
+  "location": "required",
+  "request": {
+    "base_url": "https://earthquake.usgs.gov",
+    "path": "/fdsnws/event/1/query",
+    "method": "GET",
+    "params": {
+      "format": "geojson",
+      "latitude": "{location.lat}",
+      "longitude": "{location.lng}",
+      "maxradiuskm": 500,
+      "starttime": "{date.days_ago_7}",
+      "minmagnitude": 2.5,
+      "orderby": "time",
+      "limit": 3
+    }
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "earthquake.usgs.gov"
+  ],
+  "response": {
+    "list": {
+      "path": "features",
+      "item": "M{properties.mag} {properties.place} ({properties.time|ms_date})",
+      "max": 3,
+      "join": "; "
+    },
+    "replies": [
+      "Quakes near {location.text}, last 7 days: {items}. Data: USGS",
+      "USGS, within 500 km of {location.text}: {items}",
+      "Recent shaking near {location.text}: {items} (USGS)"
+    ],
+    "empty_replies": [
+      "No M2.5+ earthquakes within 500 km of {location.text} in the last week (USGS).",
+      "USGS lists no M2.5+ quakes near {location.text} this week."
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

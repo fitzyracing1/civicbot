@@ -1,0 +1,68 @@
+{
+  "spec_version": 1,
+  "name": "emsc-earthquakes",
+  "title": "Recent earthquakes (EMSC, Europe-Mediterranean)",
+  "description": "Latest earthquakes within ~500 km of a place from the European-Mediterranean Seismological Centre. No key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "emsc-quakes",
+  "terms": {
+    "url": "https://www.seismicportal.eu/fdsn-wsevent.html",
+    "attribution": "Data: EMSC (seismicportal.eu)",
+    "notes": "Open FDSN service, no key; fair use."
+  },
+  "triggers": {
+    "keywords": [
+      "emsc",
+      "sismo",
+      "terremoto"
+    ],
+    "phrases": [
+      "emsc earthquake",
+      "europe earthquake"
+    ]
+  },
+  "location": "required",
+  "request": {
+    "base_url": "https://www.seismicportal.eu",
+    "path": "/fdsnws/event/1/query",
+    "method": "GET",
+    "params": {
+      "format": "json",
+      "lat": "{location.lat}",
+      "lon": "{location.lng}",
+      "maxradius": 4.5,
+      "limit": 3,
+      "orderby": "time"
+    }
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "www.seismicportal.eu"
+  ],
+  "response": {
+    "list": {
+      "path": "features",
+      "item": "M{properties.mag} {properties.flynn_region|title} ({properties.time|date})",
+      "max": 3,
+      "join": "; "
+    },
+    "replies": [
+      "EMSC quakes near {location.text}: {items}. Data: EMSC",
+      "Latest from EMSC around {location.text}: {items}"
+    ],
+    "empty_replies": [
+      "EMSC lists no recent quakes near {location.text}."
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

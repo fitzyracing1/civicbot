@@ -1,0 +1,68 @@
+{
+  "spec_version": 1,
+  "name": "book-lookup",
+  "title": "Book lookup (Open Library)",
+  "description": "Author and first-publication year for a book title, e.g. 'book the power broker'. No key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "open-library",
+  "terms": {
+    "url": "https://openlibrary.org/developers/api",
+    "attribution": "Data: Open Library (Internet Archive)",
+    "notes": "No key; Open Library asks bots to send a User-Agent with contact info and avoid bulk scraping."
+  },
+  "triggers": {
+    "keywords": [
+      "book",
+      "novel",
+      "author"
+    ],
+    "phrases": [
+      "who wrote"
+    ]
+  },
+  "inputs": {
+    "title": {
+      "regex": "(?:book|novel|who\\s+wrote)\\s+(?:called\\s+)?([A-Za-z0-9][A-Za-z0-9 ,.'():-]{1,58})",
+      "required": true,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9 ,.'():-]{1,58}$",
+      "description": "a book title"
+    }
+  },
+  "location": "none",
+  "request": {
+    "base_url": "https://openlibrary.org",
+    "path": "/search.json",
+    "method": "GET",
+    "params": {
+      "q": "{inputs.title}",
+      "limit": 1,
+      "fields": "title,author_name,first_publish_year"
+    }
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "openlibrary.org"
+  ],
+  "response": {
+    "extract": {
+      "t": "docs.0.title",
+      "a": "docs.0.author_name.0",
+      "y": "docs.0.first_publish_year"
+    },
+    "replies": [
+      "{t} by {a}, first published {y}. Data: Open Library",
+      "'{t}' ({y}) by {a}. (Open Library)"
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

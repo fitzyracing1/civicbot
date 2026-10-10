@@ -1,0 +1,66 @@
+{
+  "spec_version": 1,
+  "name": "food-recalls",
+  "title": "Latest FDA food recalls",
+  "description": "The newest US FDA food enforcement reports (recalls). No key.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "cost": "free",
+  "api_id": "openfda-food",
+  "terms": {
+    "url": "https://open.fda.gov/terms/",
+    "attribution": "Data: openFDA",
+    "notes": "No key: 240 requests/minute and 1,000/day per IP. openFDA data is not for medical decisions."
+  },
+  "triggers": {
+    "keywords": [
+      "recall",
+      "recalls",
+      "fda",
+      "food"
+    ],
+    "phrases": [
+      "food recall",
+      "food recalls"
+    ],
+    "min_score": 2
+  },
+  "location": "none",
+  "request": {
+    "base_url": "https://api.fda.gov",
+    "path": "/food/enforcement.json",
+    "method": "GET",
+    "params": {
+      "sort": "report_date:desc",
+      "limit": 3
+    }
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "api.fda.gov"
+  ],
+  "response": {
+    "list": {
+      "path": "results",
+      "item": "{recalling_firm}: {reason_for_recall}",
+      "max": 3,
+      "join": "; "
+    },
+    "replies": [
+      "Latest FDA food recalls: {items}. Data: openFDA",
+      "New FDA food recalls: {items} (openFDA)"
+    ],
+    "empty_replies": [
+      "openFDA returned no food recall reports right now."
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 262144,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}
