@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Account{% endblock %}
+{% block content %}
+<h1>Your account</h1>
+<div class="card">
+  <p>Signed in as <b>@{{ owner.handle }}</b> (X user id {{ owner.x_user_id }}). Robots: {{ robots|map(attribute='robot_id')|map('string')|join(', ') or 'none' }}.</p>
+  <p><a class="btn secondary" href="/account/export">Download my data (JSON)</a></p>
+</div>
+<details class="card danger-zone" open>
+  <summary><b>Delete everything</b></summary>
+  <form method="post" action="/account/delete">
+    <input type="hidden" name="csrf_token" value="{{ csrf }}">
+    <p>This revokes every robot's X access and permanently deletes your account, robot settings, activity history and usage records from civicbot. Your X accounts themselves are not affected.</p>
+    <label>Type <b>DELETE</b> to confirm <input name="confirm" autocomplete="off"></label>
+    <button class="btn danger">Delete my civicbot data</button>
+  </form>
+</details>
+{% endblock %}

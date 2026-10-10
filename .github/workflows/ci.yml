@@ -28,3 +28,23 @@ jobs:
         env:
           CIVICBOT_LIVE: "0"
         run: pytest -q -m "not live"
+
+  docker:
+    # Builds the deploy image and smoke-tests it in dev mode (fake X, no secrets, nothing pushed anywhere).
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: docker build -t civicbot:ci .
+      - name: Smoke test (web + embedded worker, dev mode)
+        run: |
+          docker run -d --name cb -p 8000:8000 -e CIVICBOT_DEV_MODE=1 -e CIVICBOT_EMBEDDED_WORKER=1 civicbot:ci
+          for i in $(seq 1 30); do
+            if curl -fsS 'http://127.0.0.1:8000/healthz?strict=1'; then echo; break; fi
+            sleep 2
+          done
+          curl -fsS 'http://127.0.0.1:8000/healthz?strict=1'
+          curl -fsS http://127.0.0.1:8000/ | grep -q "Get your robot"
+          docker exec -e CIVICBOT_DEV_MODE=1 cb python -m civicbot.web.worker --check
+          docker logs cb | tail -20
+          docker rm -f cb

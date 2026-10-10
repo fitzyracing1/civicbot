@@ -34,7 +34,12 @@ classifiers = [
 [project.optional-dependencies]
 transit = ["gtfs-realtime-bindings>=1.0"]
 secure = ["cryptography>=41"]
-dev = ["pytest>=7", "gtfs-realtime-bindings>=1.0", "cryptography>=41"]
+web = ["fastapi>=0.110", "uvicorn>=0.30", "jinja2>=3.1", "sqlalchemy>=2.0", "itsdangerous>=2.1",
+       "python-multipart>=0.0.9", "cryptography>=41"]
+postgres = ["psycopg[binary]>=3.1"]
+dev = ["pytest>=7", "gtfs-realtime-bindings>=1.0", "cryptography>=41", "httpx>=0.27",
+       "fastapi>=0.110", "uvicorn>=0.30", "jinja2>=3.1", "sqlalchemy>=2.0", "itsdangerous>=2.1",
+       "python-multipart>=0.0.9"]
 
 [project.urls]
 Homepage = "https://github.com/fitzyracing1/civicbot"
@@ -50,7 +55,8 @@ civicbot = "civicbot.__main__:main"
 include = ["civicbot*"]
 
 [tool.setuptools.package-data]
-civicbot = ["data/*.json", "skills/schema.json", "catalog/index.json", "catalog/skills/*.json"]
+civicbot = ["data/*.json", "skills/schema.json", "catalog/index.json", "catalog/skills/*.json",
+            "web/templates/*.html", "web/static/*"]
 
 [tool.pytest.ini_options]
 markers = ["live: hits real city APIs (read-only); run with CIVICBOT_LIVE=1"]

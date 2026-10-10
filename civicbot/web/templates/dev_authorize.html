@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Fake X: authorize{% endblock %}
+{% block content %}
+<div class="card fakex">
+  <p class="tag">FAKE X (dev mode)</p>
+  <h1>Authorize civicbot to access your account?</h1>
+  <p>This page stands in for x.com's real sign-in. Type the X username you're "signed in" as.</p>
+  <p class="muted">Requested permissions: {{ scopes|join(', ') }}</p>
+  <form method="post" action="/dev/x/oauth2/authorize">
+    <input type="hidden" name="csrf_token" value="{{ csrf }}">
+    {% for k, v in q.items() %}<input type="hidden" name="{{ k }}" value="{{ v }}">{% endfor %}
+    <label for="username">Signed in to X as</label>
+    <div class="row"><span class="at">@</span><input id="username" name="username" value="{{ hint }}" placeholder="{{ 'your_robot' if kind == 'robot' else 'your_name' }}" maxlength="15"></div>
+    <div class="row"><button class="btn" name="action" value="approve">Authorize app</button><button class="btn secondary" name="action" value="cancel">Cancel</button></div>
+  </form>
+</div>
+{% endblock %}

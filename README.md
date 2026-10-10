@@ -246,6 +246,47 @@ spec, open a PR. Reviewers check the API terms, the domains, the reply wording, 
 @joshua -> @joshs_robot streetlight out at 401 N Morton St           -> built-in city-311-report, dry-run
 ```
 
+## Hosted signup site (for non-developers)
+
+`civicbot.web` is a small FastAPI site plus a background runner. With it, people who don't code can get a robot
+without touching a terminal:
+
+1. **Sign in with X** using their personal account. This identifies the owner, and the token is revoked right away.
+2. **Make a robot account**: a checklist for creating a separate X account, writing the bot bio, and turning on the
+   *Automated* label with their personal account as the managing account.
+3. **Connect the robot**: a second OAuth (PKCE) flow, signed in as the robot. It reuses `civicbot.x.finish_connect`,
+   records consent, and refuses if the robot turns out to be the owner's own account.
+4. **Home city**: the resolver shows which 311 system covers it, or says there's no 311 API there yet and only
+   weather/transit skills will work.
+5. **Skills**: pick from the reviewed catalog.
+6. **Done**: example mentions to try.
+
+The owner dashboard shows each robot's status, today's usage and estimated X cost, and recent replies. From it the
+owner can change skills, turn 311 sending on (behind a clear warning), pause, disconnect (revokes tokens at X),
+download their data, or delete everything.
+
+```bash
+pip install -e '.[web]'
+CIVICBOT_DEV_MODE=1 python -m civicbot.web          # http://localhost:8000 with a FAKE X: no credentials, no network
+CIVICBOT_DEV_MODE=1 python -m civicbot.web.worker   # the runner (or use "Run the runner now" on the dashboard)
+```
+
+In dev mode the real `XOAuth2`, `finish_connect` and `XApiV2Adapter` code talks to a fake X that checks PKCE and
+client auth. City lookups and skills use the offline fixtures. You can send your robot fake mentions from the
+dashboard and watch it reply.
+
+* **Runner:** the existing `Fleet`, with robot state in SQLite (or Postgres via `DATABASE_URL`). Tokens are
+  Fernet-encrypted at rest. Logs are structured JSON with secrets redacted.
+* **Guardrails:** a global daily spend cap based on the X prices below, per-robot daily caps, per-app poll and post
+  ceilings, and shadow mode (`CIVICBOT_X_WRITE_ENABLED=0`).
+* **Security:** CSRF tokens plus an Origin check, `__Host-` Secure/HttpOnly/SameSite=Lax cookies, OAuth `state`
+  bound to the browser session (single use, TTL), strict CSP, per-IP rate limits on sign-in/connect, and
+  owner-scoped queries (another owner's robot returns 404).
+* `/privacy` and `/terms` are **drafts that need legal review**.
+
+Deploying: `Dockerfile`, `docker-compose.yml` (web + worker), `.env.example`, and [`docs/DEPLOY.md`](https://github.com/fitzyracing1/civicbot/blob/main/docs/DEPLOY.md)
+(X app setup, Fly.io/Render/Railway notes with sourced prices).
+
 ## Safety model
 
 - **Dry-run by default.** `create_request()` builds and validates the exact form payload. To actually

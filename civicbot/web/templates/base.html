@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}civicbot{% endblock %} · civicbot</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+{% if dev %}<div class="devbar">DEV MODE: fake X, offline city data. Nothing here reaches X or a city.</div>{% endif %}
+<header class="top">
+  <a class="brand" href="/"><span class="logo" aria-hidden="true">◉</span> civicbot</a>
+  <nav>
+    {% if owner %}
+      <a href="/dashboard">My robots</a>
+      <a href="/account">Account</a>
+      <form method="post" action="/logout" class="inline"><input type="hidden" name="csrf_token" value="{{ csrf }}"><button class="link">Sign out @{{ owner.handle }}</button></form>
+    {% else %}
+      <a href="/start" class="btn small">Get your robot</a>
+    {% endif %}
+  </nav>
+</header>
+<main>
+{% if step %}
+<ol class="steps" aria-label="Setup progress">
+  {% for name in steps %}<li class="{% if loop.index < step %}done{% elif loop.index == step %}current{% endif %}"><span>{{ loop.index }}</span>{{ name }}</li>{% endfor %}
+</ol>
+{% endif %}
+{% for kind, msg in flashes %}<div class="flash {{ kind }}" role="status">{{ msg }}</div>{% endfor %}
+{% if problems %}<div class="flash error" role="alert"><ul>{% for p in problems %}<li>{{ p }}</li>{% endfor %}</ul></div>{% endif %}
+{% block content %}{% endblock %}
+</main>
+<footer>
+  <p>civicbot is open source (MIT) · <a href="https://github.com/fitzyracing1/civicbot">GitHub</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · Not affiliated with X Corp. or any city.</p>
+</footer>
+</body>
+</html>
