@@ -1,0 +1,60 @@
+{
+  "_note": "Verified live (read) 2026-10-10. bbox = [min_lat, min_lng, max_lat, max_lng], approximate city limits. See ../../research.md.",
+  "endpoints": [
+    {
+      "id": "chicago",
+      "name": "Chicago, IL",
+      "base_url": "https://311api.cityofchicago.org/open311/v2",
+      "bbox": [41.644, -87.940, 42.023, -87.524],
+      "write": true,
+      "api_key_required_for_write": true,
+      "docs": "https://github.com/Chicago/open311-api-docs",
+      "key_request": "http://311api.cityofchicago.org/open311/v2/apps/new"
+    },
+    {
+      "id": "boston",
+      "name": "Boston, MA",
+      "base_url": "https://311.boston.gov/open311/v2",
+      "bbox": [42.227, -71.191, 42.400, -70.986],
+      "write": true,
+      "api_key_required_for_write": true,
+      "docs": "https://311.boston.gov/open311/docs"
+    },
+    {
+      "id": "bloomington-in",
+      "name": "Bloomington, IN",
+      "base_url": "https://bloomington.in.gov/crm/open311/v2",
+      "bbox": [39.110, -86.600, 39.220, -86.470],
+      "write": true,
+      "api_key_required_for_write": true,
+      "docs": "https://bloomington.in.gov/crm/open311"
+    },
+    {
+      "id": "austin",
+      "name": "Austin, TX",
+      "base_url": "https://311.austintexas.gov/open311/v2",
+      "bbox": [30.098, -97.938, 30.517, -97.561],
+      "write": true,
+      "api_key_required_for_write": true,
+      "docs": "https://311.austintexas.gov/open311/docs"
+    },
+    {
+      "id": "brookline-ma",
+      "name": "Brookline, MA",
+      "base_url": "https://spot.brooklinema.gov/open311/v2",
+      "bbox": [42.295, -71.180, 42.353, -71.104],
+      "write": true,
+      "api_key_required_for_write": true,
+      "docs": "https://spot.brooklinema.gov/open311"
+    }
+  ],
+  "fallback": {
+    "id": "seeclickfix",
+    "name": "SeeClickFix (CivicPlus) - any client jurisdiction by lat/lng",
+    "base_url": "https://seeclickfix.com/open311/v2",
+    "geo_scoped": true,
+    "write": true,
+    "api_key_required_for_write": true,
+    "docs": "https://seeclickfix.com/open311/v2/docs"
+  }
+}

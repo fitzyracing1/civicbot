@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "civicbot"
+version = "0.2.0"
+description = "Let robots and agents call city-operated APIs: Open311 311 requests, jurisdiction resolution, transit, and an X robot layer."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Joshua Almeida" }]
+dependencies = []
+
+[project.optional-dependencies]
+transit = ["gtfs-realtime-bindings>=1.0"]
+secure = ["cryptography>=41"]
+dev = ["pytest>=7", "gtfs-realtime-bindings>=1.0", "cryptography>=41"]
+
+[project.scripts]
+civicbot = "civicbot.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["civicbot*"]
+
+[tool.setuptools.package-data]
+civicbot = ["data/*.json"]
+
+[tool.pytest.ini_options]
+markers = ["live: hits real city APIs (read-only); run with CIVICBOT_LIVE=1"]

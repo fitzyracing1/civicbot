@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets / local config
+.env
+.env.*
+*.key
+*.pem
+
+# civicbot runtime state: OAuth token stores, pending PKCE state, robot state/profiles
+*.enc
+tokens*.json
+*token*.enc
+pending*.json
+*.state.json
+profiles*.json
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
