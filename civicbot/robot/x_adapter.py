@@ -21,6 +21,7 @@ class Mention:
     lng: Optional[float] = None
     robot: str = ""        # which robot account received it (multi-tenant routing)
     channel: str = "mention"  # "mention" | "dm"
+    urls: List[str] = field(default_factory=list)  # expanded URLs (X wraps links in t.co)
 
 
 class XAdapter(Protocol):

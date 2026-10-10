@@ -76,9 +76,14 @@ class Phraser:
         self.robot_id, self.guard, self.tag = robot_id, guard or FleetDuplicateGuard(), tag
 
     def _pick(self, kind: str, seed: str, **fields) -> str:
-        pool = TEMPLATES[kind]
-        start = int(hashlib.sha256(f"{self.robot_id}|{seed}|{kind}".encode()).hexdigest(), 16) % len(pool)
-        candidates = [self._tagged(pool[(start + i) % len(pool)].format(**fields)) for i in range(len(pool))]
+        return self.choose(kind, [t.format(**fields) for t in TEMPLATES[kind]], seed)
+
+    def choose(self, key: str, rendered: List[str], seed: str) -> str:
+        """Pick one of several already-rendered phrasings: stable per robot+seed, never a copy
+        of what another robot in the fleet posted."""
+        rendered = [r for r in rendered if r] or ["Done."]
+        start = int(hashlib.sha256(f"{self.robot_id}|{seed}|{key}".encode()).hexdigest(), 16) % len(rendered)
+        candidates = [self._tagged(rendered[(start + i) % len(rendered)]) for i in range(len(rendered))]
         for c in candidates:
             if not self.guard.taken_by_other(self.robot_id, c):
                 break

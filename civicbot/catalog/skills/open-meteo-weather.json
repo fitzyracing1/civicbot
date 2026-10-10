@@ -1,0 +1,73 @@
+{
+  "spec_version": 1,
+  "name": "open-meteo-weather",
+  "title": "Current weather (Open-Meteo)",
+  "description": "Current temperature, conditions and wind for the place you mention (or your home city), from Open-Meteo's free forecast API. No key needed.",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "terms": {
+    "url": "https://open-meteo.com/en/terms",
+    "attribution": "Weather data by Open-Meteo.com (CC BY 4.0)",
+    "notes": "Free for non-commercial use under 10,000 calls/day; commercial use needs an Open-Meteo API plan."
+  },
+  "triggers": {
+    "keywords": [
+      "weather",
+      "forecast",
+      "temperature",
+      "temp",
+      "raining",
+      "rain",
+      "windy",
+      "wind"
+    ],
+    "phrases": [
+      "what's the weather",
+      "how cold",
+      "how warm",
+      "how hot"
+    ]
+  },
+  "location": "required",
+  "request": {
+    "base_url": "https://api.open-meteo.com",
+    "path": "/v1/forecast",
+    "method": "GET",
+    "params": {
+      "latitude": "{location.lat}",
+      "longitude": "{location.lng}",
+      "current": "temperature_2m,apparent_temperature,weather_code,wind_speed_10m",
+      "temperature_unit": "fahrenheit",
+      "wind_speed_unit": "mph",
+      "timezone": "auto"
+    }
+  },
+  "auth": {
+    "type": "none"
+  },
+  "allowed_domains": [
+    "api.open-meteo.com"
+  ],
+  "response": {
+    "extract": {
+      "temp": "current.temperature_2m",
+      "feels": "current.apparent_temperature",
+      "code": "current.weather_code",
+      "wind": "current.wind_speed_10m",
+      "at": "current.time"
+    },
+    "replies": [
+      "{location.text}: {temp|round}°F (feels like {feels|round}°F), {code|wmo}, wind {wind|round} mph at {at|time_hm}. Data: Open-Meteo",
+      "Weather for {location.text} at {at|time_hm}: {code|wmo}, {temp|round}°F, feels {feels|round}°F, wind {wind|round} mph. (Open-Meteo)",
+      "Right now in {location.text}: {temp|round}°F and {code|wmo}; feels like {feels|round}°F, wind {wind|round} mph. Source: Open-Meteo",
+      "Now {code|wmo} in {location.text}, {temp|round}°F (feels {feels|round}°F), wind {wind|round} mph as of {at|time_hm}. Open-Meteo data"
+    ]
+  },
+  "limits": {
+    "timeout_s": 8,
+    "max_bytes": 65536,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

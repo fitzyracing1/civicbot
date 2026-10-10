@@ -6,8 +6,12 @@ owner posts "@joshs_robot streetlight out at 401 N Morton St", the robot works o
 address is in, picks the right 311 request type, prepares the Open311 request, and replies **from
 the owner's robot account**.
 
-> Prototype (v0.2, Oct 2026). Private repo for review; not published to PyPI; never posts to X. **Dry-run by default: it never files a real 311 request unless you
-> explicitly enable sending.** Not published to PyPI. The `civicbot` name was free on PyPI on 2026-10-10.
+Owners can also **teach their robot new APIs** over time (weather, transit, open data, ...) by
+installing reviewed skills from the community catalog or their own spec files.
+
+> **Early prototype (v0.3, Oct 2026), open source under the MIT license.** Dry-run by default: it never
+> files a real 311 request, never sends a write-skill request, and never posts to X unless you explicitly
+> enable each of those. Not yet published to PyPI; install from source. Issues and PRs welcome.
 
 ## What's in the box
 
@@ -20,6 +24,8 @@ the owner's robot account**.
 | `civicbot.transit` | Minimal GTFS-Realtime reader (arrivals, vehicles, alerts) for any feed URL | read |
 | `civicbot.robot` | Rule-based intent parser (optional LLM hook), service matcher, `RobotProfile` (one per user-owned robot), varied replies under 280 chars, the `Robot` engine with policy guards, and `Fleet` (multi-tenant runner) | stubbed X |
 | `civicbot.x` | X OAuth 2.0 PKCE connect (`XOAuth2`, `finish_connect`), token stores (`EncryptedFileTokenStore`), and the real `XApiV2Adapter` (**disabled unless `enabled=True` + a stored token**) | tests use mocked HTTP only |
+| `civicbot.skills` + `civicbot/catalog/` | User-taught skills: JSON spec format + schema, `SafeFetcher` (SSRF-guarded), rule-based `SkillRouter`, `SkillRunner`, community `Catalog`, OpenAPI → spec importer | read live (allowlisted domains), write gated |
+| `civicbot.secrets` | Per-robot, encrypted store for owner-provided API keys referenced by skills | none |
 | `civicbot.offline` | Transport that replays real responses captured 2026-10-10, for demos with no network | none |
 
 Zero runtime dependencies (stdlib `urllib`). Transit parsing needs `civicbot[transit]`; encrypted token storage needs `civicbot[secure]` (cryptography).
@@ -38,7 +44,7 @@ These figures come from [`docs/research.md`](docs/research.md), which has source
 ## Quickstart
 
 ```bash
-cd civicbot   # repo root
+git clone https://github.com/fitzyracing1/civicbot && cd civicbot
 python -m venv .venv && . .venv/bin/activate
 pip install -e '.[dev]'
 pytest -q                                   # unit tests (mocked HTTP)
@@ -111,6 +117,134 @@ fleet.run_once()   # polls each robot's mentions with ITS token, replies from IT
 - Access tokens last 2 hours; the adapter refreshes them automatically (refresh tokens need
   `offline.access`), and saves the rotated token back into the store.
 - One robot's failure (revoked token, 429) is logged and does not stop the rest of the fleet.
+
+## Teach your robot new APIs (skills)
+
+Each owner can grow **their own** robot's abilities over time. The original features are the first
+skills (`city-311-report`, `city-311-status`, `gtfs-transit`); everything else is added by the owner.
+
+**From X (owner only)**, mention or DM your robot:
+
+| Command | What happens |
+|---|---|
+| `@joshs_robot skills` | lists the robot's skills (`*` = write skill still in dry-run) |
+| `@joshs_robot learn open-meteo-weather` | installs a reviewed skill from the community catalog |
+| `@joshs_robot learn https://example.org/my-skill.json` (also `add api <url>`) | fetches the spec (https, public IP only, 64 KB max), validates it, installs it. X wraps links in t.co; civicbot uses the expanded URL from the API's `entities` |
+| `@joshs_robot forget mbta-next-trains` | removes a skill (or turns a built-in off; `learn <builtin>` turns it back on) |
+| `@joshs_robot enable skill <name>` / `disable skill <name>` | lets a *write* skill send for real (each send still needs your YES) |
+
+Only the robot's owner can change skills. Allowlisted friends can *use* skills but get "only the owner can
+change my skills"; anyone else is ignored as before.
+
+**From the CLI:**
+
+```bash
+civicbot skill catalog                                   # reviewed community skills
+civicbot skill add open-meteo-weather --robot joshs_robot --owner joshua --home-city "Bloomington, IN"
+civicbot skill add ./my-skill.json --robot joshs_robot   # or an https:// URL
+civicbot skill list --robot joshs_robot
+civicbot skill test mbta-next-trains --text "next train at place-sstat"          # shows the request, no network
+civicbot skill test mbta-next-trains --text "next train at place-sstat" --live   # read skills only
+civicbot skill remove mbta-next-trains --robot joshs_robot
+civicbot skill validate ./my-skill.json
+civicbot skill import-openapi ./openapi.json --operation listParkEvents -o parks.json   # draft spec to review
+civicbot secret set socrata_app_token --robot joshs_robot   # prompts; stored encrypted, never printed
+```
+
+### Skill spec format (JSON; YAML too if PyYAML is installed)
+
+```json
+{
+  "spec_version": 1,
+  "name": "open-meteo-weather",
+  "description": "Current weather for the place you mention (or your home city), from Open-Meteo.",
+  "kind": "read",
+  "triggers": {"keywords": ["weather", "forecast", "temperature"], "phrases": ["what's the weather"]},
+  "location": "required",
+  "request": {
+    "base_url": "https://api.open-meteo.com", "path": "/v1/forecast", "method": "GET",
+    "params": {"latitude": "{location.lat}", "longitude": "{location.lng}",
+               "current": "temperature_2m,weather_code", "temperature_unit": "fahrenheit"}
+  },
+  "auth": {"type": "none"},
+  "allowed_domains": ["api.open-meteo.com"],
+  "response": {
+    "extract": {"temp": "current.temperature_2m", "code": "current.weather_code"},
+    "replies": ["{location.text}: {temp|round}°F, {code|wmo}. Data: Open-Meteo",
+                "Right now in {location.text}: {code|wmo}, {temp|round}°F (Open-Meteo)"]
+  },
+  "limits": {"timeout_s": 8, "max_bytes": 65536, "min_interval_s": 5, "max_calls_per_day": 200}
+}
+```
+
+- **Variables** usable in requests: `{location.lat}`, `{location.lng}`, `{location.text}`, `{text}`, `{query}`,
+  `{owner.home_city}`, `{date.today}`, `{date.days_ago_N}`, `{date.now_unix}`, and `{inputs.NAME}`.
+  `inputs` are pulled out of the mention with a regex and must match an anchored `pattern`
+  (e.g. a 6-digit stop id), so they are safe to put in a path.
+- **Free text** (`{text}`, `{query}`, `{location.text}`, `{owner.home_city}`) may only be a *whole* query or body
+  value, never part of a path, header, or query expression (no injection).
+- **Auth**: `{"type": "api_key", "in": "header", "name": "X-App-Token", "secret_ref": "socrata_app_token", "required": false}`
+  or `{"type": "bearer", "secret_ref": "..."}`. The spec holds only the *name* of the secret. The owner sets the
+  value with `civicbot secret set`. It is stored encrypted per robot, and other robots can't see it.
+- **Responses**: `extract` maps names to JSON paths (`a.b.0.c`, with `||` fallbacks). `list` renders up to 10 items
+  (`path`, `item`, `max`, `join`, `sort`, `skip_past`, `require`). Filters: `round`, `int`, `upper`, `lower`,
+  `title`, `date`, `time_hm`, `minutes_from_now`, `wmo`. Give several `replies` phrasings. The robot picks one
+  per mention and never posts the same text as another robot (fleet-wide duplicate guard).
+- Full schema: [`civicbot/skills/schema.json`](civicbot/skills/schema.json).
+
+### Community catalog (`civicbot/catalog/`)
+
+`index.json` lists each reviewed spec with its **sha256**. Install-by-name refuses a spec whose bytes don't
+match, so an edited spec needs a new review plus `civicbot skill reindex civicbot/catalog`. To contribute a
+spec, open a PR. Reviewers check the API terms, the domains, the reply wording, and a live read-only run.
+
+| Skill | API | Example | Live check (2026-10-10) |
+|---|---|---|---|
+| `open-meteo-weather` | Open-Meteo forecast (no key; free for non-commercial use, CC BY 4.0) | "what's the weather in New Haven, CT" | passed |
+| `mbta-next-trains` | MBTA V3 `/predictions` (no key needed: 20 req/min; optional key) | "next train at place-pktrm" | passed |
+| `chicago-311-nearby` | Chicago Data Portal (Socrata) 311 dataset `v6vf-nfxy`, `within_circle` (optional app token) | "311 requests near 121 N LaSalle St, Chicago, IL" | passed |
+| `carris-metropolitana-arrivals` | Carris Metropolitana (Lisbon area) `/v2/arrivals/by_stop/{id}` (no key) | "carris 020429" | passed |
+
+### Skill safety rules
+
+- **Owner-only install/remove/enable.** A mention from anyone else can never add a skill.
+- **Write skills are dry-run** until the owner says `enable skill <name>`. Even then, each call is
+  prepared and waits for the owner's YES. `skill test` never sends a write request.
+- **Domain allowlist per skill.** Requests (and secrets) only go to `allowed_domains`, over https on port 443.
+- **SSRF protection.** Every resolved IP must be public: loopback, private, link-local/metadata (169.254.x),
+  CGNAT, multicast and reserved ranges are rejected, IPv4-mapped IPv6 included. Redirects are not followed.
+  Known limit: DNS is checked before connecting, so put an egress proxy in front for DNS-rebinding defence.
+  *Sandbox note:* if your environment's DNS returns proxy "fake IPs" (e.g. 198.18.0.0/15), set
+  `CIVICBOT_SSRF_ALLOW_NETS=198.18.0.0/15` for local runs only. Never set it in production.
+- **Limits.** Timeout ≤ 15 s, responses ≤ 1 MB (spec default 256 KB), JSON only. Each skill on each robot has a
+  minimum interval and a daily call cap.
+- **No secrets in specs.** The validator rejects credential headers, key-like params with literal values, and
+  token-looking strings.
+- **Safe replies.** Reply templates can't contain links (X charges $0.20 per post with a URL) or @mentions.
+  API values are stripped of links/@ before posting. Replies stay ≤ 280 characters, one per mention.
+- **Rule-based routing.** Skills are matched by trigger keywords and phrases; an owner-installed skill
+  wins a tie against a built-in. No LLM is used, because X requires prior approval for AI reply bots.
+- Each API has its own terms (attribution, commercial use). Every catalog spec carries a `terms` block, and
+  replies credit the data source.
+
+### Demo: owners teach their robots
+
+`python -m civicbot simulate --demo skills` (fake X, live read-only APIs; add `--offline` for canned data):
+
+```
+@joshua -> @joshs_robot learn open-meteo-weather
+  REPLY: Learned 'open-meteo-weather': Current weather (Open-Meteo). Try: 'what's the weather'. [bot]
+@joshua -> @joshs_robot what's the weather?
+  skill: open-meteo-weather (keywords score 3)
+  REPLY: Bloomington, IN: 67°F (feels like 64°F), overcast, wind 8 mph at 18:15. Data: Open-Meteo [bot]
+@ana -> @anas_robot weather
+  REPLY: Now overcast in New Haven, CT, 60°F (feels 57°F), wind 4 mph as of 18:15. Open-Meteo data [bot]
+@joshua -> @joshs_robot next train at place-pktrm        (after 'learn mbta-next-trains')
+  REPLY: Leaving place-pktrm soon: Green-B 0 min, Red 1 min, Green-E 4 min. Source: MBTA [bot]
+@randomuser -> @joshs_robot learn https://evil.example/spec.json    -> ignored (not the owner)
+@joshua -> @joshs_robot learn https://localhost/spec.json            -> "Couldn't fetch that spec (host 'localhost' is not allowed)."
+@joshua -> @joshs_robot streetlight out at 401 N Morton St           -> built-in city-311-report, dry-run
+```
 
 ## Safety model
 
@@ -241,20 +375,26 @@ per-app ceiling (item 8); (e) each city's API key and terms for real filing.
 
 ## Tests
 
-`pytest -q` runs 84 unit tests with mocked HTTP and skips 5 live tests. They cover:
+`pytest -q -m "not live"` runs 137 unit tests with mocked HTTP; the 9 live tests are skipped unless
+`CIVICBOT_LIVE=1`. They cover:
 - PKCE S256, the authorize URL, code exchange (state check, TTL, Basic auth), refresh and revoke
 - the encrypted token store (no plaintext on disk, mode 600, wrong key fails)
 - the adapter's disabled guard, mentions/reply payloads, token auto-refresh and 429 handling
 - `finish_connect` identity checks
 - fleet routing, owner-only, consent, summoned-only, reply variation and follow-up permission
 - CLI `connect` (no network) and the two-robot demo
+- skills: schema and safety rules, SSRF blocks (private/loopback/metadata/CGNAT/IPv6-mapped, redirects,
+  size), templates, routing, owner-only install, URL install via t.co expansion, write dry-run → enable →
+  YES, per-robot secrets, catalog hash pinning, OpenAPI import, the `skill` CLI and the skills demo
 
 `CIVICBOT_LIVE=1 pytest -m live` adds the read-only live city checks (Bloomington, Boston, SeeClickFix
-New Haven, a live-schema dry run, MBTA GTFS-RT).
+New Haven, a live-schema dry run, MBTA GTFS-RT) and the four catalog skills.
 
 ## Limitations / next steps
 
 - City bounding boxes are approximate. Point-in-polygon against city boundaries (Census TIGER) would be exact.
 - Intersections fall back to a street centroid. An Overpass query for the actual intersection node would be more precise.
 - Each Open311 server returns a different response shape after a POST (service_request_id or token). `get_token` exists, but polling tokens isn't wired into the robot yet.
+- Skills: DNS-rebinding needs an egress proxy; no OAuth-based skill auth yet (API keys/bearer only); DM-based
+  install is modelled but the real DM adapter is still a stub.
 - Next integrations to add: SeeClickFix's own APIv2 (accounts, comments), Socrata/ArcGIS read helpers, Accela, and parking.

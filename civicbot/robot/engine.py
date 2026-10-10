@@ -13,6 +13,7 @@ Policy guards (see README "X policy findings"):
 from __future__ import annotations
 
 import json
+import re
 import time
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
@@ -26,6 +27,15 @@ from .matcher import ServiceMatcher
 from .profile import RobotProfile
 from .replies import FleetDuplicateGuard, Phraser
 from .x_adapter import Mention, XAdapter
+from ..skills import (BUILTIN_SKILLS, Catalog, FetchBlocked, FetchError, SafeFetcher, SkillInputError,
+                      SkillRouter, SkillRunner, SpecError, usage_check, validate_spec)
+from ..secrets import InMemorySecretStore, SecretStore
+
+MAX_SKILLS = 25
+CMD_INSTALL = re.compile(r"^(?:learn|install|add (?:api|skill))\s+(?P<arg>\S+)\s*$", re.I)
+CMD_REMOVE = re.compile(r"^(?:forget|uninstall|remove (?:api|skill))\s+(?P<arg>[a-z0-9-]+)\s*$", re.I)
+CMD_LIST = re.compile(r"^(?:skills|list skills|my skills|what can you do)\??$", re.I)
+CMD_ENABLE = re.compile(r"^(?P<op>enable|disable) skill\s+(?P<arg>[a-z0-9-]+)\s*$", re.I)
 
 
 @dataclass
@@ -35,6 +45,7 @@ class RobotState:
     pending: Dict[str, dict] = field(default_factory=dict)   # user -> prepared request
     tracked: Dict[str, dict] = field(default_factory=dict)   # request_id -> {endpoint, status, mention_id, user}
     since_id: Optional[str] = None
+    skill_usage: Dict[str, dict] = field(default_factory=dict)  # per-skill rate-limit counters
 
     @classmethod
     def load(cls, path: Optional[Path]) -> "RobotState":
@@ -57,6 +68,7 @@ class RobotAction:
     service: Optional[dict] = None
     prepared: Optional[dict] = None
     log: List[str] = field(default_factory=list)
+    skill: Optional[str] = None
 
 
 class Robot:
@@ -67,7 +79,9 @@ class Robot:
                  state_path: Optional[str] = None, send_enabled: bool = False,
                  api_keys: Optional[Dict[str, str]] = None, transit_feed: Optional[TransitFeed] = None,
                  transit_stop_id: Optional[str] = None, auto_status_updates: bool = False,
-                 guard: Optional[FleetDuplicateGuard] = None):
+                 guard: Optional[FleetDuplicateGuard] = None, fetcher: Optional[SafeFetcher] = None,
+                 secrets: Optional[SecretStore] = None, catalog: Optional[Catalog] = None,
+                 on_profile_change=None):
         if profile is None:  # convenience for single-robot scripts/tests
             if not owner:
                 raise ValueError("pass a RobotProfile or owner=")
@@ -86,6 +100,19 @@ class Robot:
                                              if profile.transit_feed_url else None)
         self.transit_stop_id = transit_stop_id or profile.transit_stop_id or None
         self.phrase = Phraser(profile.robot_id, guard)
+        self.fetcher = fetcher or SafeFetcher()
+        self.secrets = secrets or InMemorySecretStore()
+        self.catalog = catalog or Catalog()
+        self.router = SkillRouter()
+        self.on_profile_change = on_profile_change or (lambda p: None)
+        self.runner = SkillRunner(self.fetcher, self.resolver.geocoder,
+                                  lambda ref: self.secrets.get(self.profile.robot_id, ref))
+
+    # -- skills ---------------------------------------------------------------------------
+    def skills(self) -> List[dict]:
+        """Built-ins first (unless the owner removed them), then the owner's installed skills."""
+        b = [s for n, s in BUILTIN_SKILLS.items() if n not in self.profile.disabled_builtins]
+        return b + list(self.profile.skills.values())
 
     # convenience accessors (kept for older call sites)
     @property
@@ -129,10 +156,175 @@ class Robot:
             self._save()
             return act
 
-        handler = getattr(self, f"_on_{intent.kind}", self._on_help)
-        handler(m, intent, act)
+        body = self.parser.clean(m.text)
+        if self._manage(m, body, act):
+            self._save()
+            return act
+        if intent.kind in ("stop", "confirm", "updates"):
+            getattr(self, f"_on_{intent.kind}")(m, intent, act)
+            self._save()
+            return act
+        route = self.router.route(body, intent.kind, self.skills(), transit_available=self.transit_feed is not None)
+        if route is None:
+            self._on_help(m, intent, act)
+        else:
+            act.skill = route.skill["name"]
+            act.log.append(f"skill: {route.skill['name']} ({route.why})")
+            h = route.skill.get("handler")
+            if h:
+                getattr(self, "_on_" + h.split(":", 1)[1])(m, intent, act)
+            else:
+                self._run_skill(route.skill, m, body, act)
         self._save()
         return act
+
+    def _manage(self, m: Mention, body: str, act: RobotAction) -> bool:
+        """Owner-only skill management. Returns True if the message was a management command."""
+        low = body.strip()
+        mi, mr, ml, me = CMD_INSTALL.match(low), CMD_REMOVE.match(low), CMD_LIST.match(low), CMD_ENABLE.match(low)
+        if not (mi or mr or ml or me):
+            return False
+        act.intent.kind = "manage"
+        if ml:
+            names = [s["name"] + ("*" if s.get("kind") == "write" and not s.get("handler")
+                                  and s["name"] not in self.profile.write_enabled else "")
+                     for s in self.skills()]
+            act.reply = self.phrase.text("Skills: " + ", ".join(names) + ". (* = write, dry-run)")
+            return True
+        if m.author.lower() != self.owner:
+            act.log.append(f"refused: only @{self.profile.owner_handle} can change this robot's skills")
+            act.reply = self.phrase.text(f"Only @{self.profile.owner_handle} can change my skills.".replace("@", ""))
+            return True
+        if mi:
+            self._install(mi.group("arg"), m, act)
+        elif mr:
+            name = mr.group("arg").lower()
+            if name in self.profile.skills:
+                del self.profile.skills[name]
+                if name in self.profile.write_enabled:
+                    self.profile.write_enabled.remove(name)
+                act.reply = self.phrase.text(f"Forgot skill '{name}'.")
+            elif name in BUILTIN_SKILLS and name not in self.profile.disabled_builtins:
+                self.profile.disabled_builtins.append(name)
+                act.reply = self.phrase.text(f"Turned off built-in '{name}'. 'learn {name}' turns it back on.")
+            else:
+                act.reply = self.phrase.text(f"I don't have a skill called '{name}'.")
+            self.on_profile_change(self.profile)
+        else:
+            name, on = me.group("arg").lower(), me.group("op").lower() == "enable"
+            spec = self.profile.skills.get(name)
+            if not spec or spec.get("kind") != "write":
+                act.reply = self.phrase.text(f"'{name}' isn't an installed write skill.")
+            else:
+                if on and name not in self.profile.write_enabled:
+                    self.profile.write_enabled.append(name)
+                if not on and name in self.profile.write_enabled:
+                    self.profile.write_enabled.remove(name)
+                act.reply = self.phrase.text(f"'{name}' will {'send real requests (after your YES each time)' if on else 'stay dry-run'}.")
+                self.on_profile_change(self.profile)
+        return True
+
+    def _install(self, arg: str, m: Mention, act: RobotAction) -> None:
+        name = arg.lower()
+        if name in BUILTIN_SKILLS:
+            if name in self.profile.disabled_builtins:
+                self.profile.disabled_builtins.remove(name)
+                self.on_profile_change(self.profile)
+            act.reply = self.phrase.text(f"Built-in '{name}' is on.")
+            return
+        try:
+            if re.match(r"^https?://", arg, re.I):
+                url = arg
+                if re.match(r"^https?://t\.co/", arg, re.I) and m.urls:
+                    url = m.urls[0]  # X shortens links; the API gives us the expanded URL
+                    act.log.append(f"expanded {arg} -> {url}")
+                spec = validate_spec(self.fetcher.get_spec(url))
+                source = url
+            else:
+                spec, source = self.catalog.get(name), f"catalog:{name}"
+        except KeyError:
+            act.reply = self.phrase.text(f"No catalog skill '{name[:40]}'. Try 'skills' or a link to a spec.")
+            return
+        except SpecError as e:
+            act.log.append(f"spec rejected: {e.problems}")
+            act.reply = self.phrase.text(f"Can't learn that spec: {e.problems[0][:150]}")
+            return
+        except (FetchBlocked, FetchError) as e:
+            act.log.append(f"spec fetch refused/failed: {e}")
+            act.reply = self.phrase.text(f"Couldn't fetch that spec ({str(e)[:120]}).")
+            return
+        if spec["name"] in BUILTIN_SKILLS:
+            act.reply = self.phrase.text("That name is reserved for a built-in skill.")
+            return
+        if spec["name"] not in self.profile.skills and len(self.profile.skills) >= MAX_SKILLS:
+            act.reply = self.phrase.text(f"I already know {MAX_SKILLS} skills; forget one first.")
+            return
+        updated = spec["name"] in self.profile.skills
+        spec = dict(spec, _source=source, _installed_at=time.time())
+        self.profile.skills[spec["name"]] = spec
+        self.on_profile_change(self.profile)
+        act.log.append(f"installed {spec['name']} from {source} (kind={spec['kind']}, domains={spec['allowed_domains']})")
+        extra = " It's a write skill, so it stays dry-run until you 'enable skill " + spec["name"] + "'." \
+            if spec["kind"] == "write" else ""
+        hint = spec["triggers"].get("phrases", spec["triggers"]["keywords"])[0]
+        title = spec.get("title", spec["description"])[:90]
+        verb = "Updated" if updated else "Learned"
+        act.reply = self.phrase.choose("learn", [
+            f"{verb} '{spec['name']}': {title}. Try: '{hint}'.{extra}",
+            f"{verb} a skill: {title} ('{spec['name']}'). Ask me '{hint}'.{extra}",
+            f"New skill {verb.lower()}: '{spec['name']}' ({title}). Say '{hint}' to use it.{extra}"], m.id)
+
+    def _run_skill(self, spec: dict, m: Mention, body: str, act: RobotAction) -> None:
+        try:
+            ctx = self.runner.context(spec, body, home_city=self.home_city, default_lat=self.profile.default_lat,
+                                      default_lng=self.profile.default_lng, lat=m.lat, lng=m.lng)
+            if spec["kind"] == "write":
+                call = self.runner.build(spec, ctx)
+                act.prepared = {k: v for k, v in call.items() if k != "headers"}
+                host = call["url"].split("/")[2]
+                if spec["name"] not in self.profile.write_enabled:
+                    act.log.append("write skill not enabled -> dry-run, nothing sent")
+                    act.reply = self.phrase.text(f"Dry run: '{spec['name']}' would {call['method']} to {host}. "
+                                                 f"Not sent. Owner can 'enable skill {spec['name']}'.")
+                    return
+                self.state.pending[m.author.lower()] = {"type": "skill", "skill": spec["name"], "call": call,
+                                                        "mention_id": m.id, "ctx": vars(ctx)}
+                act.reply = self.phrase.text(f"Ready to {call['method']} to {host} via '{spec['name']}'. "
+                                             "Reply YES to send, STOP to opt out.")
+                return
+            refusal = usage_check(self.state.skill_usage, spec)
+            if refusal:
+                act.reply = self.phrase.text(refusal)
+                return
+            options = self.runner.run_read(spec, ctx, act.log)
+            act.reply = self.phrase.choose(spec["name"], options, m.id)
+        except SkillInputError as e:
+            act.reply = self.phrase.text(str(e))
+        except FetchBlocked as e:
+            act.log.append(f"blocked: {e}")
+            act.reply = self.phrase.text(f"'{spec['name']}' was blocked by a safety rule.")
+        except FetchError as e:
+            act.log.append(f"fetch error: {e}")
+            act.reply = self.phrase.text(f"'{spec['name']}' couldn't reach its API right now.")
+
+    def _send_pending_skill(self, m: Mention, pending: dict, act: RobotAction) -> None:
+        spec = self.profile.skills.get(pending["skill"])
+        del self.state.pending[m.author.lower()]
+        if not spec or spec["name"] not in self.profile.write_enabled:
+            act.reply = self.phrase.text("That skill is no longer enabled; nothing sent.")
+            return
+        refusal = usage_check(self.state.skill_usage, spec)
+        if refusal:
+            act.reply = self.phrase.text(refusal)
+            return
+        from ..skills.runner import SkillContext
+        ctx = SkillContext(**pending["ctx"])
+        try:
+            data = self.runner.execute(spec, pending["call"], act.log)
+            act.reply = self.phrase.choose(spec["name"], self.runner.replies(spec, data, ctx), m.id)
+        except (FetchBlocked, FetchError, SkillInputError) as e:
+            act.log.append(f"send failed: {e}")
+            act.reply = self.phrase.text(f"'{spec['name']}' failed: {str(e)[:120]}")
 
     def run_once(self, x: XAdapter) -> List[RobotAction]:
         actions = []
@@ -245,6 +437,9 @@ class Robot:
         if not pending:
             act.reply = self.phrase.text("Nothing pending to file.")
             return
+        if pending.get("type") == "skill":
+            self._send_pending_skill(m, pending, act)
+            return
         key = self.api_keys.get(pending["endpoint"])
         if not (self.profile.send_enabled and key):
             act.log.append("send disabled - request NOT filed")
@@ -323,7 +518,7 @@ class Robot:
 
     def _on_help(self, m: Mention, intent: Intent, act: RobotAction) -> None:
         act.reply = self.phrase.text("Tell me a problem + place, e.g. 'pothole at 401 N Morton St'. "
-                                     "Or 'status #123', 'next bus', 'updates on'. STOP to opt out.")
+                                     "Also 'skills', 'learn <skill>', 'status #123'. STOP to opt out.")
 
     # ------------------------------------------------------------------
     def poll_status_updates(self, x: Optional[XAdapter] = None) -> List[str]:

@@ -1,0 +1,73 @@
+{
+  "spec_version": 1,
+  "name": "chicago-311-nearby",
+  "title": "Recent Chicago 311 requests nearby (Socrata)",
+  "description": "Latest Chicago 311 service requests within 400 m of a place in the last 30 days, from the city's open data portal (Socrata SODA API, dataset v6vf-nfxy).",
+  "kind": "read",
+  "version": "1.0.0",
+  "author": "civicbot catalog",
+  "terms": {
+    "url": "https://www.chicago.gov/city/en/narr/foia/data_disclaimer.html",
+    "attribution": "Data: City of Chicago Data Portal",
+    "notes": "Works without a key at low volume; an app token (secret_ref socrata_app_token) gets higher limits."
+  },
+  "triggers": {
+    "keywords": [
+      "311",
+      "requests",
+      "complaints",
+      "reported"
+    ],
+    "phrases": [
+      "311 near",
+      "311 requests near",
+      "what's been reported",
+      "recent 311"
+    ],
+    "min_score": 2
+  },
+  "location": "required",
+  "request": {
+    "base_url": "https://data.cityofchicago.org",
+    "path": "/resource/v6vf-nfxy.json",
+    "method": "GET",
+    "params": {
+      "$select": "sr_type,status,created_date",
+      "$where": "within_circle(location, {location.lat}, {location.lng}, 400) AND created_date > '{date.days_ago_30}T00:00:00'",
+      "$order": "created_date DESC",
+      "$limit": 4
+    }
+  },
+  "auth": {
+    "type": "api_key",
+    "in": "header",
+    "name": "X-App-Token",
+    "secret_ref": "socrata_app_token",
+    "required": false
+  },
+  "allowed_domains": [
+    "data.cityofchicago.org"
+  ],
+  "response": {
+    "list": {
+      "path": "$",
+      "item": "{sr_type} ({status|lower}, {created_date|date})",
+      "max": 4,
+      "join": "; "
+    },
+    "replies": [
+      "Latest 311 near {location.text}: {items}",
+      "Recent Chicago 311 requests around {location.text}: {items}",
+      "Near {location.text}, the city logged: {items}"
+    ],
+    "empty_replies": [
+      "No Chicago 311 requests within 400 m of {location.text} in the last 30 days."
+    ]
+  },
+  "limits": {
+    "timeout_s": 10,
+    "max_bytes": 65536,
+    "min_interval_s": 5,
+    "max_calls_per_day": 200
+  }
+}

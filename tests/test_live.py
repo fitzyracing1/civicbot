@@ -43,3 +43,29 @@ def test_live_gtfs_rt_mbta():
     except OSError as e:
         pytest.skip(f"network unavailable: {e}")
     assert any(a.time for a in arr)
+
+
+CATALOG_LIVE = {
+    "open-meteo-weather": ("weather in Bloomington, IN", "°F"),
+    "mbta-next-trains": ("next train at place-pktrm", "place-pktrm"),
+    "chicago-311-nearby": ("311 requests near 121 N LaSalle St, Chicago, IL", "LaSalle"),
+    "carris-metropolitana-arrivals": ("carris 020429", "020429"),
+}
+
+
+@pytest.mark.parametrize("name", sorted(CATALOG_LIVE))
+def test_live_catalog_skill(name):
+    """Each reviewed catalog skill answers live (read-only GET through SafeFetcher with all guards)."""
+    from civicbot.geocode import Geocoder
+    from civicbot.skills import Catalog, FetchError, SafeFetcher, SkillRunner
+    spec = Catalog().get(name)
+    text, expect = CATALOG_LIVE[name]
+    runner = SkillRunner(SafeFetcher(), Geocoder())
+    log = []
+    try:
+        replies = runner.run_read(spec, runner.context(spec, text), log)
+    except (FetchError, OSError) as e:
+        pytest.skip(f"network unavailable: {e}")
+    assert replies and all(len(r) <= 270 for r in replies)
+    assert expect in replies[0]
+    print(name, "->", replies[0])
