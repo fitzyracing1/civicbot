@@ -1,0 +1,44 @@
+# Weekly live re-check of the published global directory (directory/data/). It never deletes anything:
+# when entries stop answering it opens (or updates) one issue listing them, for a human to review.
+name: directory-recheck
+
+on:
+  schedule:
+    - cron: "17 6 * * 1"   # Mondays 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: directory-recheck
+  cancel-in-progress: false
+
+jobs:
+  recheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Re-check published entries (read-only GETs, polite pacing)
+        run: python scripts/verify_apis.py --recheck --report recheck.md
+      - name: Open or update an issue if anything is dead
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          dead=$(python -c "import json;print(len(json.load(open('directory/recheck_report.json'))['dead']))")
+          echo "dead entries: $dead"
+          if [ "$dead" -gt 0 ]; then
+            title="Directory re-check: $dead entries not answering"
+            num=$(gh issue list --state open --label directory-recheck --json number -q '.[0].number' || true)
+            if [ -n "$num" ]; then
+              gh issue edit "$num" --title "$title" --body-file recheck.md
+            else
+              gh label create directory-recheck --color BFD4F2 --description "Weekly directory re-check" 2>/dev/null || true
+              gh issue create --title "$title" --label directory-recheck --body-file recheck.md
+            fi
+          fi

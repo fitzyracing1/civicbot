@@ -1,5 +1,36 @@
 # Changelog
 
+## Unreleased (data and site only, 2026-10-10): global free-API directory, batch 1
+
+Strictly additive. These are unchanged:
+- `civicbot/data/free_apis.json` (pinned by a test)
+- the catalog skills, `grok.txt`, the Python package, and PR #2
+
+Added:
+- **`directory/`**: a global directory of verified free APIs and open feeds.
+  - Sources: the 120 v0.4 entries, a curated list, MobilityData GBFS, Mobility Database GTFS/GTFS-RT (keyless),
+    CKAN instances and public-apis, each with recorded provenance and license.
+  - Published as per-continent JSON shards plus `index.json`. `failed.json` keeps every failure with its reason for retries.
+- **`scripts/collect_apis.py`** and **`scripts/verify_apis.py`**: re-runnable collection and verification.
+  - Polite live checks: identifying UA, 1.2 s spacing per host, 20 s timeout, one retry, recorded redirects. No keys used.
+  - `--recheck` produces a dead-entry report.
+- **`.github/workflows/directory-recheck.yml`**: a weekly re-check that opens or updates an issue. It never deletes.
+- **Site**: `directory.html` with continent, country, category, key-type, kind, verification and CORS filters,
+  pagination, and counts by region. Links were added to the nav, `apis.html` and `grok.html`.
+- **Assistant files**: `grok-global.txt`, `grok-apis-<continent>.txt` and `grok-apis-<country>.txt` (keyless JSON/XML/text
+  APIs only). A "Global directory" section was appended to `llms.txt`.
+- **"Paste into Grok" copy bar on every API card** (the original 120 on `apis.html` and every global entry on
+  `directory.html`). Each card shows a one-line prompt and a Copy button.
+  - The prompt points Grok at `grok.txt`, names the API, includes its verified URL and asks a natural question.
+  - Skill-backed APIs reuse the skill's URL template, filled for a sample place. With an optional place box, location
+    skills use your place instead.
+  - Prompts are generated at build time by `scripts/directory/prompts.py`. They appear as new fields:
+    - `grok_prompt` and `grok_prompt_template` in the directory shards
+    - `grok_prompt` in `data/grok-pack.json` skills and apis
+    - `data/grok_prompts.json`
+    - a new last column in `grok-apis-<region>.txt`
+  - `grok.txt` is unchanged.
+
 ## Unreleased (site only, 2026-10-10): use civicbot free inside Grok
 
 No Python package changes, so no new PyPI release. Website and scripts only:

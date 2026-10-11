@@ -41,6 +41,13 @@ def main(out: str = "_site") -> int:
     gmod = importlib.util.module_from_spec(gspec)
     gspec.loader.exec_module(gmod)
     print("grok pack:", gmod.write(dst))
+    dspec = importlib.util.spec_from_file_location("build_directory_site", ROOT / "scripts" / "build_directory_site.py")
+    dmod = importlib.util.module_from_spec(dspec)
+    dspec.loader.exec_module(dmod)
+    if (ROOT / "directory" / "data" / "index.json").exists():  # global directory (v0.4.x, additive)
+        print("global directory:", dmod.write(dst))
+    else:
+        print("grok prompts:", dmod.write_prompts(dst))
     (dst / ".nojekyll").write_text("")
     print(f"built {dst} ({len(skills)} skills)")
     return 0

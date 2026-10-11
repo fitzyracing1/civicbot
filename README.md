@@ -132,6 +132,15 @@ Project text, example prompts and honest limits are on [Use with Grok](https://f
 `python scripts/check_grok_pack.py` checks every URL in the pack live. It is a text file an assistant follows, not the
 Python robot: there is no skill pinning or SSRF guard, and the assistant decides what to open.
 
+## Global free-API directory (growing)
+
+Beyond the 120-entry directory above, [`directory/`](directory/README.md) holds a global list of free APIs and
+open feeds, verified live and tagged with continent, country, key type and source. You can browse it at
+https://fitzyracing1.github.io/civicbot/directory.html. AI assistants can read it as small text files starting from
+https://fitzyracing1.github.io/civicbot/grok-global.txt. Each batch is collected with `scripts/collect_apis.py` and
+verified with `scripts/verify_apis.py`, and a weekly workflow re-checks every entry. It is data and site only; the
+Python package does not use it.
+
 ## Bring your own robot account (setup for each person)
 
 civicbot never creates, owns or holds anyone's X account. Each person does this once:

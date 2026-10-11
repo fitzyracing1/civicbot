@@ -7,6 +7,8 @@
 <main>
 <h1>Free APIs, checked live</h1>
 <p class="lead" id="summary">Loading…</p>
+<p class="small">Looking for more? The <a href="directory.html">global directory</a> lists thousands of verified free APIs
+and open feeds from every continent.</p>
 <p class="small">“No key” means no signup at all. “Free key” means a free signup. “Demo key” means a shared public key
 with low limits. <b>CORS</b> means a web page can call the API directly. Please respect each provider's limits and
 terms. civicbot is not affiliated with any of them. Where a skill exists, your robot can learn it.</p>
@@ -18,10 +20,14 @@ terms. civicbot is not affiliated with any of them. Where a skill exists, your r
   <label class="small"><input type="checkbox" id="cors"> CORS only</label>
   <label class="small"><input type="checkbox" id="sk"> Has a robot skill</label>
 </div>
+<div class="gplace small"><label for="gplace">Your place for the “Paste into Grok” prompts:</label>
+  <input id="gplace" placeholder="e.g. Lisbon, Portugal (optional)" autocomplete="address-level2">
+  <span>Each card has a one-line prompt and a Copy button. Paste it into Grok. Location-aware APIs use your place; the rest show a sample.</span></div>
 <p class="small" id="count"></p>
 <div class="grid" id="list"></div>
 </main>
 <script src="assets/nav.js"></script>
+<script src="assets/grokbar.js" data-prompts="data/grok_prompts.json"></script>
 <script>
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 let DATA = null;
@@ -43,6 +49,7 @@ function render() {
     <p class="small">✓ verified ${esc(a.verified.date)} (HTTP ${esc(a.verified.http)}, ${esc(a.verified.ms)} ms${a.verified.mode.startsWith("reachable") ? ", reachable, needs key" : ""})
       · <a href="${esc(a.example)}" rel="noopener nofollow">example request</a></p>
     ${a.skills.length ? `<p class="learn">${a.skills.map(s => `<code>@yourrobot learn ${esc(s)}</code>`).join(" ")}</p>` : ""}
+    ${window.grokBar ? window.grokBar(a) : ""}
   </div>`).join("");
 }
 fetch("data/free_apis.json").then(r => r.json()).then(d => {

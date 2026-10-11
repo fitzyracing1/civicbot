@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Global free-API directory (verified live) · civicbot</title>
+<meta name="description" content="Thousands of free public APIs and open feeds from every continent: weather, hazards, transit, bikeshare, open-data portals, 311, statistics and more. Each was checked live, with its source, key type and CORS listed.">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+#regions{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+#regions button{cursor:pointer;border:1px solid #8885;border-radius:999px;padding:.3rem .8rem;background:transparent;color:inherit;font:inherit}
+#regions button[aria-pressed=true]{background:#2d6cdf;color:#fff;border-color:#2d6cdf}
+.pager{display:flex;gap:8px;align-items:center;margin:12px 0}
+.pager button{cursor:pointer;border:0;border-radius:8px;padding:.4rem .8rem;background:#2d6cdf;color:#fff;font:inherit}
+.pager button:disabled{opacity:.4;cursor:default}
+.api .meta{font-size:.8rem;opacity:.8;margin:.3rem 0 0}
+.api code{word-break:break-all;font-size:.78rem}
+</style></head>
+<body>
+<main>
+<h1>Global free-API directory</h1>
+<p class="lead" id="summary">Loading…</p>
+<p class="small">Every entry was called live on its verified date. It uses an identifying User-Agent and one request per
+API, and redirects are recorded rather than silently followed. <b>Endpoint</b> means the example URL answered in the
+expected format. <b>Docs only</b> means only the documentation page loaded (listed in public-apis; the API itself isn't
+tested yet). “No key” means no signup at all. “Free key” means a free signup, and we never use one.
+<b>CORS</b> means a web page can call the API directly. Please respect each provider's terms and limits. civicbot isn't
+affiliated with any of them. The <a href="apis.html">original 120-API directory</a> is unchanged. For AI assistants,
+see <a href="grok-global.txt">grok-global.txt</a>.</p>
+<div id="regions" role="group" aria-label="Continent"></div>
+<div class="filters">
+  <input type="search" id="q" placeholder="Search: tides, Lisbon, bikes, CKAN…" aria-label="Search">
+  <select id="country" aria-label="Country"><option value="">All countries</option></select>
+  <select id="cat" aria-label="Category"><option value="">All categories</option></select>
+  <select id="auth" aria-label="Key type"><option value="">Any key type</option><option value="none">No key</option>
+    <option value="free-key">Free key</option><option value="demo-key">Demo key</option></select>
+  <select id="kind" aria-label="Kind"><option value="">Any kind</option></select>
+  <select id="tier" aria-label="Verification"><option value="">Endpoint + docs</option><option value="endpoint">Endpoint verified</option>
+    <option value="docs">Docs only</option></select>
+  <label class="small"><input type="checkbox" id="cors"> CORS only</label>
+</div>
+<div class="gplace small"><label for="gplace">Your place for the “Paste into Grok” prompts:</label>
+  <input id="gplace" placeholder="e.g. Lisbon, Portugal (optional)" autocomplete="address-level2">
+  <span>Each card has a one-line prompt and a Copy button. Paste it into Grok. Location-aware APIs use your place; the rest show a sample.</span></div>
+<p class="small" id="count"></p>
+<div class="grid" id="list"></div>
+<div class="pager"><button id="prev">Previous</button><span class="small" id="page"></span><button id="next">Next</button></div>
+</main>
+<script src="assets/nav.js"></script>
+<script src="assets/grokbar.js"></script>
+<script src="assets/directory.js"></script>
+</body></html>
