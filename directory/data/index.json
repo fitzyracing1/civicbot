@@ -1,0 +1,611 @@
+{
+ "version": 1,
+ "generated": "2026-10-10",
+ "count": 6099,
+ "ok": 6097,
+ "endpoint_verified": 4593,
+ "docs_only": 1504,
+ "by_continent": {
+  "Europe": 1961,
+  "Global": 1690,
+  "North America": 1475,
+  "Asia": 854,
+  "Oceania": 68,
+  "South America": 36,
+  "Africa": 12,
+  "Antarctica": 1
+ },
+ "by_category": {
+  "Transit": 3003,
+  "Bikeshare & micromobility": 1212,
+  "Development": 159,
+  "Open data portals": 98,
+  "Geocoding": 86,
+  "Government": 83,
+  "Games & Comics": 76,
+  "Finance": 74,
+  "Cryptocurrency": 66,
+  "Open Data": 60,
+  "Transportation": 51,
+  "Sports & Fitness": 44,
+  "Machine Learning": 42,
+  "Security": 42,
+  "Science & Math": 38,
+  "Video": 37,
+  "Health": 36,
+  "Documents & Productivity": 36,
+  "Weather": 33,
+  "Weather & climate": 32,
+  "Alerts & hazards": 31,
+  "Geocoding & places": 30,
+  "Email": 28,
+  "Books, words & knowledge": 26,
+  "Food & Drink": 26,
+  "Social": 26,
+  "Business": 25,
+  "Jobs": 25,
+  "Photography": 24,
+  "Test Data": 24,
+  "Currency Exchange": 23,
+  "Money": 22,
+  "News": 21,
+  "Animals": 20,
+  "Art & Design": 20,
+  "Books": 20,
+  "Environment": 20,
+  "Statistics & economy": 19,
+  "Sun, time & holidays": 19,
+  "Entertainment": 17,
+  "Personality": 17,
+  "311 & service requests": 16,
+  "Anti-Malware": 16,
+  "Music": 16,
+  "Shopping": 16,
+  "Government & safety": 15,
+  "Blockchain": 14,
+  "Cloud Storage & File Sharing": 14,
+  "Data Validation": 14,
+  "Air quality & environment": 12,
+  "Calendar": 12,
+  "Vehicle": 12,
+  "Anime": 11,
+  "Dictionaries": 11,
+  "URL Shorteners": 11,
+  "APIs Covered Under APILayer Suite!": 10,
+  "Open Source Projects": 10,
+  "Text Analysis": 10,
+  "Flights & space": 9,
+  "Science & research": 9,
+  "Sports & games": 9,
+  "City open data": 8,
+  "Tracking": 8,
+  "Phone": 7,
+  "Water, tides & marine": 6,
+  "Animals & nature": 5,
+  "Authentication & Authorization": 5,
+  "Continuous Integration": 5,
+  "Portugal & EU": 4,
+  "Programming": 4,
+  "Patent": 3,
+  "Energy": 2,
+  "Events": 2
+ },
+ "by_auth": {
+  "none": 5330,
+  "free-key": 765,
+  "demo-key": 2
+ },
+ "by_kind": {
+  "gtfs": 2000,
+  "api": 1812,
+  "gbfs": 1204,
+  "gtfs-rt": 980,
+  "portal": 98,
+  "open311": 3
+ },
+ "by_source": {
+  "mobility-database": 2980,
+  "public-apis": 1504,
+  "gbfs": 1204,
+  "curated": 285,
+  "civicbot": 118,
+  "ckan-instances": 6
+ },
+ "by_country": {
+  "AE": {
+   "name": "United Arab Emirates",
+   "continent": "Asia",
+   "count": 6
+  },
+  "AL": {
+   "name": "Albania",
+   "continent": "Europe",
+   "count": 2
+  },
+  "AQ": {
+   "name": "Antarctica",
+   "continent": "Antarctica",
+   "count": 1
+  },
+  "AR": {
+   "name": "Argentina",
+   "continent": "South America",
+   "count": 7
+  },
+  "AT": {
+   "name": "Austria",
+   "continent": "Europe",
+   "count": 17
+  },
+  "AU": {
+   "name": "Australia",
+   "continent": "Oceania",
+   "count": 49
+  },
+  "BA": {
+   "name": "Bosnia and Herzegovina",
+   "continent": "Europe",
+   "count": 4
+  },
+  "BE": {
+   "name": "Belgium",
+   "continent": "Europe",
+   "count": 39
+  },
+  "BG": {
+   "name": "Bulgaria",
+   "continent": "Europe",
+   "count": 7
+  },
+  "BO": {
+   "name": "Bolivia",
+   "continent": "South America",
+   "count": 2
+  },
+  "BR": {
+   "name": "Brazil",
+   "continent": "South America",
+   "count": 15
+  },
+  "BY": {
+   "name": "Belarus",
+   "continent": "Europe",
+   "count": 2
+  },
+  "CA": {
+   "name": "Canada",
+   "continent": "North America",
+   "count": 256
+  },
+  "CH": {
+   "name": "Switzerland",
+   "continent": "Europe",
+   "count": 57
+  },
+  "CL": {
+   "name": "Chile",
+   "continent": "South America",
+   "count": 3
+  },
+  "CN": {
+   "name": "China",
+   "continent": "Asia",
+   "count": 1
+  },
+  "CO": {
+   "name": "Colombia",
+   "continent": "South America",
+   "count": 5
+  },
+  "CY": {
+   "name": "Cyprus",
+   "continent": "Europe",
+   "count": 8
+  },
+  "CZ": {
+   "name": "Czechia",
+   "continent": "Europe",
+   "count": 61
+  },
+  "DE": {
+   "name": "Germany",
+   "continent": "Europe",
+   "count": 217
+  },
+  "DK": {
+   "name": "Denmark",
+   "continent": "Europe",
+   "count": 21
+  },
+  "DZ": {
+   "name": "Algeria",
+   "continent": "Africa",
+   "count": 2
+  },
+  "EE": {
+   "name": "Estonia",
+   "continent": "Europe",
+   "count": 30
+  },
+  "EG": {
+   "name": "Egypt",
+   "continent": "Africa",
+   "count": 1
+  },
+  "ES": {
+   "name": "Spain",
+   "continent": "Europe",
+   "count": 113
+  },
+  "ET": {
+   "name": "Ethiopia",
+   "continent": "Africa",
+   "count": 1
+  },
+  "EU": {
+   "name": "European Union",
+   "continent": "Europe",
+   "count": 10
+  },
+  "FI": {
+   "name": "Finland",
+   "continent": "Europe",
+   "count": 43
+  },
+  "FR": {
+   "name": "France",
+   "continent": "Europe",
+   "count": 755
+  },
+  "GB": {
+   "name": "United Kingdom",
+   "continent": "Europe",
+   "count": 108
+  },
+  "GE": {
+   "name": "Georgia",
+   "continent": "Asia",
+   "count": 1
+  },
+  "GH": {
+   "name": "Ghana",
+   "continent": "Africa",
+   "count": 1
+  },
+  "GL": {
+   "name": "Greenland",
+   "continent": "North America",
+   "count": 1
+  },
+  "GR": {
+   "name": "Greece",
+   "continent": "Europe",
+   "count": 4
+  },
+  "HK": {
+   "name": "Hong Kong",
+   "continent": "Asia",
+   "count": 7
+  },
+  "HN": {
+   "name": "Honduras",
+   "continent": "North America",
+   "count": 1
+  },
+  "HR": {
+   "name": "Croatia",
+   "continent": "Europe",
+   "count": 24
+  },
+  "HU": {
+   "name": "Hungary",
+   "continent": "Europe",
+   "count": 10
+  },
+  "ID": {
+   "name": "Indonesia",
+   "continent": "Asia",
+   "count": 3
+  },
+  "IE": {
+   "name": "Ireland",
+   "continent": "Europe",
+   "count": 26
+  },
+  "IL": {
+   "name": "Israel",
+   "continent": "Asia",
+   "count": 5
+  },
+  "IN": {
+   "name": "India",
+   "continent": "Asia",
+   "count": 10
+  },
+  "IS": {
+   "name": "Iceland",
+   "continent": "Europe",
+   "count": 2
+  },
+  "IT": {
+   "name": "Italy",
+   "continent": "Europe",
+   "count": 47
+  },
+  "JE": {
+   "name": "Jersey",
+   "continent": "Europe",
+   "count": 1
+  },
+  "JP": {
+   "name": "Japan",
+   "continent": "Asia",
+   "count": 768
+  },
+  "LI": {
+   "name": "Liechtenstein",
+   "continent": "Europe",
+   "count": 2
+  },
+  "LK": {
+   "name": "Sri Lanka",
+   "continent": "Asia",
+   "count": 4
+  },
+  "LT": {
+   "name": "Lithuania",
+   "continent": "Europe",
+   "count": 10
+  },
+  "LU": {
+   "name": "Luxembourg",
+   "continent": "Europe",
+   "count": 2
+  },
+  "LV": {
+   "name": "Latvia",
+   "continent": "Europe",
+   "count": 15
+  },
+  "MA": {
+   "name": "Morocco",
+   "continent": "Africa",
+   "count": 2
+  },
+  "MC": {
+   "name": "Monaco",
+   "continent": "Europe",
+   "count": 2
+  },
+  "MD": {
+   "name": "Moldova",
+   "continent": "Europe",
+   "count": 5
+  },
+  "ME": {
+   "name": "Montenegro",
+   "continent": "Europe",
+   "count": 1
+  },
+  "MK": {
+   "name": "North Macedonia",
+   "continent": "Europe",
+   "count": 4
+  },
+  "MX": {
+   "name": "Mexico",
+   "continent": "North America",
+   "count": 3
+  },
+  "MY": {
+   "name": "Malaysia",
+   "continent": "Asia",
+   "count": 19
+  },
+  "NG": {
+   "name": "Nigeria",
+   "continent": "Africa",
+   "count": 1
+  },
+  "NL": {
+   "name": "Netherlands",
+   "continent": "Europe",
+   "count": 42
+  },
+  "NO": {
+   "name": "Norway",
+   "continent": "Europe",
+   "count": 86
+  },
+  "NZ": {
+   "name": "New Zealand",
+   "continent": "Oceania",
+   "count": 19
+  },
+  "PE": {
+   "name": "Peru",
+   "continent": "South America",
+   "count": 2
+  },
+  "PH": {
+   "name": "Philippines",
+   "continent": "Asia",
+   "count": 2
+  },
+  "PL": {
+   "name": "Poland",
+   "continent": "Europe",
+   "count": 69
+  },
+  "PT": {
+   "name": "Portugal",
+   "continent": "Europe",
+   "count": 26
+  },
+  "RO": {
+   "name": "Romania",
+   "continent": "Europe",
+   "count": 40
+  },
+  "RS": {
+   "name": "Serbia",
+   "continent": "Europe",
+   "count": 5
+  },
+  "RU": {
+   "name": "Russia",
+   "continent": "Europe",
+   "count": 1
+  },
+  "SA": {
+   "name": "Saudi Arabia",
+   "continent": "Asia",
+   "count": 5
+  },
+  "SE": {
+   "name": "Sweden",
+   "continent": "Europe",
+   "count": 13
+  },
+  "SG": {
+   "name": "Singapore",
+   "continent": "Asia",
+   "count": 6
+  },
+  "SI": {
+   "name": "Slovenia",
+   "continent": "Europe",
+   "count": 10
+  },
+  "SK": {
+   "name": "Slovakia",
+   "continent": "Europe",
+   "count": 9
+  },
+  "TH": {
+   "name": "Thailand",
+   "continent": "Asia",
+   "count": 1
+  },
+  "TN": {
+   "name": "Tunisia",
+   "continent": "Africa",
+   "count": 1
+  },
+  "TR": {
+   "name": "Türkiye",
+   "continent": "Asia",
+   "count": 15
+  },
+  "UA": {
+   "name": "Ukraine",
+   "continent": "Europe",
+   "count": 9
+  },
+  "US": {
+   "name": "United States",
+   "continent": "North America",
+   "count": 1214
+  },
+  "UY": {
+   "name": "Uruguay",
+   "continent": "South America",
+   "count": 2
+  },
+  "VN": {
+   "name": "Vietnam",
+   "continent": "Asia",
+   "count": 1
+  },
+  "XK": {
+   "name": "Kosovo",
+   "continent": "Europe",
+   "count": 2
+  },
+  "ZA": {
+   "name": "South Africa",
+   "continent": "Africa",
+   "count": 3
+  }
+ },
+ "shards": [
+  {
+   "continent": "Africa",
+   "file": "africa.json",
+   "count": 12
+  },
+  {
+   "continent": "Antarctica",
+   "file": "antarctica.json",
+   "count": 1
+  },
+  {
+   "continent": "Asia",
+   "file": "asia.json",
+   "count": 854
+  },
+  {
+   "continent": "Europe",
+   "file": "europe.json",
+   "count": 1961
+  },
+  {
+   "continent": "North America",
+   "file": "north-america.json",
+   "count": 1475
+  },
+  {
+   "continent": "Oceania",
+   "file": "oceania.json",
+   "count": 68
+  },
+  {
+   "continent": "South America",
+   "file": "south-america.json",
+   "count": 36
+  },
+  {
+   "continent": "Global",
+   "file": "global.json",
+   "count": 1692
+  }
+ ],
+ "sources": {
+  "civicbot": {
+   "name": "civicbot v0.4 verified directory",
+   "url": "https://github.com/fitzyracing1/civicbot/blob/main/civicbot/data/free_apis.json",
+   "license": "MIT"
+  },
+  "curated": {
+   "name": "civicbot curated list",
+   "url": "https://github.com/fitzyracing1/civicbot/blob/main/scripts/directory/curated.py",
+   "license": "MIT"
+  },
+  "gbfs": {
+   "name": "MobilityData GBFS systems.csv",
+   "url": "https://github.com/MobilityData/gbfs/blob/master/systems.csv",
+   "license": "CC-BY-3.0",
+   "raw": "https://raw.githubusercontent.com/MobilityData/gbfs/master/systems.csv"
+  },
+  "mobility-database": {
+   "name": "Mobility Database catalog",
+   "url": "https://mobilitydatabase.org/",
+   "license": "Apache-2.0",
+   "raw": "https://files.mobilitydatabase.org/feeds_v2.csv"
+  },
+  "ckan-instances": {
+   "name": "CKAN instances list",
+   "url": "https://github.com/ckan/ckan-instances",
+   "license": "see repository",
+   "raw": "https://raw.githubusercontent.com/ckan/ckan-instances/gh-pages/config/instances.json"
+  },
+  "public-apis": {
+   "name": "public-apis/public-apis",
+   "url": "https://github.com/public-apis/public-apis",
+   "license": "MIT",
+   "raw": "https://raw.githubusercontent.com/public-apis/public-apis/master/README.md"
+  }
+ },
+ "failed": 1632,
+ "note": "Each entry was called live on verified.date with an identifying User-Agent. tier=endpoint: the example URL answered with the expected format. tier=docs: only the documentation page was reachable (from public-apis); the API itself is not yet tested. auth: none | free-key (free signup) | demo-key. Respect each provider's terms and limits."
+}

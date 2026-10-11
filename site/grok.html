@@ -65,6 +65,14 @@ it in first, then ask your question. Without live browsing it can draft 311 repo
 <a href="grok.txt">grok.txt</a> · <a href="grok-apis.txt">grok-apis.txt</a> (<span id="napi">116</span> keyless APIs) ·
 <a href="llms.txt">llms.txt</a> · <a href="data/grok-pack.json">grok-pack.json</a></span></p>
 
+<h2 id="global">5. Beyond civic questions: the global directory</h2>
+<p>Grok can also use civicbot's <a href="directory.html">global directory of free APIs</a>. It's split into small
+text files by continent and country so Grok only opens what it needs. Try:</p>
+<div class="copy"><textarea id="p-global" readonly>Use https://fitzyracing1.github.io/civicbot/grok-global.txt to find a free API for my country, then use it to answer: what's the current electricity mix in Germany?</textarea><button data-copy="p-global">Copy</button></div>
+<p class="small">Files: <a href="grok-global.txt">grok-global.txt</a> (the index), plus one file per continent and
+per country, e.g. <a href="grok-apis-europe.txt">grok-apis-europe.txt</a> and <a href="grok-apis-pt.txt">grok-apis-pt.txt</a>.
+grok.txt itself is unchanged.</p>
+
 <h2 id="x">What about tagging @grok on X?</h2>
 <p>We don't recommend it, and there is no how-to here. Since March 2026, X's “Ask Grok” reply button has reportedly
 been limited to Premium. Public <code>@grok</code> mentions get replies only selectively, and xAI hasn't published

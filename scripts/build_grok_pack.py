@@ -23,6 +23,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(ROOT / "scripts"))
 from civicbot.skills import default_catalog  # noqa: E402
 
 SITE = "https://fitzyracing1.github.io/civicbot"
@@ -195,6 +196,13 @@ def build_pack(today: str | None = None) -> dict:
                        "url": fill(t, sample_values(s, sample)) if sample else None},
         })
     keyless = [a for a in apis["apis"] if a["auth"] == "none"]
+    from directory import prompts as _prompts  # 'Paste into Grok' prompts (new JSON fields only; grok.txt unchanged)
+    by_api = {}
+    for s in skills:
+        api_id = cat.get(s["name"]).get("api_id")
+        s["grok_prompt"] = _prompts.skill_prompts(s, by_id.get(api_id, {}).get("name") or s["source"])[0]
+        if api_id:
+            by_api.setdefault(api_id, s)
     cities = []
     for ep in eps["endpoints"]:
         link = REPORT_LINKS.get(ep["id"], {})
@@ -202,7 +210,9 @@ def build_pack(today: str | None = None) -> dict:
                        "app": link.get("app", ""), "phone": link.get("phone", ""),
                        "services": ep["base_url"] + "/services.json" if ep["id"] in SERVICES_OK else ""})
     return {"version": 1, "generated": today, "site": SITE, "repo": REPO, "geocoder": GEOCODER,
-            "skills": skills, "apis": [{k: a[k] for k in ("id", "name", "category", "answers", "region", "example", "docs", "limits")}
+            "skills": skills, "apis": [dict({k: a[k] for k in ("id", "name", "category", "answers", "region", "example", "docs", "limits")},
+                                            **_prompts.entry_prompts(dict(a, source="civicbot", tier="endpoint", kind="api"),
+                                                                     by_api.get(a["id"])))
                                        for a in keyless],
             "open311": {"cities": cities, "seeclickfix_services": SCF_SERVICES, "seeclickfix_submit": "https://seeclickfix.com/"}}
 
