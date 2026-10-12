@@ -472,3 +472,8 @@ New Haven, a live-schema dry run, MBTA GTFS-RT), the four core catalog skills an
 - Skills: DNS-rebinding needs an egress proxy; no OAuth-based skill auth yet (API keys/bearer only); DM-based
   install is modelled but the real DM adapter is still a stub.
 - Next integrations to add: SeeClickFix's own APIv2 (accounts, comments), Socrata/ArcGIS read helpers, Accela, and parking.
+
+## Documentation
+
+- In-repo docs: [docs/](docs/index.md)
+- Wiki: [https://github.com/fitzyracing1/civicbot/wiki](https://github.com/fitzyracing1/civicbot/wiki)
