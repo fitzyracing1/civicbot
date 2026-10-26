@@ -64,6 +64,12 @@ def test_parse_mobility_database():
     assert [x["id"] for x in S.parse_mobility_database(MDB, include_static=False)] == ["gtfsrt-mdb-2"]
 
 
+def test_trilliumtransit_feeds_use_https():
+    row = MDB.splitlines()[1].replace("https://example.org/nairobi.zip", "http://data.trilliumtransit.com/gtfs/x/x.zip")
+    c = S.parse_mobility_database(MDB.splitlines()[0] + "\n" + row + "\n")
+    assert c[0]["example"] == "https://data.trilliumtransit.com/gtfs/x/x.zip"
+
+
 PA = """| [Sponsor](https://sponsor.example/?utm_source=Github) | Ad | x |
 ### Weather
 API | Description | Auth | HTTPS | CORS |

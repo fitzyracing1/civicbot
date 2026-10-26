@@ -1,5 +1,5 @@
 {
-"count": 349,
+"count": 352,
 "dropped": [
 {
 "id": "nws-points",
@@ -170,6 +170,11 @@
 "id": "gtfs-mdb-402",
 "source": "mobility-database",
 "reason": "URL carries a credential-like parameter (not stored)"
+},
+{
+"id": "gtfs-mdb-459",
+"source": "mobility-database",
+"reason": "duplicate"
 },
 {
 "id": "gtfsrt-mdb-1604",
@@ -1527,6 +1532,11 @@
 "reason": "URL carries a credential-like parameter (not stored)"
 },
 {
+"id": "gtfs-tdg-84234",
+"source": "mobility-database",
+"reason": "URL carries a credential-like parameter (not stored)"
+},
+{
 "id": "gtfs-tdg-84235",
 "source": "mobility-database",
 "reason": "URL carries a credential-like parameter (not stored)"
@@ -1648,6 +1658,11 @@
 },
 {
 "id": "pa-jokeapi",
+"source": "public-apis",
+"reason": "duplicate"
+},
+{
+"id": "pa-master-setter",
 "source": "public-apis",
 "reason": "duplicate"
 },
