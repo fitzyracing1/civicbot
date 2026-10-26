@@ -115,6 +115,8 @@ def parse_mobility_database(text: str, include_static: bool = True) -> list:
         url = (r.get("urls.direct_download") or "").strip()
         if not url.startswith("http"):
             continue
+        if url.startswith("http://data.trilliumtransit.com/"):  # port 80 no longer answers; the same files are served over HTTPS
+            url = "https://" + url[len("http://"):]
         rt = r["data_type"] == "gtfs_rt"
         if not rt and not include_static:
             continue
