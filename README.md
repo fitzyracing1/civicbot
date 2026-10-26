@@ -477,3 +477,11 @@ New Haven, a live-schema dry run, MBTA GTFS-RT), the four core catalog skills an
 
 - In-repo docs: [docs/](docs/index.md)
 - Wiki: [https://github.com/fitzyracing1/civicbot/wiki](https://github.com/fitzyracing1/civicbot/wiki)
+
+## Plans
+
+This project is free, and its license stays as is. Support it through [GitHub Sponsors](https://github.com/sponsors/fitzyracing1):
+
+- **Free**: use the code, community support.
+- **Pro ($49/month)**: priority issues and support.
+- **Team ($199/month)**: priority support for your team plus early access.
