@@ -1,5 +1,5 @@
 {
-"count": 352,
+"count": 355,
 "dropped": [
 {
 "id": "nws-points",
@@ -1507,11 +1507,6 @@
 "reason": "URL carries a credential-like parameter (not stored)"
 },
 {
-"id": "gtfs-tdg-84192",
-"source": "mobility-database",
-"reason": "URL carries a credential-like parameter (not stored)"
-},
-{
 "id": "gtfs-tdg-84205",
 "source": "mobility-database",
 "reason": "URL carries a credential-like parameter (not stored)"
@@ -1642,7 +1637,17 @@
 "reason": "duplicate"
 },
 {
+"id": "pa-crawlbrulee",
+"source": "public-apis",
+"reason": "duplicate"
+},
+{
 "id": "pa-isitdownstatus",
+"source": "public-apis",
+"reason": "duplicate"
+},
+{
+"id": "pa-openapps",
 "source": "public-apis",
 "reason": "duplicate"
 },
@@ -1692,6 +1697,11 @@
 "reason": "duplicate"
 },
 {
+"id": "pa-contextfetch",
+"source": "public-apis",
+"reason": "duplicate"
+},
+{
 "id": "pa-tastedive",
 "source": "public-apis",
 "reason": "duplicate"
@@ -1723,6 +1733,11 @@
 },
 {
 "id": "pa-spacex",
+"source": "public-apis",
+"reason": "duplicate"
+},
+{
+"id": "pa-toolalize",
 "source": "public-apis",
 "reason": "duplicate"
 },
