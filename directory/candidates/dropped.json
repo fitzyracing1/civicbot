@@ -1,5 +1,5 @@
 {
-"count": 355,
+"count": 358,
 "dropped": [
 {
 "id": "nws-points",
@@ -707,11 +707,6 @@
 "reason": "URL carries a credential-like parameter (not stored)"
 },
 {
-"id": "gtfs-tdg-81177",
-"source": "mobility-database",
-"reason": "URL carries a credential-like parameter (not stored)"
-},
-{
 "id": "gtfs-tdg-81254",
 "source": "mobility-database",
 "reason": "URL carries a credential-like parameter (not stored)"
@@ -1367,11 +1362,6 @@
 "reason": "URL carries a credential-like parameter (not stored)"
 },
 {
-"id": "gtfs-tdg-83969",
-"source": "mobility-database",
-"reason": "URL carries a credential-like parameter (not stored)"
-},
-{
 "id": "gtfs-tdg-83981",
 "source": "mobility-database",
 "reason": "URL carries a credential-like parameter (not stored)"
@@ -1492,11 +1482,6 @@
 "reason": "URL carries a credential-like parameter (not stored)"
 },
 {
-"id": "gtfs-tdg-84188",
-"source": "mobility-database",
-"reason": "URL carries a credential-like parameter (not stored)"
-},
-{
 "id": "gtfs-tdg-84189",
 "source": "mobility-database",
 "reason": "URL carries a credential-like parameter (not stored)"
@@ -1542,17 +1527,42 @@
 "reason": "URL carries a credential-like parameter (not stored)"
 },
 {
-"id": "gtfs-tdg-84243",
-"source": "mobility-database",
-"reason": "URL carries a credential-like parameter (not stored)"
-},
-{
 "id": "gtfs-tdg-84244",
 "source": "mobility-database",
 "reason": "URL carries a credential-like parameter (not stored)"
 },
 {
 "id": "gtfs-tdg-84245",
+"source": "mobility-database",
+"reason": "URL carries a credential-like parameter (not stored)"
+},
+{
+"id": "gtfs-tdg-84251",
+"source": "mobility-database",
+"reason": "URL carries a credential-like parameter (not stored)"
+},
+{
+"id": "gtfs-tdg-84267",
+"source": "mobility-database",
+"reason": "URL carries a credential-like parameter (not stored)"
+},
+{
+"id": "gtfs-tdg-84271",
+"source": "mobility-database",
+"reason": "URL carries a credential-like parameter (not stored)"
+},
+{
+"id": "gtfs-tdg-84275",
+"source": "mobility-database",
+"reason": "URL carries a credential-like parameter (not stored)"
+},
+{
+"id": "gtfs-tdg-84276",
+"source": "mobility-database",
+"reason": "URL carries a credential-like parameter (not stored)"
+},
+{
+"id": "gtfs-tdg-84277",
 "source": "mobility-database",
 "reason": "URL carries a credential-like parameter (not stored)"
 },
@@ -1597,16 +1607,6 @@
 "reason": "URL carries a credential-like parameter (not stored)"
 },
 {
-"id": "gtfs-tld-6676",
-"source": "mobility-database",
-"reason": "duplicate"
-},
-{
-"id": "gtfs-tld-6677",
-"source": "mobility-database",
-"reason": "duplicate"
-},
-{
 "id": "gtfs-tld-7023",
 "source": "mobility-database",
 "reason": "duplicate"
@@ -1618,6 +1618,11 @@
 },
 {
 "id": "pa-dog-facts",
+"source": "public-apis",
+"reason": "duplicate"
+},
+{
+"id": "pa-requstory",
 "source": "public-apis",
 "reason": "duplicate"
 },
@@ -1687,6 +1692,11 @@
 "reason": "duplicate"
 },
 {
+"id": "pa-pourwire",
+"source": "public-apis",
+"reason": "duplicate"
+},
+{
 "id": "pa-covid-19",
 "source": "public-apis",
 "reason": "duplicate"
@@ -1703,6 +1713,11 @@
 },
 {
 "id": "pa-tastedive",
+"source": "public-apis",
+"reason": "duplicate"
+},
+{
+"id": "pa-coworkingview",
 "source": "public-apis",
 "reason": "duplicate"
 },
