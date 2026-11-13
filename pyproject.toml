@@ -42,6 +42,7 @@ Source = "https://github.com/fitzyracing1/civicbot"
 Issues = "https://github.com/fitzyracing1/civicbot/issues"
 Documentation = "https://github.com/fitzyracing1/civicbot#readme"
 Changelog = "https://github.com/fitzyracing1/civicbot/releases"
+Funding = "https://github.com/sponsors/fitzyracing1"
 
 [project.scripts]
 civicbot = "civicbot.__main__:main"
