@@ -1,5 +1,5 @@
 {
-"count": 358,
+"count": 361,
 "dropped": [
 {
 "id": "nws-points",
@@ -1622,6 +1622,11 @@
 "reason": "duplicate"
 },
 {
+"id": "pa-hey-research-lab",
+"source": "public-apis",
+"reason": "duplicate"
+},
+{
 "id": "pa-requstory",
 "source": "public-apis",
 "reason": "duplicate"
@@ -1652,12 +1657,22 @@
 "reason": "duplicate"
 },
 {
+"id": "pa-octocrawl",
+"source": "public-apis",
+"reason": "duplicate"
+},
+{
 "id": "pa-openapps",
 "source": "public-apis",
 "reason": "duplicate"
 },
 {
 "id": "pa-qr-code",
+"source": "public-apis",
+"reason": "duplicate"
+},
+{
+"id": "pa-site-shot",
 "source": "public-apis",
 "reason": "duplicate"
 },
