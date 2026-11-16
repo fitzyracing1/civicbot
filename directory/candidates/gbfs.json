@@ -5,7 +5,7 @@
 "license": "CC-BY-3.0",
 "raw": "https://raw.githubusercontent.com/MobilityData/gbfs/master/systems.csv"
 },
-"count": 1549,
+"count": 1550,
 "candidates": [
 {
 "id": "gbfs-159",
@@ -28120,6 +28120,27 @@
 "docs": "https://www.ryde-technology.com/",
 "example": "https://api.entur.io/mobility/v2/gbfs/v3/rydebaerum/gbfs",
 "check": "https://api.entur.io/mobility/v2/gbfs/v3/rydebaerum/gbfs",
+"expect": "gbfs",
+"format": "json",
+"tier": "endpoint",
+"source": "gbfs",
+"terms": "https://github.com/MobilityData/gbfs/blob/master/systems.csv"
+},
+{
+"id": "gbfs-rydebergen",
+"name": "Ryde Bergen (GBFS)",
+"category": "Bikeshare & micromobility",
+"answers": "Live bikes/scooters and docks for Ryde Bergen in Bergen",
+"kind": "gbfs",
+"auth": "none",
+"country": "NO",
+"city": "Bergen",
+"continent": "Europe",
+"region": "Bergen, Norway",
+"language": null,
+"docs": "https://www.ryde-technology.com/",
+"example": "https://api.entur.io/mobility/v2/gbfs/v3/rydebergen/gbfs",
+"check": "https://api.entur.io/mobility/v2/gbfs/v3/rydebergen/gbfs",
 "expect": "gbfs",
 "format": "json",
 "tier": "endpoint",
