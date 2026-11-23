@@ -1,63 +1,63 @@
 {
  "version": 1,
- "generated": "2026-11-16",
- "count": 8089,
- "ok": 8087,
- "endpoint_verified": 6124,
- "docs_only": 1963,
+ "generated": "2026-11-23",
+ "count": 8239,
+ "ok": 8237,
+ "endpoint_verified": 6192,
+ "docs_only": 2045,
  "by_continent": {
-  "Europe": 2303,
-  "Global": 2185,
-  "North America": 1846,
-  "Asia": 1097,
-  "Africa": 235,
-  "South America": 228,
-  "Oceania": 192,
+  "Europe": 2319,
+  "Global": 2268,
+  "North America": 1863,
+  "Asia": 1102,
+  "Africa": 242,
+  "South America": 242,
+  "Oceania": 200,
   "Antarctica": 1
  },
  "by_category": {
-  "Transit": 3543,
-  "Bikeshare & micromobility": 1237,
-  "Open data portals": 505,
+  "Transit": 3576,
+  "Bikeshare & micromobility": 1245,
+  "Open data portals": 519,
   "Alerts & hazards": 285,
-  "Development": 206,
-  "Government": 109,
-  "Geocoding": 100,
-  "Finance": 98,
-  "Cryptocurrency": 90,
-  "Games & Comics": 87,
-  "Open Data": 83,
-  "Transportation": 69,
-  "Weather & climate": 68,
-  "Money": 63,
-  "Sports & Fitness": 62,
-  "Health": 59,
+  "Development": 214,
+  "Government": 114,
+  "Finance": 104,
+  "Geocoding": 102,
+  "Cryptocurrency": 92,
+  "Games & Comics": 92,
+  "Open Data": 87,
+  "Weather & climate": 70,
+  "Transportation": 70,
+  "Sports & Fitness": 66,
+  "Money": 64,
+  "Statistics & economy": 62,
+  "Health": 60,
   "Water, tides & marine": 57,
-  "Security": 54,
-  "Statistics & economy": 53,
-  "Machine Learning": 53,
-  "Documents & Productivity": 52,
-  "Science & Math": 49,
+  "Documents & Productivity": 55,
+  "Security": 55,
+  "Machine Learning": 54,
+  "Science & Math": 51,
   "Science & research": 48,
-  "Video": 44,
-  "Email": 43,
+  "APIs Covered Under APILayer Suite!": 46,
+  "Email": 46,
+  "Video": 46,
+  "Business": 43,
   "Geocoding & places": 40,
-  "APIs Covered Under APILayer Suite!": 40,
-  "Business": 39,
+  "Jobs": 39,
   "Weather": 39,
-  "Jobs": 38,
-  "Social": 34,
+  "Social": 36,
+  "Currency Exchange": 31,
+  "Environment": 31,
+  "Shopping": 31,
   "Books, words & knowledge": 30,
-  "Environment": 30,
   "Food & Drink": 30,
-  "Currency Exchange": 29,
-  "Photography": 29,
+  "Photography": 30,
   "Sun, time & holidays": 28,
-  "Shopping": 27,
+  "Art & Design": 27,
   "Test Data": 27,
   "Government & safety": 26,
-  "Art & Design": 25,
-  "Books": 23,
+  "Books": 24,
   "Energy": 22,
   "Music": 21,
   "News": 21,
@@ -65,49 +65,49 @@
   "311 & service requests": 20,
   "Animals": 20,
   "Calendar": 20,
+  "Entertainment": 20,
   "Blockchain": 19,
-  "Entertainment": 19,
   "Flights & space": 18,
   "Vehicle": 18,
+  "Animals & nature": 17,
   "Anti-Malware": 17,
+  "Data Validation": 17,
   "Personality": 17,
-  "Animals & nature": 16,
   "Cloud Storage & File Sharing": 16,
-  "Data Validation": 16,
   "URL Shorteners": 15,
   "Anime": 14,
   "Dictionaries": 14,
   "Text Analysis": 12,
+  "Events": 11,
   "Sports & games": 11,
-  "Events": 10,
   "Open Source Projects": 10,
-  "Phone": 9,
+  "Phone": 10,
+  "Tracking": 9,
   "City open data": 8,
-  "Tracking": 8,
-  "Authentication & Authorization": 6,
-  "Programming": 6,
+  "Authentication & Authorization": 8,
+  "Programming": 7,
   "Continuous Integration": 5,
   "Portugal & EU": 4,
   "Patent": 4
  },
  "by_auth": {
-  "none": 7106,
-  "free-key": 979,
+  "none": 7218,
+  "free-key": 1017,
   "demo-key": 2
  },
  "by_kind": {
-  "api": 2843,
-  "gtfs": 2328,
-  "gbfs": 1229,
-  "gtfs-rt": 1175,
-  "portal": 505,
+  "api": 2938,
+  "gtfs": 2358,
+  "gbfs": 1237,
+  "gtfs-rt": 1178,
+  "portal": 519,
   "open311": 7
  },
  "by_source": {
-  "mobility-database": 3503,
-  "public-apis": 1963,
-  "curated": 1268,
-  "gbfs": 1229,
+  "mobility-database": 3536,
+  "public-apis": 2045,
+  "curated": 1295,
+  "gbfs": 1237,
   "civicbot": 118,
   "ckan-instances": 6
  },
@@ -155,7 +155,7 @@
   "AR": {
    "name": "Argentina",
    "continent": "South America",
-   "count": 32
+   "count": 34
   },
   "AS": {
    "name": "American Samoa",
@@ -170,7 +170,7 @@
   "AU": {
    "name": "Australia",
    "continent": "Oceania",
-   "count": 107
+   "count": 113
   },
   "AW": {
    "name": "Aruba",
@@ -185,7 +185,7 @@
   "BA": {
    "name": "Bosnia and Herzegovina",
    "continent": "Europe",
-   "count": 5
+   "count": 6
   },
   "BB": {
    "name": "Barbados",
@@ -210,7 +210,7 @@
   "BG": {
    "name": "Bulgaria",
    "continent": "Europe",
-   "count": 16
+   "count": 17
   },
   "BH": {
    "name": "Bahrain",
@@ -225,7 +225,7 @@
   "BJ": {
    "name": "Benin",
    "continent": "Africa",
-   "count": 1
+   "count": 2
   },
   "BM": {
    "name": "Bermuda",
@@ -245,7 +245,7 @@
   "BR": {
    "name": "Brazil",
    "continent": "South America",
-   "count": 52
+   "count": 53
   },
   "BW": {
    "name": "Botswana",
@@ -310,7 +310,7 @@
   "CN": {
    "name": "China",
    "continent": "Asia",
-   "count": 7
+   "count": 8
   },
   "CO": {
    "name": "Colombia",
@@ -320,7 +320,7 @@
   "CR": {
    "name": "Costa Rica",
    "continent": "North America",
-   "count": 6
+   "count": 7
   },
   "CV": {
    "name": "Cabo Verde",
@@ -345,7 +345,7 @@
   "DE": {
    "name": "Germany",
    "continent": "Europe",
-   "count": 237
+   "count": 238
   },
   "DJ": {
    "name": "Djibouti",
@@ -370,7 +370,7 @@
   "EC": {
    "name": "Ecuador",
    "continent": "South America",
-   "count": 9
+   "count": 10
   },
   "EE": {
    "name": "Estonia",
@@ -385,12 +385,12 @@
   "ES": {
    "name": "Spain",
    "continent": "Europe",
-   "count": 125
+   "count": 129
   },
   "ET": {
    "name": "Ethiopia",
    "continent": "Africa",
-   "count": 8
+   "count": 9
   },
   "EU": {
    "name": "European Union",
@@ -405,7 +405,7 @@
   "FJ": {
    "name": "Fiji",
    "continent": "Oceania",
-   "count": 3
+   "count": 4
   },
   "FM": {
    "name": "Micronesia",
@@ -415,7 +415,7 @@
   "FR": {
    "name": "France",
    "continent": "Europe",
-   "count": 898
+   "count": 899
   },
   "GA": {
    "name": "Gabon",
@@ -435,7 +435,7 @@
   "GH": {
    "name": "Ghana",
    "continent": "Africa",
-   "count": 9
+   "count": 10
   },
   "GL": {
    "name": "Greenland",
@@ -495,12 +495,12 @@
   "ID": {
    "name": "Indonesia",
    "continent": "Asia",
-   "count": 15
+   "count": 16
   },
   "IE": {
    "name": "Ireland",
    "continent": "Europe",
-   "count": 28
+   "count": 29
   },
   "IL": {
    "name": "Israel",
@@ -510,7 +510,7 @@
   "IN": {
    "name": "India",
    "continent": "Asia",
-   "count": 23
+   "count": 24
   },
   "IQ": {
    "name": "Iraq",
@@ -555,7 +555,7 @@
   "KE": {
    "name": "Kenya",
    "continent": "Africa",
-   "count": 20
+   "count": 21
   },
   "KG": {
    "name": "Kyrgyzstan",
@@ -645,7 +645,7 @@
   "MA": {
    "name": "Morocco",
    "continent": "Africa",
-   "count": 4
+   "count": 5
   },
   "MC": {
    "name": "Monaco",
@@ -675,7 +675,7 @@
   "MK": {
    "name": "North Macedonia",
    "continent": "Europe",
-   "count": 5
+   "count": 6
   },
   "ML": {
    "name": "Mali",
@@ -725,7 +725,7 @@
   "MX": {
    "name": "Mexico",
    "continent": "North America",
-   "count": 7
+   "count": 8
   },
   "MY": {
    "name": "Malaysia",
@@ -750,12 +750,12 @@
   "NG": {
    "name": "Nigeria",
    "continent": "Africa",
-   "count": 13
+   "count": 14
   },
   "NL": {
    "name": "Netherlands",
    "continent": "Europe",
-   "count": 44
+   "count": 49
   },
   "NO": {
    "name": "Norway",
@@ -795,12 +795,12 @@
   "PE": {
    "name": "Peru",
    "continent": "South America",
-   "count": 15
+   "count": 18
   },
   "PG": {
    "name": "Papua New Guinea",
    "continent": "Oceania",
-   "count": 1
+   "count": 2
   },
   "PH": {
    "name": "Philippines",
@@ -810,12 +810,12 @@
   "PK": {
    "name": "Pakistan",
    "continent": "Asia",
-   "count": 1
+   "count": 2
   },
   "PL": {
    "name": "Poland",
    "continent": "Europe",
-   "count": 75
+   "count": 76
   },
   "PS": {
    "name": "Palestine",
@@ -835,7 +835,7 @@
   "PY": {
    "name": "Paraguay",
    "continent": "South America",
-   "count": 11
+   "count": 12
   },
   "QA": {
    "name": "Qatar",
@@ -925,7 +925,7 @@
   "SR": {
    "name": "Suriname",
    "continent": "South America",
-   "count": 5
+   "count": 10
   },
   "SS": {
    "name": "South Sudan",
@@ -985,7 +985,7 @@
   "TR": {
    "name": "Türkiye",
    "continent": "Asia",
-   "count": 23
+   "count": 24
   },
   "TT": {
    "name": "Trinidad and Tobago",
@@ -1020,12 +1020,12 @@
   "US": {
    "name": "United States",
    "continent": "North America",
-   "count": 1533
+   "count": 1548
   },
   "UY": {
    "name": "Uruguay",
    "continent": "South America",
-   "count": 5
+   "count": 6
   },
   "UZ": {
    "name": "Uzbekistan",
@@ -1075,7 +1075,7 @@
   "ZA": {
    "name": "South Africa",
    "continent": "Africa",
-   "count": 13
+   "count": 14
   },
   "ZM": {
    "name": "Zambia",
@@ -1092,7 +1092,7 @@
   {
    "continent": "Africa",
    "file": "africa.json",
-   "count": 235
+   "count": 242
   },
   {
    "continent": "Antarctica",
@@ -1102,32 +1102,32 @@
   {
    "continent": "Asia",
    "file": "asia.json",
-   "count": 1097
+   "count": 1102
   },
   {
    "continent": "Europe",
    "file": "europe.json",
-   "count": 2303
+   "count": 2319
   },
   {
    "continent": "North America",
    "file": "north-america.json",
-   "count": 1846
+   "count": 1863
   },
   {
    "continent": "Oceania",
    "file": "oceania.json",
-   "count": 192
+   "count": 200
   },
   {
    "continent": "South America",
    "file": "south-america.json",
-   "count": 228
+   "count": 242
   },
   {
    "continent": "Global",
    "file": "global.json",
-   "count": 2187
+   "count": 2270
   }
  ],
  "sources": {
@@ -1166,6 +1166,6 @@
    "raw": "https://raw.githubusercontent.com/public-apis/public-apis/master/README.md"
   }
  },
- "failed": 1448,
+ "failed": 1447,
  "note": "Each entry was called live on verified.date with an identifying User-Agent. tier=endpoint: the example URL answered with the expected format. tier=docs: only the documentation page was reachable (from public-apis); the API itself is not yet tested. auth: none | free-key (free signup) | demo-key. Respect each provider's terms and limits."
 }
