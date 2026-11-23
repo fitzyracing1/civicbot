@@ -1,5 +1,5 @@
 {
-"count": 361,
+"count": 1637,
 "dropped": [
 {
 "id": "nws-points",
@@ -154,6 +154,6361 @@
 {
 "id": "ckan-www-wprdc-org",
 "source": "ckan-instances",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-7vallees",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-9",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-9b0e8df6-141e-11ee-be56-0242ac120002",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-27",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-66",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-71",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-84b174c4-eb74-5d07-bdeb-27f4215d2aa9",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-159",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-475",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-511",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-5534922f6997f4d861ce1b33f2efce21a470c22",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-Augsburg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-BIKI_valladolid",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-Bixi_MTL",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-BoltEU_Austin",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-BoltEU_Brussels",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-BoltEU_Liverpool",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-BoltEU_Washington DC",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-CKL",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-CVelo_FR_Clermont-Ferrand",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-Donkey-Prignitz",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-Ergolding",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-Kelheim",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-MEX",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-Marguerite_FR_Nantes",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-Mobibikes_CA_Vancouver",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-Neutraubling",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-Obertraubling",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-Optymo_Belfort_ALS",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-Optymo_FR_Belfort",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-Paris",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-acoruna",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-altervelo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-amicarnapoli",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-amiens",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-auchveloc",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-aupa",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-auray-quiberon",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-austin",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-auto-en-velay",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-auxrmlevelo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-avelo_quebec",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-barcelona",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bayern_komplett",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_aventura",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_bentonville",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_bikelnk",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_bismarck",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_boulder",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_broward",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_bublr",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_cincyredbike",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_clemson",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_desmoines",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_elpaso",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_greenbikeslc",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_greenville",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_heartland",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_indego",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_jacksoncounty",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_lametro",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_madison",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_mcallen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_memphis",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_nashville",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_pacersbikeshare",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_redding",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_rtcbikeshare",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_sanantonio",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_santabarbara",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_santacruz",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_truckee",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bcycle_valentine",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-beb",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bergen-city-bike",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-beryl_bcp",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-beryl_belfast",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-beryl_bradford",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-beryl_brighton",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-beryl_canterbury",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-beryl_cornwall",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-beryl_eastleigh",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-beryl_greater_manchester",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-beryl_guildford",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-beryl_hackney_cargo_bike",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-beryl_hereford",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-beryl_hertsmere",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-beryl_isle_of_wight",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-beryl_leeds",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-beryl_norwich",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-beryl_plymouth",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-beryl_portsmouth",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-beryl_southampton",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-beryl_stevenage",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-beryl_watford",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-beryl_west_midlands",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-beryl_weymouth",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-beryl_wool",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-beryl_worcester",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-besancon",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bicimad_madrid",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bike_barcelona",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bike_brasilia",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bike_buenosaires",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bike_chattanooga",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bike_nordelta",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bike_pe",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bike_poa",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bike_rio",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bike_salvador",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bike_sampa",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bike_santiago",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bike_share_hawaii",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bike_share_toronto",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-biketobike",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-biketown_nike",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-biketown_pdx",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bikr-lisbon",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bilbao",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-adeje",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-ajaccio",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-antigua",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-antwerp",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-arlingtonco",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-atlanta",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-barcelona",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-basel",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-biel",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-bordeaux",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-braga",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-bulle",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-calgary",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-cascais",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-castres",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-chalonsenchampagne",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-cleveland",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-columbus",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-culver-city",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-dallas",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-denver",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-detroit",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-dieppe",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-draguignan",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-durham",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-edmonton",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-epron",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-fairfax",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-florence",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-gainesville",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-gap",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-gij\u00f3n",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-greensboro",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-grenchen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-halifax",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-hamilton",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-helsinki",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-herouvillesaintclair",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-indianapolis",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-israel",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-kansas-city",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-kloten",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-larochesuryon",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-laval",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-leduc",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-lexington",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-los-angeles",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-louisville",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-madrid",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-marseille",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-matosinhos",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-miami",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-milan",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-millau",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-montlucon",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-munich",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-murcia",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-nashville",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-new-york",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-newark",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-orlando",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-ottawa",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-ouistreham",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-p\u00e1jara",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-portland",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-porto",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-reno",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-richmond",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-rome",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-sarreguemines",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-saskatoon",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-schaffhausen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-seattle-washington",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-st-louis",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-tel-aviv",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-tempe",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-ulm",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-uster",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-vaughan",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-vichy",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-washington-dc",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-wiener neustadt",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-winterthur",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bird-zurich",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bluebike",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bogota_bike",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bolt_basel",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bolt_karlsruhe",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bolt_reutlingen_tuebingen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bolt_stuttgart",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bolt_zurich",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-boltbergen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-boltdrammen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-boltfredrikstad",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-boltgjovik",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bolthamar",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-boltkristiansand",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-boltlillehammer",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-boltlillestrom",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-boltoslo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-boltsarpsborg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bora_viseu",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-breizhgo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-brennus_a_velo_sens",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-bruxelles",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-cabi",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-calais",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-calais-velos",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-calivelo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-callabike",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-capcotentin",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-car-ship",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-careem_bike",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-carvelo2go_ch",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-cc_smartbike_antwerp",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-cergy",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-chantrerie",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-check_almere",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-check_amersfoort",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-check_amstelveen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-check_amsterdam",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-check_breda",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-check_delft",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-check_denbosch",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-check_denhaag",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-check_diemen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-check_eindhoven",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-check_groningen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-check_haarlem",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-check_hilversum",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-check_lansingerland",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-check_leeuwarden",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-check_nijmegen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-check_rijswijk",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-check_rotterdam",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-check_schiedam",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-check_tilburg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-check_vlaardingen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-check_voorburg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-check_zaandam",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-check_zwolle",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-choletbus",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-citecycle",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-citedia_services",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-citiz_alpes_loire",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-citiz_angers",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-citiz_bfc",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-citiz_developpement",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-citiz_gironde",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-citiz_grand_est",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-citiz_grand_poitiers",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-citiz_lille_arras",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-citiz_metropole_lyon",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-citiz_nantes",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-citiz_occitanie",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-citiz_provence",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-citiz_rennes_metropole",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-citybikes_helsinki",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-clem-france",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-cogo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-conficars_ulm",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-cooltra_amsterdam",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-cooltra_antwerp",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-cooltra_arnhem",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-cooltra_breda",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-cooltra_brussels",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-cooltra_delft",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-cooltra_den_bosch",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-cooltra_eindhoven",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-cooltra_enschede",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-cooltra_groningen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-cooltra_haarlem",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-cooltra_nijmegen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-cooltra_rotterdam",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-cooltra_the_hague",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-cooltra_tilburg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-cooltra_zwolle",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-curitiba",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-cyclam",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-cyclolibre",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-cyclovis",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-deer",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dej_bikecity",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-docomo-cycle",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-docomo-cycle-tokyo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_aalborg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_aarhus",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_aengelholm",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_am",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_antwerp",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_baastad",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_ballerup",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_bamberg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_bandholm",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_barcelona",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_budapest",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_charlbury",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_cheltenham_spa",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_cirencester",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_copenhagen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_den_haag",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_dordrecht",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_frederikshavn",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_ge",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_gh",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_glostrup",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_gorinchem",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_haemeenlinna",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_hamina",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_hannover",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_helsinki",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_henley_on_thames",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_herning",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_hillerod",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_hyvinkaa",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_iisalmi",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_imatra",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_katwijk",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_kiel",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_kielsmile",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_kingham",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_klampenborg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_kortrijk_leiedal",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_kotka",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_kouvola",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_kreuzlingen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_lalandia",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_lappeenranta",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_li",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_maentsaelae",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_malmoe",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_middelfart",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_mikkeli",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_miltonpark",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_moreton_in_marsh",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_munich",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_neuchatel",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_northleach",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_ochtrup",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_odense",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_oxford",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_plymouth",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_porvoo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_qbuzz",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_raasepori",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_regensburg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_regensburg_straubing",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_reykjavik",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_riihimaki",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_rivierenland",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_roedvig",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_rotterdam_den_haag",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_rt",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_schleswig",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_sion",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_store_heddinge",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_stroud",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_tetbury",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_the_cotswold_water_park",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_thun",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_turku",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_ut",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_utrechtse_heuvelrug",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_westhoek",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_whichford",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_worthing",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_ystad",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-donkey_yverdon-les-bains",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-aachen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-abu-dhabi",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-basel",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-bath",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-berlin",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-bochum",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-bordeaux",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-bristol",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-brunel-university",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-brussels",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-charleroi",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-colchester",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-cologne",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-copenhagen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-dubai",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-dubai-hills",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-dusseldorf",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-essen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-frederikssund",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-friedrichshafen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-ghent",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-hannover",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-heidelberg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-heilbronn",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-jeddah",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-kaiserslautern",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-karlsruhe",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-langenfeld",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-leipzig",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-liege",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-ludwigsburg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-lyon",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-makkah",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-malvik",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-melhus",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-milton-keynes",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-mons",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-munich",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-munster",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-nottingham",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-ol-vallee",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-orkanger",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-oswiecim",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-paris",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-potsdam",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-ras-al-khaimah",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-region-h",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-riyadh",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-romanshorn",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-rorschach",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-roskilde",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-sbf",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-sharjah",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-siemu",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-skaun",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-st.-gallen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-stc-city",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-stj\u00f8rdal",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-stuttgart",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-tel-aviv",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-trondheim",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-versailles-grand-parc",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-wo\u0142omin",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dott-zurich",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-dublin",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-e6cb78c4-5ba5-4414-a2a2-bbf1ed91f76c",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-edrivecarsharing_ch",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-einfach_unterwegs",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-epfl_lausanne",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-esel_ac",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-fartebysykkel",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-flamingo_auckland",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-flamingo_christchurch",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-flamingo_dunedin",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-flamingo_palmerston_north",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-flamingo_porirua",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-flamingo_tauranga",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-flamingo_waimakariri",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-flamingo_wellington",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-flinkster_carsharing",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-ford_carsharing_autohausalbert",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-ford_carsharing_autohausbaur",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-ford_carsharing_autohausboelz",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-ford_carsharing_autohauskauderer",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-fortworth",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-freibe",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-ganxeta_reus",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_aalst",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_aix-en-provence",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_ajaccio",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_albi",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_alcobendas",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_alesund",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_alicante",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_alta",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_amiens",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_angers",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_antibes",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_antony",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_antwerpen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_aranjuez",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_arendal",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_argenteuil",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_arles",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_asker",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_aubervilliers",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_aulnay-sous-bois",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_avignon",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_badalona",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_baerum",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_barcelona",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_bayeux",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_bayonne",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_beaumont",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_beauvais",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_benidorm",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_bergen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_berlin",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_blois",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_bodo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_bordeaux",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_boulogne-billancourt",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_bourges",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_brest",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_brive-la-gaillarde",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_caen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_calais",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_candelaria",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_cannes",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_castelldefels",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_cergy",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_champigny-sur-marne",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_charleroi",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_clamart",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_clermont-ferrand",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_clichy",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_colmar",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_colombes",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_coslada",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_courbevoie",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_dijon",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_drammen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_drancy",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_dunkerque",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_essen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_evenes",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_fontenay-sous-bois",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_fredrikstad",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_fuenlabrada",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_gardermoen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_gent",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_getafe",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_granada",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_granollers",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_graz",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_grenoble",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_hamburg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_harstad",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_hove",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_innsbruck",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_issy-les-moulineaux",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_ivry-sur-seine",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_kirkenes",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_kristiansand",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_laval",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_leknes",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_leuven",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_levallois-perret",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_leverkusen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_lille",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_lillehammer",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_lillestrom",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_limay",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_limoges",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_lorenskog",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_lorient",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_lyon",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_macau",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_macon",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_madrid",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_maisons-alfort",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_majadahonda",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_mao",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_marseille",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_meaux",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_mechelen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_meru",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_metz",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_molde",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_montauban",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_montpellier",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_montreuil",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_moss",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_mulhouse",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_nancy",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_nanterre",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_nantes",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_narbonne",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_narvik",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_nesodden",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_neuilly-sur-seine",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_nice",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_niort",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_noisy-le-grand",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_norderstedt",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_orange",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_oslo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_pantin",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_paris",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_parla",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_paterna",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_pau",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_perpignan",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_pessac",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_poitiers",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_porsgrunn",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_pulheim",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_quimper",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_reims",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_rennes",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_roubaix",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_rouen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_rueil-malmaison",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_sabadell",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_saint-brieuc",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_saint-denis",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_saint-laurent",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_saint-louis",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_saint-malo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_saint-nazaire",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_saint-paul",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_saint-quentin",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_saint-quentin-en-yvelines",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_sandefjord",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_sandvika",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_sarcelles",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_sartrouville",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_seraing",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_sevilla",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_ski",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_skien",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_stavanger",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_stjordal",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_strasbourg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_strommen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_tarbes",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_tonsberg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_torremolinos",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_torrent",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_toulon",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_toulouse",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_tourcoing",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_tours",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_troisdorf",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_tromso",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_trondheim",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_troyes",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_valdemoro",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_valence",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_valencia",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_vannes",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_velbert",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_versailles",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_viladecans",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_villeurbanne",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_vitry-sur-seine",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-getaround_waterloo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-go_biki",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-goabout",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-grand-est",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-graoulib_metz",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-gruene-flotte_freiburg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-hellocycling",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-herrenberg_alf",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-herrenberg_fare",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-herrenberg_guelf",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-herrenberg_stadtrad",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-hertlein_carsharing",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-hertzbildeling",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-hopp_konstanz",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-hunedoara",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-hyrenorge",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-idecycle_pau",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-impulsyon",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-inurba-budapest",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-inurba-gdansk",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-inurba-rouen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-jolt_hutt_valley",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-jolt_new_plymouth",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-jolt_selwyn",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-karu",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-knot_strasbourg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-kolumbusbysykkel",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-labaule",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lara_to_go",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lastenkarle",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lastenvelo_fr",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-le_velo_star",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lemarcel",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lesherbiers",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-levelo_inurba_marseille",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-libelo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-liemobil_liechtenstein",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lillestrom",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_antony",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_antwerp",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_arlington",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_atlanta",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_baltimore",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_bari",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_basel",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_brussels",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_bw",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_calgary",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_casa",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_chicago",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_cleveland",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_colorado_springs",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_denver",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_detroit",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_dresden",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_edmonton",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_frankfurt",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_grand_rapids",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_hamburg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_kelowna",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_kortrijk",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_leslilas",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_lille",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_lincoln",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_louisville",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_marseille",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_mexico_city",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_mississauga",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_naples",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_new_york",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_nice",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_nogent",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_oakland",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_oberhausen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_opfikon",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_ottawa",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_paris",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_paris_saclay",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_paris_west",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_portland",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_san_francisco",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_san_jose",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_sceaux",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_seattle",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_stuttgart",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_tel_aviv",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_uppsala",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_uster",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_vancouver_bc",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_washington_dc",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_wuppertal",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_zug",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lime_zurich",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-linka_aar_bike",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-ljubljana",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-locomotion_montreal",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-locomotion_sherbrooke",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-long_beach_ca_bikeshare",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lund",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-luxembourg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lyft_bay",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lyft_chi",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lyft_dca",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lyft_den",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lyft_nyc",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-lyon",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-madrid",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-maribor",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-miamiunderline",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-mibici_guadalajara",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-mikar",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-milan",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-milan-bikemi",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-mobility_ch",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-mobymoby_dublin",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-modalis_royan",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-mogo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-moinesti",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-mona_bike",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-montenvelo_mont_blanc",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-moqo_team_277065271",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-mp_ARBRESLE",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-mp_CHATELLERAULT",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-mp_COQUELICOT",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-mp_ESTREES",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-mp_GEVAUDAN",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-mp_LASCAUX",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-mp_OLORON",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-mp_OSSAU",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-mp_Opale",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-mp_TARARE",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-mp_VASSIVIERE",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-mugibike_vitoria",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-mulhouse",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-mybuxi_ch",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-namur",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nancy",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nantes",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-naturenergie_sharing",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nemovelo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_aa",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ac",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ad",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ae",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_af",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ah",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ai",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ak",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_al",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_am",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_an",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ap",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_as",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_av",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ba",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_bc",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_bi",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_bj",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_bk",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_bn",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_bp",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_bq",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_br",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_bs",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_bv",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_bw",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_bx",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_by",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_bz",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_cb",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_cc",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_cd",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ce",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_cf",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_cg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ch",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_cj",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_cm",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_cn",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_co",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_cq",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_cs",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_cu",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_cv",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_cw",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_cx",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_cy",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_da",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_dc",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_dd",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_df",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_dg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_dh",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_dj",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_dk",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_dn",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_do",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ds",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_dv",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_dw",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_dx",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ea",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_eb",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ed",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_eh",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ek",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_el",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_em",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_eq",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ev",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_fa",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_fg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_fp",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_gd",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_gh",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_gk",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_gp",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_gs",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_gt",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_gu",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_gv",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_gx",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_gy",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_hb",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_hd",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_hf",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_hr",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ib",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ig",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ka",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_kc",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_kg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_kk",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ko",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_kr",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ky",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_la",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_lb",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_lc",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_le",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_lh",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_lo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_lr",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ls",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_lv",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ma",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ml",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_mr",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ms",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_mx",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_mz",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_na",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_nc",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_nd",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ne",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ng",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_nh",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ni",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_nl",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_nm",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_nn",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_nr",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ns",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_nt",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_nu",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_oa",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_oe",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ol",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_or",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_os",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ot",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_pg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_pi",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_pj",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_pl",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_pm",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_pn",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ps",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_py",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ra",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_rc",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_re",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_rh",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_rl",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_rq",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_rr",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_rt",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_rv",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_rw",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_sb",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_se",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_sg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_si",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_sl",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_sn",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_st",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_td",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_te",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_tf",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_tg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ti",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_tj",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_tk",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_tl",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_tn",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_to",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_tq",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_tr",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ts",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_tt",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_tu",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_tv",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_tw",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_tx",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ty",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ud",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_uf",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ug",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_uk",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_um",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_uo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_ur",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_uu",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_vm",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_vn",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_vo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_vr",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_vt",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_vu",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_vw",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_wa",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_wd",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_we",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_wf",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_wn",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_wp",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_wr",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_xa",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_xb",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_xc",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_zc",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_zd",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_zg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_zs",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_zu",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_zy",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-nextbike_zz",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-ns_ov_fiets",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-oberschwabenmobil",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-oekostadt_renningen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-ogalo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-oslobysykkel",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-otto",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-pbsn",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-peacehealth_rides",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-perivelo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-petitesreines",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-pickebike_aubonne",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-pickebike_basel",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-pickebike_fribourg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-pittsburgh",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-pony_Angers",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-pony_Basque_Country",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-pony_Beauvais",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-pony_Bourges",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-pony_Charleroi",
+"source": "mobility-database",
+"reason": "URL carries a credential-like parameter (not stored)"
+},
+{
+"id": "gtfs-gbfs-pony_Evry",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-pony_Herouville",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-pony_Limoges",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-pony_Lorient",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-pony_Marseille",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-pony_Nice",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-pony_Perpignan",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-pony_bordeaux",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-pony_brussels",
+"source": "mobility-database",
+"reason": "URL carries a credential-like parameter (not stored)"
+},
+{
+"id": "gtfs-gbfs-pony_li\u00e8ge",
+"source": "mobility-database",
+"reason": "URL carries a credential-like parameter (not stored)"
+},
+{
+"id": "gtfs-gbfs-pony_poitiers",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-provider-null-blois-france",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-provider-null-lansing",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-provider-null-milwaukee",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-provider-null-montgomery-county",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-provider-null-salt_lake_city",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-provider-null-san_diego",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-provider-null-san_francisco",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-provider-null-san_marcos",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-provider-null-santa_monica",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-provider-null-st_george",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-provider-null-st_paul",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-provider-null-stillwater",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-provider-null-tallahassee",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-provider-null-tampa",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-provider-null-tempe",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-provider-null-tucson",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-provider-null-university_of_central_florida",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-publibike",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-quickrent.ch",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-reddy_bikeshare",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-regiorad_stuttgart",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-relay_bike_share",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-rhoule",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-rivas",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-rivi_bike",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-rlvlib",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-rome",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-rydeaalesund",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-rydeasker",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-rydebaerum",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-rydebergen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-rydebodo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-rydefredrikstad",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-rydelarvik",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-rydelillestrom",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-rydelorenskog",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-rydeoslo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-rydeporsgrunn",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-rydesandefjord",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-rydesarpsborg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-rydeskien",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-rydestavanger",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-rydetonsberg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-rydetromso",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-rydetrondheim",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-saguenay_bike",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-saintbrieuc",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-sansebastian",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-santana_bikecity",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-sbu",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-seefahrer_ecarsharing",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-semo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-share_birrer_ch",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-sharedmobility.ch",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-sibiu_bikecity",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-sobi_hamilton",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-spin akron",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-spin ann_arbor",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-spin baltimore",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-spin chicago",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-spin columbus",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-spin dayton",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-spin detroit",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-spin durham",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-spin fayetteville",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-spin fort_collins",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-spin gainesville",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-spin lexington",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-spin los_angeles",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-spin michigan_state_university",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-spin minneapolis",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-spin nashville",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-spin ohio_state",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-spin phoenix",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-spin providence",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-spin raleigh",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-spin washington_dc",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-stadtmobil_karlsruhe",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-stadtmobil_rhein-neckar",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-stadtmobil_stuttgart",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-stadtwerk_tauberfranken",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-stadtwerke_wertheim",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-stella",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-swabi",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-swu2go",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-szabo_mobility",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-tanlib",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-targumures",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-teilauto_biberach",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-teilauto_neckar-alb",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-teilauto_schwaebisch_hall",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-tempovelo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-ti_velo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-tlpmobilites",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-toulouse",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-toyama",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-trondheimbysykkel",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-tugo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-turin",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-twisto_velolib_caen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-v_lille",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-valence",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-valencia",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-valenciennes",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-velibeo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-velivert_saint_etienne",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-velo-modalis",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-velo-modalis-saintes",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-velo-tbm-bordeaux",
+"source": "mobility-database",
+"reason": "URL carries a credential-like parameter (not stored)"
+},
+{
+"id": "gtfs-gbfs-velo_modalis_angouleme",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-velocite",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-velodaqui",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-velomagg_montpellier",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-velomoove_pompey",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-velonecy60minutes_annecy",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-velopop",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-velospot_ch",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-velozef",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-velyceo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-ala",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-asb",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-bir",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-bnd",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-cbs",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-cid",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-cle",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-cpk",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-cvl",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-fay",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-gvl",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-hrt",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-iuc",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-ksu",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-nhv",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-nrc",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-nwk",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-nyc",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-nyq",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-oku",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-orl",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-osu",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-pnc",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-pur",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-roc",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-rut",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-sar",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-siu",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-stx",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-syr",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-tam",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-tol",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-wta",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-xdc",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-xeb",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-veo-xla",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-vernouvelo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-verona-bike",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-vertuose",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-viavelo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-vilnius",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-vilvolt_epinal",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-vivelo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-voi_Antwerp",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-voi_Grand_Paris_Seine_et_Oise",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-voi_Grenoble",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-voi_Le_Havre",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-voi_Marseille",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-voi_Nantes",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-voi_Paris",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-voi_SQY",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-voi_V'L\u00f4nes",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-voi_ch",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-voi_de",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-voiarendal",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-voibaerum",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-voibergen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-voifredrikstad",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-voikristiansand",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-voilillestrom",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-voimoss",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-voioslo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-voistavanger",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-voitrondheim",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-we_cycle",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-whitebikes_bratislava",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-yego bordeaux",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-yego nice",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-yego paris",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-yego toulouse",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zaragoza",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zebullo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zem_ch",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeo_bruchsal",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_anzio",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_augusta",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_bamberg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_borlange",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_castrop-rauxel",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_cheltenham",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_donaueschingen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_duisburg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_falun",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_freiburg im breisgau",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_friedberg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_gera",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_gloucester",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_goppingen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_hagen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_halmstad",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_hattingen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_heidelberg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_heilbronn",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_hemmingen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_herne",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_jena",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_karlstad",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_kempten",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_konstanz",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_kuala lumpur",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_leimen_walldorf_wiesloch",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_limburgerhof",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_ludwigsburg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_marburg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_mazara",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_neustadt",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_oslo",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_pforzheim",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_regensburg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_renningen-malmsheim",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_reutlingen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_russelsheim",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_schwabisch gmund",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_schweinfurt",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_singen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_straubing",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_sunderland",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_tubingen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_tuttlingen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_villingen-schwenningen",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_wurzburg",
+"source": "mobility-database",
+"reason": "duplicate"
+},
+{
+"id": "gtfs-gbfs-zeus_yeovil",
+"source": "mobility-database",
 "reason": "duplicate"
 },
 {
@@ -892,6 +7247,11 @@
 "reason": "URL carries a credential-like parameter (not stored)"
 },
 {
+"id": "gtfs-tdg-82310",
+"source": "mobility-database",
+"reason": "URL carries a credential-like parameter (not stored)"
+},
+{
 "id": "gtfs-tdg-82311",
 "source": "mobility-database",
 "reason": "URL carries a credential-like parameter (not stored)"
@@ -1372,6 +7732,11 @@
 "reason": "URL carries a credential-like parameter (not stored)"
 },
 {
+"id": "gtfs-tdg-83989",
+"source": "mobility-database",
+"reason": "URL carries a credential-like parameter (not stored)"
+},
+{
 "id": "gtfsrt-tdg-84015",
 "source": "mobility-database",
 "reason": "URL carries a credential-like parameter (not stored)"
@@ -1642,6 +8007,11 @@
 "reason": "duplicate"
 },
 {
+"id": "pa-ironflow",
+"source": "public-apis",
+"reason": "duplicate"
+},
+{
 "id": "pa-agent-nexus",
 "source": "public-apis",
 "reason": "duplicate"
@@ -1677,6 +8047,11 @@
 "reason": "duplicate"
 },
 {
+"id": "pa-unique-domains",
+"source": "public-apis",
+"reason": "duplicate"
+},
+{
 "id": "pa-helium",
 "source": "public-apis",
 "reason": "duplicate"
@@ -1698,6 +8073,11 @@
 },
 {
 "id": "pa-ipstack",
+"source": "public-apis",
+"reason": "duplicate"
+},
+{
+"id": "pa-loupe",
 "source": "public-apis",
 "reason": "duplicate"
 },
